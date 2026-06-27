@@ -346,6 +346,18 @@
   .tcard .trole{color:var(--accent);font-weight:600;font-size:.82rem;margin-top:2px}
   .tcard .tregio{color:var(--text-soft);font-size:.82rem;margin-top:6px}
 
+  /* CAPTAINS AAN TAFEL */
+  .captains{background:linear-gradient(150deg,#04253f,var(--primary));color:#fff;position:relative;overflow:hidden}
+  .captains .cap-glow{position:absolute;left:-140px;top:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(229,161,56,.22),transparent 68%);pointer-events:none}
+  .cap-inner{position:relative;z-index:2;max-width:780px}
+  .captains h2{color:#fff;font-size:clamp(2rem,4.4vw,2.6rem);margin:14px 0 16px}
+  .cap-lead{color:rgba(255,255,255,.84);font-size:1.1rem;max-width:62ch;margin-bottom:30px}
+  .cap-feats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:30px}
+  .cap-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-left:3px solid var(--accent);border-radius:12px;padding:18px 20px}
+  .cap-card b{display:block;font-family:var(--serif);font-weight:400;font-size:1.15rem;color:var(--accent-soft);margin-bottom:6px}
+  .cap-card span{font-size:.92rem;color:rgba(255,255,255,.8)}
+  @media(max-width:760px){.cap-feats{grid-template-columns:1fr}}
+
   /* WERKGEVERS */
   .werk{background:linear-gradient(155deg,#063359,var(--primary));color:#fff;position:relative;overflow:hidden}
   .werk .glow{position:absolute;right:-160px;top:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(229,161,56,.22),transparent 68%);pointer-events:none}
@@ -582,7 +594,24 @@
       <div class="event reveal"><div class="date"><div class="d">18</div><div class="m">Sep</div></div><div class="info"><h4>Masterclass: Klantgesprek van de toekomst</h4><p>Online · praktische skills-training</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk · online</div></div><span class="pill">Gratis voor leden</span></div>
       <div class="event reveal"><div class="date"><div class="d">09</div><div class="m">Okt</div></div><div class="info"><h4>HYPie Netwerkborrel</h4><p>Utrecht · informeel bijpraten met leeftijdsgenoten</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Regio Utrecht</div></div><span class="pill">Gratis voor leden</span></div>
       <div class="event reveal"><div class="date"><div class="d">20</div><div class="m">Nov</div></div><div class="info"><h4>HYPie top 50 Awards</h4><p>De top 50 van 2026 in de schijnwerpers</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk</div></div><span class="pill">Op uitnodiging</span></div>
+      <div class="event reveal"><div class="date"><div class="d">Q4</div><div class="m">2026</div></div><div class="info"><h4>Captains aan tafel — Wonen Morgen</h4><p>Besloten gesprek met de captains van de sector over het financieren van wonen — morgen</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Besloten</div></div><span class="pill">Op uitnodiging</span></div>
     </div>
+  </div>
+</section>
+
+<!-- CAPTAINS AAN TAFEL -->
+<section class="captains" id="captains">
+  <div class="cap-glow"></div>
+  <div class="wrap cap-inner reveal">
+    <span class="eyebrow">Captains aan tafel</span>
+    <h2>Wonen Morgen — aan tafel met de captains van de sector.</h2>
+    <p class="cap-lead">Een ontmoeting in klein gezelschap met de leiders van ons vak. Niet over de dossiers van gisteren en vandaag, maar over de structurele ontwikkelingen in het financieren van wonen — morgen. De generatie die het vak straks draagt, aan tafel met de mensen die het vandaag leiden.</p>
+    <div class="cap-feats">
+      <div class="cap-card"><b>Klein &amp; besloten</b><span>8–12 personen: een paar captains én een selectie HYPies aan één tafel.</span></div>
+      <div class="cap-card"><b>Eén scherp thema</b><span>Betaalbaarheid, verduurzaming, de rol van AI of nieuwe woonvormen.</span></div>
+      <div class="cap-card"><b>Open gesprek</b><span>Onder Chatham House-regels: vrijuit praten, niets gaat naar buiten.</span></div>
+    </div>
+    <a class="btn btn-accent" href="mailto:info@hypie.nl?subject=Captains%20aan%20tafel%20%E2%80%94%20Wonen%20Morgen">Hou me op de hoogte →</a>
   </div>
 </section>
 
