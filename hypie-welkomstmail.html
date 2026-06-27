@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+  HYPie — WELKOMSTMAIL
+  Onderwerp-suggestie: Welkom bij HYPie 👋 — je staat op de kaart
+  Afzender-suggestie: HYPie <info@hypie.nl>
+  Plaatshouders vervangen: {{voornaam}}, {{jaar}} (= 2026), {{afmeldlink}}
+
+  ── PLAIN-TEXT VERSIE (voor clients zonder HTML) ──────────────────────────
+  Welkom bij HYPie, {{voornaam}}!
+
+  Top dat je erbij bent. HYPie is het netwerk dat jonge hypotheekadviseurs
+  (t/m 35) in het zonnetje zet — met trainingen, kennis, events en de top 50.
+
+  Wat je nu kunt doen:
+  1. Bekijk de top 50 en de agenda op https://www.hypie.nl
+  2. Sluit je aan bij de community (LinkedIn/WhatsApp) via de site
+  3. Houd je mailbox in de gaten voor events en trainingen bij jou in de regio
+
+  Vragen? Mail gewoon terug naar info@hypie.nl.
+
+  Tot snel — team HYPie
+  hypie.nl · Afmelden: {{afmeldlink}}
+  ──────────────────────────────────────────────────────────────────────────
+-->
+<html lang="nl">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Welkom bij HYPie</title></head>
+<body style="margin:0;padding:0;background:#F4F7F9;font-family:Arial,Helvetica,sans-serif;color:#333333;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#F4F7F9;padding:24px 0;">
+    <tr><td align="center">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;background:#ffffff;border-radius:12px;overflow:hidden;">
+
+        <!-- Header -->
+        <tr><td style="background:#003057;padding:28px 36px;">
+          <table role="presentation" cellpadding="0" cellspacing="0"><tr>
+            <td style="background:#E5A138;border-radius:10px;width:48px;height:48px;text-align:center;font-family:Georgia,serif;font-size:20px;color:#003057;font-weight:bold;">Hi</td>
+            <td style="padding-left:14px;color:#ffffff;font-family:Arial,sans-serif;font-weight:bold;font-size:18px;">HYPie.nl<br><span style="font-weight:normal;font-size:11px;letter-spacing:2px;color:#E5A138;text-transform:uppercase;">Hypotheek Young Professionals</span></td>
+          </tr></table>
+        </td></tr>
+
+        <!-- Body -->
+        <tr><td style="padding:40px 36px 10px 36px;">
+          <h1 style="margin:0 0 10px 0;font-family:Georgia,serif;font-size:28px;color:#003057;font-weight:normal;line-height:1.2;">Welkom bij HYPie, {{voornaam}}! 👋</h1>
+          <p style="margin:0 0 18px 0;font-size:15px;line-height:1.6;color:#4A4A4A;">Top dat je erbij bent. Je staat nu op de kaart bij het netwerk dat jonge hypotheekadviseurs in het zonnetje zet — met trainingen, kennis, events en een eigen top 50.</p>
+
+          <p style="margin:0 0 10px 0;font-size:15px;font-weight:bold;color:#003057;">Wat je nu kunt doen:</p>
+          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:0 0 22px 0;">
+            <tr><td valign="top" style="padding:6px 12px 6px 0;color:#E5A138;font-weight:bold;font-size:15px;">1.</td><td style="padding:6px 0;font-size:15px;line-height:1.5;color:#4A4A4A;">Bekijk de <strong>top 50</strong> en de agenda op de site.</td></tr>
+            <tr><td valign="top" style="padding:6px 12px 6px 0;color:#E5A138;font-weight:bold;font-size:15px;">2.</td><td style="padding:6px 0;font-size:15px;line-height:1.5;color:#4A4A4A;">Sluit je aan bij de <strong>community</strong> (LinkedIn/WhatsApp) via de site.</td></tr>
+            <tr><td valign="top" style="padding:6px 12px 6px 0;color:#E5A138;font-weight:bold;font-size:15px;">3.</td><td style="padding:6px 0;font-size:15px;line-height:1.5;color:#4A4A4A;">Houd je mailbox in de gaten voor <strong>events &amp; trainingen</strong> bij jou in de regio.</td></tr>
+          </table>
+
+          <!-- Bulletproof button -->
+          <table role="presentation" cellpadding="0" cellspacing="0" style="margin:6px 0 26px 0;"><tr>
+            <td align="center" bgcolor="#E5A138" style="border-radius:10px;">
+              <a href="https://www.hypie.nl/" style="display:inline-block;padding:14px 28px;font-family:Arial,sans-serif;font-size:15px;font-weight:bold;color:#003057;text-decoration:none;border-radius:10px;">Bekijk de top 50 →</a>
+            </td>
+          </tr></table>
+
+          <p style="margin:0 0 6px 0;font-size:15px;line-height:1.6;color:#4A4A4A;">Vragen? Mail gewoon terug naar <a href="mailto:info@hypie.nl" style="color:#E5A138;font-weight:bold;text-decoration:none;">info@hypie.nl</a>.</p>
+          <p style="margin:18px 0 0 0;font-size:15px;line-height:1.6;color:#4A4A4A;">Tot snel,<br><strong style="color:#003057;">team HYPie</strong></p>
+        </td></tr>
+
+        <!-- Footer -->
+        <tr><td style="padding:24px 36px;border-top:1px solid #dde6ec;background:#fafcfd;">
+          <p style="margin:0;font-size:12px;line-height:1.6;color:#8a97a5;">© {{jaar}} HYPie.nl — Hypotheek Young Professionals · mede mogelijk gemaakt door DFO, NVHP, Impact, Blinqx, De Goudse, VCN, Lloyds Bank, Argenta en ING.<br>
+          De Wel 14–16, 3871 MV Hoevelaken · 033 258 04 60<br>
+          <a href="https://www.hypie.nl/privacy.html" style="color:#8a97a5;">Privacy</a> · <a href="{{afmeldlink}}" style="color:#8a97a5;">Afmelden</a></p>
+        </td></tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

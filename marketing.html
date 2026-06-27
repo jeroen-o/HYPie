@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merk- & marketingkit — HYPie.nl</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23003057'/%3E%3Cpath d='M32 11 l4.5 16.5 16.5 4.5 -16.5 4.5 -4.5 16.5 -4.5 -16.5 -16.5 -4.5 16.5 -4.5z' fill='%23E5A138'/%3E%3C/svg%3E">
+<style>
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url('fonts/DMSerifDisplay-Regular.woff2') format('woff2')}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url('fonts/DMSerifDisplay-Italic.woff2') format('woff2')}
+@font-face{font-family:'Plus Jakarta Sans';font-style:normal;font-weight:400 800;font-display:swap;src:url('fonts/PlusJakartaSans.woff2') format('woff2')}
+  :root{--primary:#003057;--accent:#E5A138;--accent-soft:#f2c074;--bg:#F4F7F9;--paper:#fff;--text:#333;--soft:#4A4A4A;--line:#dde6ec;--serif:'DM Serif Display',Georgia,serif;--sans:'Plus Jakarta Sans',system-ui,sans-serif}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);color:var(--text);background:var(--bg);line-height:1.6}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;color:var(--primary);line-height:1.12}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  .head{background:var(--primary);color:#fff;padding:30px 0}
+  .head .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .logo{width:48px;height:48px;border-radius:11px;background:var(--accent);display:flex;align-items:center;justify-content:center;flex:none}
+  .logo svg{width:26px;height:26px}
+  .head h1{color:#fff;font-size:1.5rem}
+  .head small{display:block;font-family:var(--sans);font-weight:600;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-top:3px}
+  .head .home{margin-left:auto;color:#fff;font-weight:600;font-size:.9rem;text-decoration:none;border:1.5px solid rgba(255,255,255,.3);padding:9px 16px;border-radius:8px}
+  section{padding:42px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{font-weight:700;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+  h2{font-size:1.7rem;margin:8px 0 6px}
+  .intro{color:var(--soft);margin-bottom:24px;max-width:60ch}
+  /* asset-grid */
+  .grid{display:grid;gap:18px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+  .card .prev{padding:16px;display:flex;align-items:center;justify-content:center;background:#eef3f6;min-height:150px}
+  .card .prev.navy{background:var(--primary)}
+  .card .prev img{max-width:100%;max-height:180px;border-radius:6px;display:block}
+  .card .meta{padding:14px 16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .card .meta .nm{font-weight:600;font-size:.9rem;color:var(--primary)}
+  .card .meta .dim{font-size:.76rem;color:var(--soft)}
+  .dl{background:var(--accent);color:var(--primary);text-decoration:none;font-weight:700;font-size:.82rem;padding:8px 14px;border-radius:8px;white-space:nowrap}
+  .dl:hover{background:var(--accent-soft)}
+  /* kleuren */
+  .swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .sw{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+  .sw .c{height:88px}
+  .sw .l{padding:10px 12px;font-size:.82rem}
+  .sw .l b{display:block;color:var(--primary)}
+  .sw .l span{color:var(--soft);font-variant-numeric:tabular-nums}
+  /* fonts */
+  .fonts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .fontcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+  .fontcard .big{font-size:2.4rem;color:var(--primary)}
+  .fontcard .big.serif{font-family:var(--serif)}
+  .fontcard .big.sans{font-family:var(--sans);font-weight:700}
+  .fontcard .nm{font-weight:700;color:var(--primary);margin-top:8px}
+  .fontcard .use{font-size:.84rem;color:var(--soft)}
+  /* copy-blokken */
+  .copyblock{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin-bottom:14px}
+  .copyblock .lbl{font-weight:700;color:var(--primary);font-size:.92rem;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .copytext{white-space:pre-wrap;font-size:.92rem;color:var(--text)}
+  .copybtn{background:var(--primary);color:#fff;border:none;border-radius:7px;padding:7px 14px;font-family:var(--sans);font-weight:600;font-size:.78rem;cursor:pointer;white-space:nowrap}
+  .copybtn:hover{background:#0a4170}
+  .foot{padding:26px 0;color:var(--soft);font-size:.82rem}
+  @media(max-width:760px){.g3,.g2,.fonts{grid-template-columns:1fr}.swatches{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header class="head">
+  <div class="wrap">
+    <span class="logo"><svg viewBox="0 0 24 24"><path d="M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z" fill="#003057"/></svg></span>
+    <div><h1>Merk- & marketingkit</h1><small>HYPie.nl · Hypotheek Young Professionals</small></div>
+    <a href="index.html" class="home">← Naar de site</a>
+  </div>
+</header>
+
+<!-- LOGO'S -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Logo's</span>
+    <h2>Logo's</h2>
+    <p class="intro">Het HYPie-logo in horizontale en vierkante varianten. Gebruik bij voorkeur de navy- of witte versie; de gouden variant als accent.</p>
+    <div class="grid g3">
+      <div class="card"><div class="prev"><img src="hypie-logo.jpg" alt="HYPie logo"></div><div class="meta"><div><div class="nm">Logo horizontaal</div><div class="dim">900×260 · JPG</div></div><a class="dl" href="hypie-logo.jpg" download>Download</a></div></div>
+      <div class="card"><div class="prev navy"><img src="hypie-logo-navy.jpg" alt="HYPie logo navy"></div><div class="meta"><div><div class="nm">Logo horizontaal (navy)</div><div class="dim">900×260 · JPG</div></div><a class="dl" href="hypie-logo-navy.jpg" download>Download</a></div></div>
+      <div class="card"><div class="prev navy"><img src="hypie-logo-linkedin-navy.jpg" alt="HYPie vierkant navy"></div><div class="meta"><div><div class="nm">Vierkant (navy) — LinkedIn</div><div class="dim">1000×1000 · JPG</div></div><a class="dl" href="hypie-logo-linkedin-navy.jpg" download>Download</a></div></div>
+      <div class="card"><div class="prev"><img src="hypie-logo-linkedin-wit.jpg" alt="HYPie vierkant wit"></div><div class="meta"><div><div class="nm">Vierkant (wit)</div><div class="dim">1000×1000 · JPG</div></div><a class="dl" href="hypie-logo-linkedin-wit.jpg" download>Download</a></div></div>
+      <div class="card"><div class="prev"><img src="hypie-logo-linkedin-goud.jpg" alt="HYPie vierkant goud"></div><div class="meta"><div><div class="nm">Vierkant (goud)</div><div class="dim">1000×1000 · JPG</div></div><a class="dl" href="hypie-logo-linkedin-goud.jpg" download>Download</a></div></div>
+      <div class="card"><div class="prev navy"><img src="hypie-favicon.jpg" alt="HYPie favicon"></div><div class="meta"><div><div class="nm">Favicon / icoon</div><div class="dim">512×512 · JPG</div></div><a class="dl" href="hypie-favicon.jpg" download>Download</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL & DEELBEELDEN -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Beeld</span>
+    <h2>Social & deelbeelden</h2>
+    <p class="intro">Kant-en-klare beelden voor delen op social en als preview-kaart bij links.</p>
+    <div class="grid g2">
+      <div class="card"><div class="prev navy"><img src="hypie-og-image.png" alt="Deelafbeelding"></div><div class="meta"><div><div class="nm">Deelafbeelding (link-preview)</div><div class="dim">1200×630 · PNG</div></div><a class="dl" href="hypie-og-image.png" download>Download</a></div></div>
+      <div class="card"><div class="prev navy"><img src="hypie-social-1200.png" alt="Social vierkant"></div><div class="meta"><div><div class="nm">Social post (vierkant)</div><div class="dim">1200×1200 · PNG</div></div><a class="dl" href="hypie-social-1200.png" download>Download</a></div></div>
+      <div class="card" style="grid-column:1/-1"><div class="prev navy"><img src="hypie-linkedin-banner.png" alt="LinkedIn banner"></div><div class="meta"><div><div class="nm">LinkedIn-bannerafbeelding</div><div class="dim">1584×396 · PNG</div></div><a class="dl" href="hypie-linkedin-banner.png" download>Download</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HUISSTIJL -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Huisstijl</span>
+    <h2>Kleuren & lettertypen</h2>
+    <p class="intro">De vaste kleuren en fonts van HYPie.</p>
+    <div class="swatches" style="margin-bottom:24px">
+      <div class="sw"><div class="c" style="background:#003057"></div><div class="l"><b>Navy</b><span>#003057</span></div></div>
+      <div class="sw"><div class="c" style="background:#E5A138"></div><div class="l"><b>Goud</b><span>#E5A138</span></div></div>
+      <div class="sw"><div class="c" style="background:#F4F7F9"></div><div class="l"><b>Achtergrond</b><span>#F4F7F9</span></div></div>
+      <div class="sw"><div class="c" style="background:#333333"></div><div class="l"><b>Tekst</b><span>#333333</span></div></div>
+    </div>
+    <div class="fonts">
+      <div class="fontcard"><div class="big serif">HYPie</div><div class="nm">DM Serif Display</div><div class="use">Koppen & wordmark</div></div>
+      <div class="fontcard"><div class="big sans">HYPie</div><div class="nm">Plus Jakarta Sans</div><div class="use">Bodytekst & UI</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TEKSTEN -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Teksten</span>
+    <h2>Omschrijvingen</h2>
+    <p class="intro">Kant-en-klare teksten voor je website, LinkedIn-pagina of bio. Klik op "Kopieer".</p>
+
+    <div class="copyblock">
+      <div class="lbl">Tagline (1 regel) <button class="copybtn">Kopieer</button></div>
+      <div class="copytext">HYPie — het netwerk dat jonge hypotheekadviseurs in het zonnetje zet.</div>
+    </div>
+    <div class="copyblock">
+      <div class="lbl">Korte bio <button class="copybtn">Kopieer</button></div>
+      <div class="copytext">HYPie is hét netwerk voor hypotheekadviseurs tot en met 35 jaar. We brengen jong talent in beeld met trainingen, kennis, events, een community en een eigen top 50 — gratis, mede mogelijk gemaakt door negen sectorpartners.</div>
+    </div>
+    <div class="copyblock">
+      <div class="lbl">Over HYPie (lang) <button class="copybtn">Kopieer</button></div>
+      <div class="copytext">Ben jij een HYPie? Of op zoek naar een HYPie?
+
+HYPie is het netwerk voor de nieuwe generatie hypotheekadviseurs: iedereen tot en met 35 jaar die het vak vooruit wil helpen. Want jong talent verdient een eigen plek — eentje die je in het zonnetje zet in plaats van achteraan in de rij.
+
+Wat we doen:
+• Trainingen & kennis — masterclasses, tools en updates over wet- en regelgeving, gratis of met flinke korting.
+• Events & community — meetups en netwerkborrels door het hele land, plus een actieve community om elke dag bij te horen.
+• Mentoren — ervaren adviseurs die je verder helpen in je vak én je loopbaan.
+• De top 50 — een jaarlijkse lijst die jonge adviseurs zichtbaar maakt in de sector.
+
+Voor werkgevers is HYPie de plek om jong talent te vinden, vacatures te delen en het eigen team te binden. Het lidmaatschap is gratis, mede mogelijk gemaakt door onze partners: DFO, NVHP, Impact, Blinqx, De Goudse, VCN, Lloyds Bank, Argenta en ING.
+
+Word lid op hypie.nl.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKEDIN POSTS -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">LinkedIn</span>
+    <h2>Lanceerposts</h2>
+    <p class="intro">Drie kant-en-klare posts: lancering, werving en werkgevers.</p>
+
+    <div class="copyblock">
+      <div class="lbl">Post 1 — De lancering <button class="copybtn">Kopieer</button></div>
+      <div class="copytext">Ben jij een HYPie? 👋
+
+Vandaag lanceren we HYPie.nl — het netwerk voor hypotheekadviseurs t/m 35 jaar.
+
+Want jong talent in ons vak verdient een eigen plek. Eentje die je in het zonnetje zet in plaats van achteraan in de rij.
+
+Als HYPie krijg je:
+✦ Trainingen & masterclasses (gratis of met flinke korting)
+✦ Kennis, tools en updates over wet- en regelgeving
+✦ Events, meetups en een community door heel Nederland
+✦ Mentoren die je verder helpen
+✦ Een plek in de jaarlijkse top 50 van 2026
+
+En het mooiste: het lidmaatschap is gratis, mede mogelijk gemaakt door 9 partners die in jonge adviseurs geloven.
+
+Ben jij een HYPie — of ken je er één? 👉 hypie.nl
+
+#hypotheekadvies #youngprofessionals #hypotheek #financieeladvies #HYPie</div>
+    </div>
+
+    <div class="copyblock">
+      <div class="lbl">Post 2 — Word lid <button class="copybtn">Kopieer</button></div>
+      <div class="copytext">35 jaar of jonger en werkzaam in hypotheekadvies? Dan is dit voor jou. 🎯
+
+Bij HYPie bouw je aan je vak én aan je netwerk, met leeftijdsgenoten die in dezelfde fase zitten. Geen ranglijst op punten, geen drempels — gewoon een community die je vooruithelpt.
+
+Wat je eraan hebt:
+• Korting of gratis toegang tot trainingen en events
+• Een mentor die je op weg helpt
+• Zichtbaarheid in de top 50 van 2026
+• Een achterban van jonge adviseurs door het hele land
+
+Meld je in twee minuten aan en je staat meteen op de kaart.
+
+👉 hypie.nl
+
+#hypotheekadviseur #youngprofessionals #carrière #hypotheek #HYPie</div>
+    </div>
+
+    <div class="copyblock">
+      <div class="lbl">Post 3 — Voor werkgevers <button class="copybtn">Kopieer</button></div>
+      <div class="copytext">Op zoek naar een HYPie? 🔎
+
+De nieuwe generatie hypotheekadviseurs zit op HYPie.nl. Voor kantoren en geldverstrekkers is dat goud waard:
+
+→ Talent in beeld via de top 50 en de ledenlijst per regio
+→ Plaats je vacatures gericht bij adviseurs t/m 35
+→ Bind je eigen jonge adviseurs met trainingen, events en mentoren
+→ Versterk je werkgeversmerk bij de generatie die je morgen nodig hebt
+
+Onze partners (DFO, NVHP, Impact, Blinqx, De Goudse, VCN, Lloyds Bank, Argenta en ING) gingen je voor.
+
+Benieuwd hoe je jouw HYPie vindt? 👉 hypie.nl
+
+#werkgeversmerk #recruitment #hypotheek #talent #HYPie</div>
+    </div>
+  </div>
+</section>
+
+<div class="foot"><div class="wrap">© 2026 HYPie.nl — Hypotheek Young Professionals · merk- & marketingkit · alle assets bevinden zich in dezelfde map als deze pagina.</div></div>
+
+<script>
+  document.querySelectorAll('.copybtn').forEach(function(b){
+    b.addEventListener('click',function(){
+      var txt=b.closest('.copyblock').querySelector('.copytext').innerText;
+      navigator.clipboard.writeText(txt).then(function(){
+        var o=b.textContent;b.textContent='✓ Gekopieerd';setTimeout(function(){b.textContent=o;},1500);
+      }).catch(function(){
+        var o=b.textContent;b.textContent='Selecteer & kopieer';setTimeout(function(){b.textContent=o;},2000);
+      });
+    });
+  });
+</script>
+</body>
+</html>
