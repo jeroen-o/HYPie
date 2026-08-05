@@ -279,6 +279,8 @@
   .pcard{display:flex;align-items:center;justify-content:center;min-height:104px;border:1px solid var(--line);border-radius:14px;background:var(--paper);transition:all .25s;padding:22px}
   .pcard img{max-height:52px;max-width:100%;width:auto;object-fit:contain}
   .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}
+  .pcard.dark{background:var(--primary);border-color:rgba(255,255,255,.14)}
+  .pcard.dark img{max-height:60px}
   .partners .footnote{text-align:center;color:var(--text-soft);font-size:.88rem;margin-top:28px}
 
   /* AANMELDEN */
@@ -727,6 +729,13 @@
       <div class="pcard"><img src="logos/vcn.svg" alt="VCN"></div>
       <div class="pcard"><img src="logos/argenta.png" alt="Argenta"></div>
       <div class="pcard"><img src="logos/quion.png" alt="Quion"></div>
+    </div>
+    <p class="sponsor-label" style="margin-top:36px">Partners</p>
+    <div class="partner-grid reveal">
+      <div class="pcard dark"><img src="logos/vip-congres-2027.png" alt="VIP Congres 2027"></div>
+      <div class="pcard"><img src="logos/serviceproviders-congres-2026.png" alt="Service Providers Congres 2026"></div>
+      <div class="pcard"><img src="logos/cga.png" alt="Contactgroep Automatisering"></div>
+      <div class="pcard"><img src="logos/pitchstraat.svg" alt="Pitchstraat"></div>
     </div>
     <p class="footnote">Ook partner worden? Mail naar <a href="mailto:partners@hypie.nl" style="color:var(--accent);font-weight:700">partners@hypie.nl</a></p>
   </div>
