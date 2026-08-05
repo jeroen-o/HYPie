@@ -158,15 +158,16 @@
   .hero .glow{position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:760px;height:560px;background:radial-gradient(50% 50% at 50% 0%,rgba(229,161,56,.34),transparent 68%);pointer-events:none}
   .hero .ring{position:absolute;right:-160px;bottom:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(255,255,255,.08);pointer-events:none}
   .hero .ring::after{content:"";position:absolute;inset:60px;border-radius:50%;border:1px solid rgba(229,161,56,.18)}
-  .hero-inner{position:relative;z-index:2;max-width:760px}
+  .hero-inner{position:relative;z-index:2;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center}
+  .hero-copy{max-width:660px}
   .badge35{display:inline-flex;align-items:center;gap:8px;background:rgba(229,161,56,.16);border:1px solid rgba(229,161,56,.45);color:var(--accent-soft);font-weight:700;font-size:.82rem;padding:7px 15px;border-radius:999px}
   .hero h1{font-size:clamp(2.4rem,5.4vw,4rem);margin:22px 0 0;color:#fff}
   .hero h1 em{font-style:italic;color:var(--accent)}
   .hero p.lead{font-size:1.18rem;color:rgba(255,255,255,.82);max-width:36ch;margin:20px 0 30px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-stats{display:flex;gap:34px;margin-top:38px;flex-wrap:wrap}
-  .hero-stats .s .n{font-family:var(--serif);font-size:2.1rem;color:var(--accent)}
-  .hero-stats .s .l{font-size:.84rem;color:rgba(255,255,255,.65)}
+  .hero-stats{display:flex;flex-direction:column;gap:26px;margin:0;padding-left:34px;border-left:1px solid rgba(255,255,255,.16)}
+  .hero-stats .s .n{font-family:var(--serif);font-size:2.4rem;color:var(--accent);line-height:1}
+  .hero-stats .s .l{font-size:.84rem;color:rgba(255,255,255,.65);margin-top:2px}
 
   .spotcard{position:relative;background:linear-gradient(180deg,#0a4170,#063359);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:28px;box-shadow:var(--shadow);text-align:center}
   .spotcard .av{width:92px;height:92px;border-radius:50%;margin:0 auto 16px;background:var(--accent);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.6rem;color:var(--primary);box-shadow:0 0 34px rgba(229,161,56,.5)}
@@ -433,7 +434,8 @@
   .modal-ok .check{width:56px;height:56px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
 
   @media(max-width:920px){
-    .hero-inner{grid-template-columns:1fr;gap:40px}
+    .hero-inner{grid-template-columns:1fr;gap:34px}
+    .hero-stats{flex-direction:row;gap:30px;padding-left:0;border-left:none;flex-wrap:wrap}
     .spotcard{order:-1;max-width:340px}
     .grid3{grid-template-columns:1fr 1fr}
     .join-grid{grid-template-columns:1fr;gap:34px}
@@ -491,7 +493,7 @@
   <div class="glow"></div>
   <div class="ring"></div>
   <div class="wrap hero-inner">
-    <div>
+    <div class="hero-copy">
       <span class="badge35">★ Voor hypotheekadviseurs t/m 35 jaar</span>
       <h1>Ben jij een <em>HYPie</em>?<br>Of op zoek naar een <em>HYPie</em>?</h1>
       <p class="lead">Het netwerk voor Hypotheek Young Professionals zet jonge hypotheekadviseurs in het zonnetje — met trainingen, kennis, events, een netwerk én een eigen top 50. En werkgevers vinden hier hun volgende talent.</p>
@@ -499,11 +501,11 @@
         <a href="#aanmelden" class="btn btn-accent btn-cta">Ik ben een HYPie →</a>
         <a href="#werkgevers" class="btn btn-ghost">Ik zoek een HYPie</a>
       </div>
-      <div class="hero-stats">
-        <div class="s"><div class="n" id="statLeden">—</div><div class="l">young professionals</div></div>
-        <div class="s"><div class="n">9</div><div class="l">partners</div></div>
-        <div class="s"><div class="n">t/m 35</div><div class="l">leeftijd</div></div>
-      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="s"><div class="n" id="statLeden">—</div><div class="l">young professionals</div></div>
+      <div class="s"><div class="n">9</div><div class="l">partners</div></div>
+      <div class="s"><div class="n">t/m 35</div><div class="l">leeftijd</div></div>
     </div>
   </div>
 </section>
