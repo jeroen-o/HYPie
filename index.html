@@ -281,6 +281,10 @@
   .pcard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}
   .pcard.dark{background:var(--primary);border-color:rgba(255,255,255,.14)}
   .pcard.dark img{max-height:60px}
+  /* kaderloos: logo met eigen achtergrond, geen rand/vulling */
+  .pcard.bare{background:transparent;border:none;padding:0;overflow:hidden}
+  .pcard.bare img{width:100%;max-width:100%;max-height:none;height:auto;border-radius:10px;display:block}
+  .pcard.bare:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
   .partners .footnote{text-align:center;color:var(--text-soft);font-size:.88rem;margin-top:28px}
 
   /* AANMELDEN */
@@ -732,7 +736,7 @@
     </div>
     <p class="sponsor-label" style="margin-top:36px">Partners</p>
     <div class="partner-grid reveal">
-      <div class="pcard dark"><img src="logos/vip-congres-2027.png" alt="VIP Congres 2027"></div>
+      <div class="pcard bare"><img src="logos/vip-congres-2027.png" alt="VIP Congres 2027"></div>
       <div class="pcard"><img src="logos/serviceproviders-congres-2026.png" alt="Service Providers Congres 2026"></div>
       <div class="pcard"><img src="logos/cga.png" alt="Contactgroep Automatisering"></div>
       <div class="pcard"><img src="logos/pitchstraat.svg" alt="Pitchstraat"></div>
