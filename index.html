@@ -382,6 +382,10 @@
   .bs-table tr:last-child td{border-bottom:none}
   .bs-cta{margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--primary);color:#fff;border-radius:20px;padding:26px 30px}
   .bs-cta h3{color:#fff;font-size:1.5rem}
+  .rva{margin-top:64px;padding-top:56px;border-top:1px solid var(--line)}
+  .team-grid.rva-grid{grid-template-columns:repeat(3,1fr)}
+  .rva-grid .tcard .tav{background:var(--accent);color:var(--primary)}
+  @media(max-width:680px){.team-grid.rva-grid{grid-template-columns:1fr}}
   .bs-cta p{color:rgba(255,255,255,.8)}
   @media(max-width:920px){.bs-rules{grid-template-columns:1fr}.team-grid.six{grid-template-columns:repeat(2,1fr)}}
   .bestuur{background:var(--paper)}
@@ -777,6 +781,15 @@
         <p>Elk jaar komen er drie zetels vrij. Stel je kandidaat voor de lichting van <b id="bsNext"></b>.</p>
       </div>
       <button class="btn btn-accent" id="bsBtn" type="button">Stel je kandidaat →</button>
+    </div>
+
+    <div class="rva" id="raad-van-advies">
+      <div class="sec-head reveal" style="max-width:720px;margin-bottom:28px">
+        <span class="eyebrow">Raad van Advies</span>
+        <h2>Ervaring naast het bestuur.</h2>
+        <p>De Raad van Advies denkt mee met het bestuur. De raad adviseert gevraagd en ongevraagd en brengt het bestuur in contact met de sector. Beslissen doet het bestuur van young professionals zelf.</p>
+      </div>
+      <div class="team-grid rva-grid" id="rvaGrid"></div>
     </div>
   </div>
 </section>
@@ -2038,8 +2051,26 @@
     else {inp.select();document.execCommand('copy');done();}
   });
 
+  /* ====== RAAD VAN ADVIES ======
+     Vul 'functie' (bijv. functie en organisatie) en eventueel 'foto' en 'linkedin' aan. */
+  var raadVanAdvies = [
+    {naam:"Jurjen Oosterbaan",  functie:"", foto:"", linkedin:""},
+    {naam:"Sanne Swierenga",    functie:"", foto:"", linkedin:""},
+    {naam:"Jeroen Oversteegen", functie:"", foto:"", linkedin:""}
+  ];
+  function renderRva(){
+    document.getElementById('rvaGrid').innerHTML=raadVanAdvies.map(function(r){
+      var ini=r.naam.split(' ').filter(function(w){return /^[A-Z]/.test(w);}).map(function(w){return w[0];}).join('').slice(0,2);
+      var av=r.foto?'<img class="tav" src="'+esc(r.foto)+'" alt="'+esc(r.naam)+'" style="object-fit:cover">':'<div class="tav">'+esc(ini)+'</div>';
+      return '<div class="tcard reveal in">'+av+'<h4>'+esc(r.naam)+'</h4><div class="trole">Lid Raad van Advies</div>'
+        +(r.functie?'<div class="tregio">'+esc(r.functie)+'</div>':'')
+        +(r.linkedin?'<div class="tregio"><a href="'+esc(r.linkedin)+'" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">LinkedIn →</a></div>':'')
+        +'</div>';
+    }).join('');
+  }
+
   // init
-  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour(); renderVerhalen();
+  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour(); renderVerhalen(); renderRva();
 </script>
 </body>
 </html>
