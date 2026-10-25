@@ -10,7 +10,7 @@ Tip: post 1 met de **vierkante afbeelding** (`hypie-social-1200.png`), zet de
 
 Ben jij een HYPie? 👋
 
-Vandaag lanceren we **HYPie.nl** — het netwerk voor hypotheekadviseurs t/m 35 jaar.
+Vandaag lanceren we **HYPie.nl** — het netwerk voor jonge hypotheekadviseurs: t/m 35 jaar of tot 5 jaar na je Wft Hypotheken.
 
 Want jong talent in ons vak verdient een eigen plek. Eentje die je in het zonnetje zet in plaats van achteraan in de rij.
 
@@ -31,7 +31,7 @@ Ben jij een HYPie — of ken je er één? 👉 hypie.nl
 
 ## Post 2 — Word lid
 
-35 jaar of jonger en werkzaam in hypotheekadvies? Dan is dit voor jou. 🎯
+35 jaar of jonger, of net je Wft Hypotheken op zak? Dan is dit voor jou. 🎯
 
 Bij **HYPie** bouw je aan je vak én aan je netwerk, met leeftijdsgenoten die in dezelfde fase zitten. Geen ranglijst op punten, geen drempels — gewoon een community die je vooruithelpt.
 
@@ -70,6 +70,6 @@ Investeer in je eigen HYPies 👉 hypie.nl
 
 Ben jij een HYPie? Of werk je met HYPies?
 
-Het netwerk voor jonge hypotheekadviseurs (t/m 35) is live. 👉 hypie.nl
+Het netwerk voor jonge hypotheekadviseurs (t/m 35 of tot 5 jaar na je Wft) is live. 👉 hypie.nl
 
 #HYPie #hypotheek
