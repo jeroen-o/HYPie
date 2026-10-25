@@ -501,6 +501,35 @@
   .dl-rules .btn{margin-top:16px}
   @media(max-width:920px){.bg-steps,.dl-wrap{grid-template-columns:1fr}}
 
+  /* LIDMAATSCHAP */
+  .leden{background:var(--bg)}
+  .lm-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch}
+  .lm-card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:32px;display:flex;flex-direction:column}
+  .lm-card .checklist{margin:18px 0 24px}
+  .lm-card .checklist li{color:var(--text)}
+  .lm-card{min-width:0}
+  .lm-card .btn{align-self:flex-start;white-space:normal;max-width:100%}
+  .lm-bedrijf{border:2px solid var(--primary);box-shadow:var(--shadow)}
+  .lm-tag{align-self:flex-start;font-size:.74rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;background:var(--accent);color:var(--primary);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+  .lm-bedrijf .lm-tag{background:var(--primary);color:#fff}
+  .lm-card h3{font-size:1.6rem}
+  .lm-prijs{font-family:var(--serif);font-size:2.2rem;color:var(--primary);margin:6px 0 4px}
+  .lm-voor{color:var(--text-soft);font-size:.94rem}
+  .lm-voor a{color:var(--accent);font-weight:600}
+  .lm-pakketten{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:-6px 0 22px}
+  .lm-pk{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
+  .lm-pk b{display:block;color:var(--primary)}
+  .lm-pk span{display:block;font-size:.8rem;color:var(--text-soft)}
+  .lm-pk em{display:block;font-style:normal;font-weight:700;color:var(--primary);margin-top:4px;font-size:.9rem}
+  .lm-note{font-size:.8rem;color:var(--text-soft);margin-top:14px;line-height:1.5}
+  .bl-wall{margin-top:40px;text-align:center}
+  .bl-wall h3{font-size:1.4rem;margin-bottom:16px}
+  .bl-list{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .bl-item{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 16px;font-weight:700;color:var(--primary);display:flex;align-items:center;gap:8px}
+  .bl-item img{max-height:32px;width:auto}
+  @media(max-width:920px){.lm-grid{grid-template-columns:1fr}}
+  @media(max-width:480px){.lm-pakketten{grid-template-columns:1fr}.lm-card{padding:24px}}
+
   /* VERHALEN */
   .verhalen{background:var(--paper)}
   .vh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -591,7 +620,7 @@
       <span class="bt">HYPie.nl<small>Hypotheek Young Professionals</small></span>
     </a>
     <nav class="nav-links" id="navLinks">
-      <a href="#top">Home</a>
+      <a href="#lidmaatschap">Lidmaatschap</a>
       <a href="#voordelen">Voordelen</a>
       <a href="#top50">top 50</a>
       <a href="#alumni">Alumni</a>
@@ -944,7 +973,8 @@
     <div class="werk-card reveal">
       <h3>Vind jouw HYPie</h3>
       <p>Vertel ons wie je zoekt of meld je kantoor aan als werkgever. We brengen je in contact met de juiste young professionals.</p>
-      <button type="button" class="btn btn-accent" id="wgBtn">Nodig je team uit →</button>
+      <a href="#lidmaatschap" class="btn btn-accent">Bekijk het bedrijfslidmaatschap →</a>
+      <button type="button" class="btn btn-outline" id="wgBtn" style="margin-top:10px">Nodig je team uit</button>
       <a href="mailto:werkgevers@hypie.nl?subject=Op%20zoek%20naar%20een%20HYPie" class="btn btn-outline" style="margin-top:10px">Neem contact op</a>
       <a href="mailto:partners@hypie.nl?subject=Partner%20worden" class="btn btn-outline" style="margin-top:10px">Word partner</a>
     </div>
@@ -1096,6 +1126,84 @@
   </div>
 </section>
 
+<!-- LIDMAATSCHAP -->
+<section class="leden" id="lidmaatschap">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <span class="eyebrow" style="justify-content:center">Lidmaatschap</span>
+      <h2>Voor jou, en voor je kantoor.</h2>
+      <p>Het individuele lidmaatschap is en blijft gratis en persoonlijk. Met een bedrijfslidmaatschap steunt je kantoor zijn jonge adviseurs en laat je zien dat je in talent investeert.</p>
+    </div>
+    <div class="lm-grid">
+      <div class="lm-card reveal">
+        <div class="lm-tag">Individueel</div>
+        <h3>Hypotheek Young Professional</h3>
+        <div class="lm-prijs">Gratis</div>
+        <p class="lm-voor">Voor hypotheekadviseurs t/m 35 jaar met minimaal Wft Hypothecair Krediet.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Trainingen, masterclasses en kennissessies</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Buddy, coach uit de alumni en dilemmasessies</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Events, borrels en HYPie on Tour</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Kans op de top 50 en zichtbaarheid</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Meedoen als ambassadeur of bestuurslid</li>
+        </ul>
+        <a href="#aanmelden" class="btn btn-accent">Word lid →</a>
+      </div>
+      <div class="lm-card lm-bedrijf reveal">
+        <div class="lm-tag">Bedrijf</div>
+        <h3>Bedrijfslidmaatschap</h3>
+        <div class="lm-prijs" id="lmPrijs">Op aanvraag</div>
+        <p class="lm-voor">Voor advieskantoren en ketens met jonge adviseurs in dienst. Geldverstrekkers en dienstverleners kunnen kiezen voor het <a href="#partners">partnerprogramma</a>.</p>
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Eigen aanmeldlink voor je team, met overzicht van het aantal aanmeldingen</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Voorrang voor je young professionals bij events en masterclasses</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Een incompany kennissessie per jaar op je kantoor</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Je vacatures in de HYPie-nieuwsbrief en de LinkedIn-groep</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Sectorinzichten uit de HYPie-Monitor, geanonimiseerd</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Vermelding als bedrijfslid op HYPie.nl</li>
+        </ul>
+        <div class="lm-pakketten" id="lmPakketten"></div>
+        <button type="button" class="btn btn-primary" id="bdBtn">Vraag het bedrijfslidmaatschap aan →</button>
+        <p class="lm-note">Het lidmaatschap van je medewerkers blijft persoonlijk. Iedereen meldt zich zelf aan en geeft zelf toestemming. Als bedrijfslid krijg je geen inzage in persoonsgegevens of activiteiten van individuele leden.</p>
+      </div>
+    </div>
+    <div class="bl-wall reveal" id="blWall" hidden>
+      <h3>Onze bedrijfsleden</h3>
+      <div class="bl-list" id="blList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- BEDRIJFSLIDMAATSCHAP MODAL -->
+<div class="modal" id="bdModal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Sluiten">✕</button>
+    <div id="bdBody">
+      <h3>Bedrijfslidmaatschap aanvragen</h3>
+      <p class="sub">We nemen contact met je op met een voorstel. Je zit nergens aan vast tot je akkoord geeft.</p>
+      <div class="field"><label for="bd_kt">Kantoor / organisatie</label><input id="bd_kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
+      <div class="field-row">
+        <div class="field"><label for="bd_naam">Contactpersoon</label><input id="bd_naam" type="text" autocomplete="name"><span class="err">Vul je naam in.</span></div>
+        <div class="field"><label for="bd_tel">Telefoon (optioneel)</label><input id="bd_tel" type="tel" autocomplete="tel"></div>
+      </div>
+      <div class="field"><label for="bd_em">E-mailadres</label><input id="bd_em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
+      <div class="field-row">
+        <div class="field"><label for="bd_aantal">Aantal young professionals</label><input id="bd_aantal" type="number" min="1" inputmode="numeric"><span class="err">Vul een aantal in.</span></div>
+        <div class="field"><label for="bd_pakket">Pakket</label><select id="bd_pakket"></select></div>
+      </div>
+      <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_bd" tabindex="-1" autocomplete="off"></label></div>
+      <label class="check-line" id="bdLine"><input type="checkbox" id="bd_ok"> Ik begrijp dat het lidmaatschap van onze medewerkers persoonlijk blijft en dat wij geen persoonsgegevens van leden ontvangen.</label>
+      <button class="btn btn-accent" id="bdSubmit" type="button">Verstuur aanvraag →</button>
+    </div>
+    <div class="modal-ok" id="bdOk">
+      <div class="check"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#003057" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></div>
+      <h3>Aanvraag ontvangen!</h3>
+      <p class="sub">We nemen binnenkort contact met je op. Alvast je aanmeldlink voor je team:</p>
+      <div class="field"><input id="bd_link" type="text" readonly></div>
+    </div>
+  </div>
+</div>
+
 <!-- VERHALEN -->
 <section class="verhalen" id="verhalen">
   <div class="wrap">
@@ -1236,7 +1344,7 @@
       <div class="foot-links">
         <div class="foot-col"><h5>Platform</h5><a href="#voordelen">Voordelen</a><a href="#top50">top 50</a><a href="#agenda">Agenda</a><a href="masterclass-young-professionals.html">Masterclass</a><a href="#aanmelden">Word lid</a></div>
         <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="lp-geslaagd.html">Net geslaagd voor Wft?</a><a href="#alumni">HYPie Alumni</a><a href="#bestuur">Bestuur</a><a href="#begeleiding">Buddy & dilemmasessies</a></div>
-        <div class="foot-col"><h5>Community</h5><a href="https://www.linkedin.com/company/hypotheek-young-professionals-hypie-nl/" target="_blank" rel="noopener">LinkedIn-pagina</a><a href="https://www.linkedin.com/groups/25800057/" target="_blank" rel="noopener">LinkedIn-groep (besloten)</a><a href="#partners">Partners</a><a href="mailto:partners@hypie.nl">Partner worden</a></div>
+        <div class="foot-col"><h5>Community</h5><a href="https://www.linkedin.com/company/hypotheek-young-professionals-hypie-nl/" target="_blank" rel="noopener">LinkedIn-pagina</a><a href="https://www.linkedin.com/groups/25800057/" target="_blank" rel="noopener">LinkedIn-groep (besloten)</a><a href="#lidmaatschap">Bedrijfslidmaatschap</a><a href="#partners">Partners</a><a href="mailto:partners@hypie.nl">Partner worden</a></div>
         <div class="foot-col"><h5>Contact</h5><a href="mailto:info@hypie.nl">info@hypie.nl</a><a href="tel:0332580460">033 258 04 60</a><a href="https://maps.google.com/?q=De+Wel+14-16+3871+MV+Hoevelaken" style="white-space:normal">De Wel 14–16<br>3871 MV Hoevelaken</a></div>
       </div>
     </div>
@@ -2069,8 +2177,62 @@
     }).join('');
   }
 
+  /* ====== BEDRIJFSLIDMAATSCHAP ======
+     prijs: bedrag per jaar in euro's (getal) of '' voor 'op aanvraag'.
+     bedrijfsleden: alleen kantoren die akkoord gaven met vermelding. logo: pad of ''. */
+  var pakketten = [
+    {naam:"Klein",  bereik:"1–5 young professionals",   min:1,  max:5,    prijs:""},
+    {naam:"Middel", bereik:"6–20 young professionals",  min:6,  max:20,   prijs:""},
+    {naam:"Groot",  bereik:"21+ young professionals",   min:21, max:9999, prijs:""}
+  ];
+  var bedrijfsleden = [
+    // {naam:"Kantoornaam", logo:""}
+  ];
+  var eur = new Intl.NumberFormat('nl-NL',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  function pkPrijs(p){ return p.prijs!=='' && p.prijs!=null ? eur.format(p.prijs)+' per jaar' : 'Op aanvraag'; }
+  function renderLeden(){
+    document.getElementById('lmPakketten').innerHTML=pakketten.map(function(p){
+      return '<div class="lm-pk"><b>'+esc(p.naam)+'</b><span>'+esc(p.bereik)+'</span><em>'+pkPrijs(p)+'</em></div>';
+    }).join('');
+    var metPrijs=pakketten.filter(function(p){return p.prijs!=='' && p.prijs!=null;});
+    document.getElementById('lmPrijs').textContent = metPrijs.length
+      ? 'Vanaf '+eur.format(Math.min.apply(null,metPrijs.map(function(p){return p.prijs;})))+' per jaar' : 'Op aanvraag';
+    document.getElementById('bd_pakket').innerHTML=pakketten.map(function(p){return '<option>'+esc(p.naam)+' ('+esc(p.bereik)+')</option>';}).join('');
+    if(bedrijfsleden.length){
+      document.getElementById('blList').innerHTML=bedrijfsleden.map(function(b){
+        return '<div class="bl-item">'+(b.logo?'<img src="'+esc(b.logo)+'" alt="">':'')+esc(b.naam)+'</div>';
+      }).join('');
+      document.getElementById('blWall').hidden=false;
+    }
+  }
+  modalPair('bdModal','bdBtn','bdBody','bdOk');
+  document.getElementById('bd_aantal').addEventListener('input',function(){
+    var n=parseInt(this.value,10); if(!(n>0)) return;
+    pakketten.forEach(function(p,i){ if(n>=p.min && n<=p.max) document.getElementById('bd_pakket').selectedIndex=i; });
+  });
+  document.getElementById('bdSubmit').addEventListener('click',function(){
+    if((document.getElementById('hp_bd')||{}).value) return;
+    var v=function(id){return (document.getElementById(id).value||'').trim();};
+    var ok=true;
+    ['bd_kt','bd_naam'].forEach(function(id){var e=!v(id);setErr(id,e);if(e)ok=false;});
+    var eA=!(parseInt(v('bd_aantal'),10)>0); setErr('bd_aantal',eA); if(eA)ok=false;
+    var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('bd_em')); setErr('bd_em',eEm); if(eEm)ok=false;
+    var eC=!document.getElementById('bd_ok').checked;
+    document.getElementById('bdLine').classList.toggle('invalid',eC); if(eC)ok=false;
+    if(!ok) return;
+    var slug=v('bd_kt').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    var link='https://www.hypie.nl/lp-aanmelden.html?utm_source=bedrijfslid&utm_medium=teamlink&utm_campaign='+slug;
+    document.getElementById('bd_link').value=link;
+    document.getElementById('bdBody').style.display='none';
+    document.getElementById('bdOk').classList.add('show');
+    dispatch('Aanvraag bedrijfslidmaatschap', {
+      type:'bedrijfslidmaatschap', kantoor:v('bd_kt'), contactpersoon:v('bd_naam'), telefoon:v('bd_tel'),
+      email:v('bd_em'), aantal_yp:v('bd_aantal'), pakket:v('bd_pakket'), teamlink:link
+    });
+  });
+
   // init
-  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour(); renderVerhalen(); renderRva();
+  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour(); renderVerhalen(); renderRva(); renderLeden();
 </script>
 </body>
 </html>
