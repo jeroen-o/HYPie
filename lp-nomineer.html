@@ -93,7 +93,7 @@ footer a{color:var(--soft)}
       </div>
       <div class="field"><label>Waarom verdient deze persoon het? (optioneel)</label><textarea data-key="waarom" placeholder="Vertel kort waarom…"></textarea></div>
       <div class="field"><label>Jouw e-mail (optioneel)</label><input type="email" data-key="jouw_email" data-email></div>
-      <label class="check-line"><input type="checkbox" data-key="voldoet_aan_voorwaarden" data-required> Voor zover ik weet heeft deze persoon minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken) en is diegene t/m 35 jaar of heeft diegene het diploma maximaal 5 jaar.</label>
+      <label class="check-line"><input type="checkbox" data-key="voldoet_aan_voorwaarden" data-required> Voor zover ik weet is deze persoon t/m 35 jaar en heeft diegene minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken).</label>
       <label class="check-line"><input type="checkbox" data-key="persoon_geinformeerd" data-required> Ik heb deze persoon op de hoogte gebracht. HYPie vraagt de voorgedragen persoon altijd eerst om toestemming voordat de naam openbaar wordt getoond.</label>
       <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp" tabindex="-1" autocomplete="off"></label></div>
       <button type="submit" class="btn">Verstuur nominatie →</button>
@@ -140,7 +140,7 @@ function lpInit(subject,type){
       else{
         if(req&&!val)bad=true;
         if(el.hasAttribute('data-email')&&val&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))bad=true;
-        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=99))bad=true;}
+        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=35))bad=true;}
       }
       var w=el.closest('.field')||el.closest('.check-line');
       if(w)w.classList.toggle('invalid',bad);
