@@ -65,35 +65,113 @@
     },
     {
       "@type": "Event",
-      "name": "VIP Congres 2026 — re:Invent",
-      "startDate": "2026-07-07",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": { "@type": "Place", "name": "AFAS Theater", "address": "Leusden, Utrecht, NL" },
-      "organizer": { "@id": "https://www.hypie.nl/#org" }
-    },
-    {
-      "@type": "Event",
-      "name": "Masterclass: Klantgesprek van de toekomst",
-      "startDate": "2026-09-18",
-      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
-      "location": { "@type": "VirtualLocation", "url": "https://www.hypie.nl/" },
-      "organizer": { "@id": "https://www.hypie.nl/#org" }
-    },
-    {
-      "@type": "Event",
-      "name": "HYPie Netwerkborrel",
-      "startDate": "2026-10-09",
-      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": { "@type": "Place", "name": "Utrecht", "address": "Utrecht, NL" },
-      "organizer": { "@id": "https://www.hypie.nl/#org" }
-    },
-    {
-      "@type": "Event",
       "name": "HYPie top 50 Awards 2026",
       "startDate": "2026-11-20",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-      "location": { "@type": "Place", "name": "Nederland", "address": "NL" },
-      "organizer": { "@id": "https://www.hypie.nl/#org" }
+      "location": {
+        "@type": "Place",
+        "name": "Nederland",
+        "address": "NL"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Koffiebreak: je eerste jaar als adviseur",
+      "startDate": "2026-11-26T08:30+01:00",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://www.hypie.nl/#agenda"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Kennissessie: de leennormen voor 2027",
+      "startDate": "2026-12-10T16:00+01:00",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
+      "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+      "location": {
+        "@type": "VirtualLocation",
+        "url": "https://www.hypie.nl/#agenda"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Nieuwjaarsborrel & bestuurswissel",
+      "startDate": "2027-01-21T17:00+01:00",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Nederland",
+        "address": "NL"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Regiobijeenkomst Noord",
+      "startDate": "2027-02-11T16:00+01:00",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Groningen",
+        "address": "Groningen, NL"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Regiobijeenkomst Oost",
+      "startDate": "2027-03-11T16:00+01:00",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Zwolle",
+        "address": "Zwolle, NL"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Regiobijeenkomst Zuid",
+      "startDate": "2027-04-08T16:00+02:00",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Eindhoven",
+        "address": "Eindhoven, NL"
+      }
+    },
+    {
+      "@type": "Event",
+      "name": "Regiobijeenkomst West",
+      "startDate": "2027-05-13T16:00+02:00",
+      "organizer": {
+        "@id": "https://www.hypie.nl/#org"
+      },
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "location": {
+        "@type": "Place",
+        "name": "Amsterdam",
+        "address": "Amsterdam, NL"
+      }
     }
   ]
 }
@@ -364,6 +442,8 @@
 
   /* BESTUUR */
   .team-grid.six{grid-template-columns:repeat(3,1fr);margin-top:34px}
+  .team-grid .tcard{min-width:0;overflow-wrap:anywhere}
+  @media(max-width:480px){.team-grid.six{grid-template-columns:1fr}}
   .tcard .tgrp{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(229,161,56,.16);border:1px solid rgba(229,161,56,.5);color:var(--primary)}
   .bs-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
   .bs-rule{display:flex;gap:16px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
@@ -382,10 +462,6 @@
   .bs-table tr:last-child td{border-bottom:none}
   .bs-cta{margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--primary);color:#fff;border-radius:20px;padding:26px 30px}
   .bs-cta h3{color:#fff;font-size:1.5rem}
-  .rva{margin-top:64px;padding-top:56px;border-top:1px solid var(--line)}
-  .team-grid.rva-grid{grid-template-columns:repeat(3,1fr)}
-  .rva-grid .tcard .tav{background:var(--accent);color:var(--primary)}
-  @media(max-width:680px){.team-grid.rva-grid{grid-template-columns:1fr}}
   .bs-cta p{color:rgba(255,255,255,.8)}
   @media(max-width:920px){.bs-rules{grid-template-columns:1fr}.team-grid.six{grid-template-columns:repeat(2,1fr)}}
   .bestuur{background:var(--paper)}
@@ -441,6 +517,7 @@
   .werk{background:linear-gradient(155deg,#063359,var(--primary));color:#fff;position:relative;overflow:hidden}
   .werk .glow{position:absolute;right:-160px;top:-120px;width:520px;height:520px;background:radial-gradient(circle,rgba(229,161,56,.22),transparent 68%);pointer-events:none}
   .werk-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:2}
+  .werk-grid>*{min-width:0;overflow-wrap:anywhere}
   .werk-grid h2{color:#fff;font-size:clamp(2rem,4.4vw,2.6rem);margin:14px 0 14px}
   .werk-grid .lead{color:rgba(255,255,255,.82);font-size:1.06rem;margin-bottom:22px}
   .werk-list{list-style:none;display:flex;flex-direction:column;gap:14px}
@@ -564,6 +641,23 @@
   .vh-cta{text-align:center;margin-top:26px}
   @media(max-width:920px){.vh-grid{grid-template-columns:1fr}}
 
+  .ag-bar{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  .ag-chips{display:flex;flex-wrap:wrap;gap:8px}
+  .ag-chip{font-family:var(--sans);font-weight:700;font-size:.84rem;cursor:pointer;border:1.5px solid var(--line);background:var(--paper);color:var(--primary);padding:7px 14px;border-radius:999px}
+  .ag-chip:hover{border-color:var(--accent)}
+  .ag-chip.on{background:var(--primary);border-color:var(--primary);color:#fff}
+  #agRegio{padding:9px 12px;border:1.5px solid var(--line);border-radius:10px;font-family:var(--sans);font-size:.9rem;background:var(--paper);color:var(--text)}
+  .event .soort{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+  .event .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
+  .event .acts{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+  .event .acts button,.event .acts a{font-family:var(--sans);font-size:.8rem;font-weight:700;border-radius:999px;padding:7px 13px;cursor:pointer;white-space:nowrap;text-decoration:none}
+  .event .ag-in{background:var(--primary);color:#fff;border:1.5px solid var(--primary)}
+  .event .ag-in:hover{background:var(--primary-soft)}
+  .event .ag-ics{background:transparent;color:var(--primary);border:1.5px solid var(--line)}
+  .event .ag-ics:hover{border-color:var(--accent)}
+  .ag-more{text-align:center;margin-top:18px}
+  .ag-empty{background:var(--paper);border:1.5px dashed var(--line);border-radius:14px;padding:24px;text-align:center;color:var(--text-soft)}
+  @media(max-width:680px){.event .acts{grid-column:1/-1;flex-direction:row;align-items:center;flex-wrap:wrap}.ag-bar{flex-direction:column;align-items:stretch}}
   .ag-archive{margin-top:22px}
   .ag-archive summary{cursor:pointer;font-weight:700;color:var(--primary);padding:8px 0}
   .ag-archive .event{opacity:.6}
@@ -660,7 +754,7 @@
     <div class="hero-copy">
       <span class="badge35">★ Voor hypotheekadviseurs t/m 35 jaar · met Wft Hypotheken</span>
       <h1>Ben jij een <em>HYPie</em>?<br>Of werk je met <em>HYPies</em>?</h1>
-      <p class="lead">Gratis trainingen en kennissessies, een buddy en een coach, zichtbaarheid in de top 50 en een netwerk van adviseurs van jouw leeftijd. En kantoren investeren hier in hun eigen jonge adviseurs.</p>
+      <p class="lead">Een landelijk netwerk van jonge hypotheekadviseurs, en toegang tot kennis: trainingen, kennissessies en de mensen die het vak al jaren kennen. Plus zichtbaarheid in de top 50. En kantoren investeren hier in hun eigen jonge adviseurs.</p>
       <div class="hero-cta">
         <a href="#aanmelden" class="btn btn-accent btn-cta">Ik ben een HYPie →</a>
         <a href="#werkgevers" class="btn btn-ghost">Ik werk met HYPies</a>
@@ -683,12 +777,12 @@
       <p>Als Hypotheek Young Professional krijg je voordelen die speciaal zijn samengesteld voor adviseurs aan het begin van hun carrière.</p>
     </div>
     <div class="grid3">
+      <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><circle cx="17" cy="8" r="2.4"/><path d="M16 14c3 0 5 2 5 6"/></svg></div><h3>Netwerk van jonge adviseurs</h3><p>Leeftijdsgenoten door het hele land die hetzelfde vak doen en in dezelfde fase zitten. Online in de community en live op events en borrels.</p></div>
+      <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V4Z"/><path d="M8 8h8M8 12h6"/></svg></div><h3>Toegang tot kennis</h3><p>Kennissessies, rekentools, kennisartikelen en updates over wet- en regelgeving. En directe lijnen met ervaren adviseurs, alumni en captains uit de sector.</p></div>
       <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></svg></div><h3>Trainingen</h3><p>Gratis of met flinke korting deelnemen aan vakinhoudelijke trainingen, soft-skills en PE-punten.</p></div>
-      <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 4h12a2 2 0 0 1 2 2v14H6a2 2 0 0 1-2-2V4Z"/><path d="M8 8h8M8 12h6"/></svg></div><h3>Kennis & tools</h3><p>Een bibliotheek met rekentools, kennisartikelen en updates over wet- en regelgeving.</p></div>
       <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></div><h3>Events</h3><p>Voorrang en toegang tot congressen, borrels en YP-only meetups door het hele land.</p></div>
-      <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3 3-5 6-5s6 2 6 5"/><circle cx="17" cy="8" r="2.4"/><path d="M16 14c3 0 5 2 5 6"/></svg></div><h3>Buddy & coach</h3><p>Een buddy om mee te sparren en een coach uit de HYPie Alumni. Plus vertrouwelijke dilemmasessies met leeftijdsgenoten.</p></div>
       <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="4"/></svg></div><h3>Spotlight & top 50</h3><p>Sta dit jaar in de top 50 die we doorlopend in beeld brengen, op podia en in interviews.</p></div>
-      <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l3 3 7-8"/><path d="M16 7h4v4"/></svg></div><h3>Groeien in je vak</h3><p>Van startend naar senior adviseur: welke Wft-modules, vaardigheden en ervaring erbij horen. Je coach denkt met je mee.</p></div>
+      <div class="bcard reveal"><div class="ic"><svg viewBox="0 0 24 24"><path d="M4 18 10 12l3 3 7-8"/><path d="M16 7h4v4"/></svg></div><h3>Groeien in je vak</h3><p>Van startend naar senior adviseur: welke Wft-modules, vaardigheden en ervaring erbij horen. Een coach uit de alumni denkt met je mee.</p></div>
     </div>
   </div>
 </section>
@@ -707,17 +801,17 @@
   </div>
 </section>
 
-<!-- BEGELEIDING -->
-<section class="begeleiding" id="begeleiding">
+<!-- NETWERK & KENNIS -->
+<section class="begeleiding" id="netwerk">
   <div class="wrap">
     <div class="sec-head reveal" style="max-width:720px">
-      <span class="eyebrow">Je staat er niet alleen voor</span>
-      <h2>Een buddy om mee te sparren. Een coach voor de lange termijn.</h2>
-      <p>Na je Wft Hypotheken begint het echte vak pas. Daarom brengen we je, op jouw verzoek en zolang er plek is, in contact met iemand die net een stap verder is en met een ervaren alumnus die met je meekijkt.</p>
+      <span class="eyebrow">Netwerk &amp; kennis</span>
+      <h2>Jonge mensen, één netwerk, alle kennis.</h2>
+      <p>Na je Wft Hypotheken begint het echte vak pas. Bij HYPie leer je van leeftijdsgenoten die hetzelfde meemaken, en van de mensen die het vak al jaren kennen.</p>
     </div>
     <div class="bg-steps">
-      <div class="bg-step reveal"><div class="bg-k">Bij de start</div><h3>Je buddy</h3><p>Een HYPie die één à twee jaar verder is. Voor de praktische vragen: je eerste dossiers, software, het klantgesprek, wie je waarvoor belt.</p></div>
-      <div class="bg-step reveal"><div class="bg-k">Jaar 1–2</div><h3>Je coach uit de alumni</h3><p>Een ervaren adviseur uit de <a href="#alumni">HYPie Alumni</a>. Samen stel je leerdoelen, kijk je naar je loopbaan en bewaak je de balans tussen werk en privé.</p></div>
+      <div class="bg-step reveal"><div class="bg-k">Altijd</div><h3>Je netwerk</h3><p>Jonge hypotheekadviseurs uit het hele land. Spar over dossiers, acceptatie en het klantgesprek, in de community, in je regio en op events.</p></div>
+      <div class="bg-step reveal"><div class="bg-k">Kennis</div><h3>Leren van ervaren collega's</h3><p>Kennissessies en masterclasses, en een coach uit de <a href="#alumni">HYPie Alumni</a> als je dat wilt. Daarnaast gesprekken met captains uit de sector en de Raad van Advies.</p></div>
       <div class="bg-step reveal"><div class="bg-k">Doorlopend</div><h3>Dilemmasessies</h3><p>Een paar keer per jaar, vertrouwelijk, in kleine groep, met leeftijdsgenoten. Over de lastige kant van het vak, waar je op kantoor niet altijd over praat.</p></div>
     </div>
 
@@ -806,11 +900,11 @@
     <div class="sec-head reveal" style="max-width:720px">
       <span class="eyebrow">Wie zit erachter</span>
       <h2>Een bestuur van Hypotheek Young Professionals.</h2>
-      <p>HYPie wordt bestuurd door de doelgroep zelf. Het bestuur bestaat uit zes young professionals. Elk bestuurslid zit twee jaar, en elk jaar wordt de helft van het bestuur vervangen. Zo blijft er altijd ervaring aan tafel en komt er elk jaar nieuwe energie bij.</p>
+      <p>HYPie wordt bestuurd door de doelgroep zelf. Het bestuur bestaat uit twaalf young professionals. Elk bestuurslid zit twee jaar, en elk jaar wordt de helft van het bestuur vervangen. Zo blijft er altijd ervaring aan tafel en komt er elk jaar nieuwe energie bij.</p>
     </div>
 
     <div class="bs-rules reveal">
-      <div class="bs-rule"><div class="n">6</div><div><b>zetels</b><span>Allemaal Hypotheek Young Professionals: t/m 35 jaar en minimaal Wft Hypotheken.</span></div></div>
+      <div class="bs-rule"><div class="n">12</div><div><b>zetels</b><span>Allemaal Hypotheek Young Professionals: t/m 35 jaar en minimaal Wft Hypotheken.</span></div></div>
       <div class="bs-rule"><div class="n">2</div><div><b>jaar per termijn</b><span>Je zit twee jaar in het bestuur en draagt daarna over.</span></div></div>
       <div class="bs-rule"><div class="n">½</div><div><b>elk jaar vervangen</b><span>Groep A en groep B wisselen om de beurt, zodat de helft blijft zitten.</span></div></div>
     </div>
@@ -826,18 +920,9 @@
     <div class="bs-cta reveal">
       <div>
         <h3>Zelf in het bestuur?</h3>
-        <p>Elk jaar komen er drie zetels vrij. Stel je kandidaat voor de lichting van <b id="bsNext"></b>.</p>
+        <p>Elk jaar komen er zes zetels vrij. Stel je kandidaat voor de lichting van <b id="bsNext"></b>.</p>
       </div>
       <button class="btn btn-accent" id="bsBtn" type="button">Stel je kandidaat →</button>
-    </div>
-
-    <div class="rva" id="raad-van-advies">
-      <div class="sec-head reveal" style="max-width:720px;margin-bottom:28px">
-        <span class="eyebrow">Raad van Advies</span>
-        <h2>Ervaring naast het bestuur.</h2>
-        <p>De Raad van Advies denkt mee met het bestuur. De raad adviseert gevraagd en ongevraagd en brengt het bestuur in contact met de sector. Beslissen doet het bestuur van young professionals zelf.</p>
-      </div>
-      <div class="team-grid rva-grid" id="rvaGrid"></div>
     </div>
   </div>
 </section>
@@ -943,21 +1028,44 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Agenda</span>
       <h2>Waar je deze maanden bij wilt zijn.</h2>
-      <p>Een greep uit de events. Leden krijgen voorrang bij inschrijving en betalen niets of korting.</p>
+      <p>Regiobijeenkomsten, korte koffiebreaks, kennissessies, dilemmasessies en de grote momenten van het jaar. Leden zijn gratis welkom of krijgen voorrang en korting.</p>
     </div>
-    <div class="events">
-      <div class="event reveal" data-datum="2026-07-07"><div class="date"><div class="d">07</div><div class="m">Jul</div></div><div class="info"><h4>VIP Congres 2026 — re:Invent</h4><p>AFAS Theater, Leusden · sectorcongres met YP-track</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Regio Utrecht</div></div><span class="pill">YP-voorrang</span></div>
-      <div class="event reveal" data-datum="2026-09-18"><div class="date"><div class="d">18</div><div class="m">Sep</div></div><div class="info"><h4>Masterclass: Klantgesprek van de toekomst</h4><p>Online · praktische skills-training</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk · online</div></div><span class="pill">Gratis voor leden</span></div>
-      <div class="event reveal" data-datum="2026-10-09"><div class="date"><div class="d">09</div><div class="m">Okt</div></div><div class="info"><h4>HYPie Netwerkborrel</h4><p>Utrecht · informeel bijpraten met leeftijdsgenoten</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Regio Utrecht</div></div><span class="pill">Gratis voor leden</span></div>
-      <div class="event reveal" data-datum="2026-11-20"><div class="date"><div class="d">20</div><div class="m">Nov</div></div><div class="info"><h4>HYPie top 50 Awards</h4><p>De top 50 van 2026 in de schijnwerpers</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk</div></div><span class="pill">Op uitnodiging</span></div>
-      <div class="event reveal" data-datum="2026-12-31"><div class="date"><div class="d">Q4</div><div class="m">2026</div></div><div class="info"><h4>Captains aan tafel — Wonen Morgen</h4><p>Besloten gesprek met de captains van de sector over het financieren van wonen — morgen</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Besloten</div></div><span class="pill">Op uitnodiging</span></div>
+    <div class="ag-bar reveal">
+      <div class="ag-chips" id="agChips" role="tablist" aria-label="Filter op soort"></div>
+      <select id="agRegio" aria-label="Filter op regio"></select>
     </div>
-    <details class="ag-archive reveal" id="agArchive" hidden>
+    <div class="events" id="agList"></div>
+    <div class="ag-more"><button type="button" class="btn btn-outline" id="agMore" hidden>Toon meer events</button></div>
+    <details class="ag-archive" id="agArchive" hidden>
       <summary>Afgelopen events (<span id="agCount">0</span>)</summary>
       <div class="events" id="agPast"></div>
     </details>
   </div>
 </section>
+
+<!-- AANMELDEN EVENT MODAL -->
+<div class="modal" id="agModal">
+  <div class="modal-box">
+    <button class="modal-close" aria-label="Sluiten">✕</button>
+    <div id="agBody">
+      <h3 id="agTitel">Aanmelden</h3>
+      <p class="sub" id="agSub"></p>
+      <div class="field-row">
+        <div class="field"><label for="ag_naam">Naam</label><input id="ag_naam" type="text" autocomplete="name"><span class="err">Vul je naam in.</span></div>
+        <div class="field"><label for="ag_em">E-mailadres</label><input id="ag_em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
+      </div>
+      <div class="field"><label for="ag_kt">Kantoor / werkgever</label><input id="ag_kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
+      <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_ag" tabindex="-1" autocomplete="off"></label></div>
+      <label class="check-line"><input type="checkbox" id="ag_lid"> Ik ben HYPie-lid (t/m 35 jaar, minimaal Wft Hypotheken).</label>
+      <button class="btn btn-accent" id="agSubmit" type="button">Aanmelden →</button>
+    </div>
+    <div class="modal-ok" id="agOk">
+      <div class="check"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#003057" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></div>
+      <h3>Je bent aangemeld!</h3>
+      <p class="sub" id="agOkMsg">We sturen je een bevestiging per e-mail.</p>
+    </div>
+  </div>
+</div>
 
 <!-- CAPTAINS AAN TAFEL -->
 <section class="captains" id="captains">
@@ -984,7 +1092,7 @@
       <h2>Investeer in je eigen HYPies.</h2>
       <p class="lead">HYPie is geen wervingskanaal. We plaatsen geen vacatures en doen niet aan werving en selectie. Je jonge adviseurs groeien hier in hun vak, en jij krijgt ze sterker terug.</p>
       <ul class="werk-list">
-        <li><span class="wn">01</span><div><b>Ontwikkel en bind je eigen team.</b> Meld je young professionals aan met een eigen link. Ze krijgen trainingen, een buddy, een coach en events.</div></li>
+        <li><span class="wn">01</span><div><b>Ontwikkel en bind je eigen team.</b> Meld je young professionals aan met een eigen link. Ze krijgen een landelijk netwerk van leeftijdsgenoten, toegang tot kennis, trainingen en events.</div></li>
         <li><span class="wn">02</span><div><b>Ga in gesprek met de nieuwe generatie.</b> Young professionals van andere kantoren denken mee over jouw vraag, zonder werving en zonder verkoop.</div></li>
         <li><span class="wn">03</span><div><b>Ken de nieuwe generatie.</b> Geanonimiseerde inzichten uit de HYPie-Monitor over hoe jonge adviseurs werken, leren en kiezen.</div></li>
       </ul>
@@ -1214,8 +1322,9 @@
         <div class="lm-prijs">Gratis</div>
         <p class="lm-voor">Voor hypotheekadviseurs t/m 35 jaar met minimaal Wft Hypothecair Krediet.</p>
         <ul class="checklist">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Trainingen, masterclasses en kennissessies</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Buddy, coach uit de alumni en dilemmasessies</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Een landelijk netwerk van jonge hypotheekadviseurs</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Toegang tot kennis: trainingen, masterclasses en kennissessies</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Coach uit de alumni en vertrouwelijke dilemmasessies</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Events, borrels en HYPie on Tour</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Kans op de top 50 en zichtbaarheid</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Meedoen als ambassadeur of bestuurslid</li>
@@ -1366,9 +1475,9 @@
           <div class="field"><label for="ml">Ik wil graag…</label>
             <select id="ml">
               <option value="Meedoen aan events & trainingen">Meedoen aan events & trainingen</option>
-              <option value="Een buddy en coach krijgen">Een buddy en coach krijgen</option>
+              <option value="Netwerken in mijn regio">Netwerken in mijn regio</option>
+              <option value="Een coach uit de alumni">Een coach uit de alumni</option>
               <option value="Meedoen aan dilemmasessies">Meedoen aan dilemmasessies</option>
-              <option value="Zelf buddy zijn">Zelf buddy zijn voor een starter</option>
               <option value="Ambassadeur worden voor mijn regio">Ambassadeur worden voor mijn regio</option>
               <option value="Bestuurslid worden">Bestuurslid worden (termijn 2 jaar)</option>
             </select>
@@ -1416,7 +1525,7 @@
       <a href="#top" class="brand"><span class="logo"><svg viewBox="0 0 24 24" width="24" height="24" aria-label="HYPie"><path d="M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z" fill="#003057"/></svg></span><span class="bt">HYPie.nl<small>Hypotheek Young Professionals</small></span></a>
       <div class="foot-links">
         <div class="foot-col"><h5>Platform</h5><a href="#voordelen">Voordelen</a><a href="#top50">top 50</a><a href="#agenda">Agenda</a><a href="masterclass-young-professionals.html">Masterclass</a><a href="#aanmelden">Word lid</a></div>
-        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="lp-geslaagd.html">Net geslaagd voor Wft?</a><a href="#alumni">HYPie Alumni</a><a href="#bestuur">Bestuur</a><a href="#begeleiding">Buddy & dilemmasessies</a></div>
+        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="lp-geslaagd.html">Net geslaagd voor Wft?</a><a href="#alumni">HYPie Alumni</a><a href="#bestuur">Bestuur</a><a href="#netwerk">Netwerk & kennis</a><a href="raad-van-advies.html">Raad van Advies</a></div>
         <div class="foot-col"><h5>Community</h5><a href="https://www.linkedin.com/company/hypotheek-young-professionals-hypie-nl/" target="_blank" rel="noopener">LinkedIn-pagina</a><a href="https://www.linkedin.com/groups/25800057/" target="_blank" rel="noopener">LinkedIn-groep (besloten)</a><a href="#lidmaatschap">Bedrijfslidmaatschap</a><a href="#partners">Partners</a><a href="mailto:partners@hypie.nl">Partner worden</a></div>
         <div class="foot-col"><h5>Contact</h5><a href="mailto:info@hypie.nl">info@hypie.nl</a><a href="tel:0332580460">033 258 04 60</a><a href="https://maps.google.com/?q=De+Wel+14-16+3871+MV+Hoevelaken" style="white-space:normal">De Wel 14–16<br>3871 MV Hoevelaken</a></div>
       </div>
@@ -2014,16 +2123,22 @@
   });
 
   /* ====== BESTUUR ======
-     6 zetels in twee groepen. Termijn 2 jaar; elk jaar treedt één groep (de helft) af.
+     12 zetels in twee groepen van 6. Termijn 2 jaar; elk jaar treedt één groep (de helft) af.
      Groep A begint in START_JAAR eenmalig met 1 jaar, zodat A en B om en om wisselen.
      Vul 'naam' in zodra bestuursleden bekend zijn. */
   var bestuur = [
-    {zetel:"Voorzitter",           taak:"Strategie & partners",         groep:"B", naam:""},
-    {zetel:"Vicevoorzitter",       taak:"Secretariaat & continuïteit",  groep:"A", naam:""},
-    {zetel:"Events",               taak:"Meetups, borrels & congressen",groep:"A", naam:""},
-    {zetel:"Kennis & opleiding",   taak:"Masterclasses & PE",           groep:"B", naam:""},
-    {zetel:"Community & regio's",  taak:"Ambassadeurs & ledengroei",    groep:"A", naam:""},
-    {zetel:"Inspraak & welzijn",   taak:"Stem van YP's in de sector",   groep:"B", naam:""}
+    {zetel:"Voorzitter",               taak:"Strategie & vertegenwoordiging",   groep:"B", naam:""},
+    {zetel:"Vicevoorzitter",           taak:"Continuïteit & overdracht",        groep:"A", naam:""},
+    {zetel:"Secretaris",               taak:"Verslaglegging & ledenzaken",      groep:"B", naam:""},
+    {zetel:"Penningmeester",           taak:"Financiën & begroting",            groep:"A", naam:""},
+    {zetel:"Events",                   taak:"Meetups, borrels & congressen",    groep:"A", naam:""},
+    {zetel:"Kennis & opleiding",       taak:"Masterclasses & kennissessies",    groep:"B", naam:""},
+    {zetel:"Community & regio's",      taak:"Ambassadeurs & ledengroei",        groep:"A", naam:""},
+    {zetel:"Inspraak & welzijn",       taak:"Stem van YP's in de sector",       groep:"B", naam:""},
+    {zetel:"Communicatie",             taak:"Social media & nieuwsbrief",       groep:"A", naam:""},
+    {zetel:"Top 50 & awards",          taak:"Selectie & Awards",                groep:"B", naam:""},
+    {zetel:"Partners & bedrijfsleden", taak:"Contact met partners en kantoren", groep:"A", naam:""},
+    {zetel:"Alumni & coaches",         taak:"Verbinding met de HYPie Alumni",   groep:"B", naam:""}
   ];
   // groep die per 1 januari van 'jaar' wordt vervangen: A in START_JAAR+1, daarna om en om
   function groepAftredend(jaar){ return ((jaar-(START_JAAR+1))%2===0) ? 'A' : 'B'; }
@@ -2180,14 +2295,105 @@
     dispatch('Nieuw HYPie-verhaal', {type:'verhaal', naam:v('vh_naam'), kantoor:v('vh_kt'), email:v('vh_em'), tekst:v('vh_tekst'), toestemming_na_akkoord:true});
   });
 
-  /* ====== AGENDA: afgelopen events naar het archief ====== */
-  (function(){
-    var vandaag=new Date().toISOString().slice(0,10), past=document.getElementById('agPast'), n=0;
-    document.querySelectorAll('.agenda .events > .event[data-datum]').forEach(function(ev){
-      if(ev.getAttribute('data-datum')<vandaag){past.insertBefore(ev,past.firstChild);n++;}
-    });
-    if(n){document.getElementById('agCount').textContent=n;document.getElementById('agArchive').hidden=false;}
-  })();
+  /* ====== AGENDA ======
+     datum: 'JJJJ-MM-DD' (of '' = datum volgt). soort: zie AG_SOORTEN. aanmelden: true = aanmeldknop,
+     false = alleen info/op uitnodiging, of een URL. Afgelopen events gaan automatisch naar het archief. */
+  var AG_SOORTEN = ["Regiobijeenkomst","Koffiebreak","Kennissessie","Masterclass","Dilemmasessie","Netwerkborrel","Groot event","Op uitnodiging"];
+  var agenda = [
+    {datum:"2026-07-07", titel:"VIP Congres 2026 — re:Invent", soort:"Groot event", plek:"AFAS Theater, Leusden", regio:"Utrecht", tijd:"", info:"Sectorcongres met een YP-track.", prijs:"YP-voorrang", aanmelden:false},
+    {datum:"2026-09-18", titel:"Masterclass: Klantgesprek van de toekomst", soort:"Masterclass", plek:"Online", regio:"Online", tijd:"", info:"Praktische skills-training.", prijs:"Gratis voor leden", aanmelden:false},
+    {datum:"2026-10-09", titel:"HYPie Netwerkborrel", soort:"Netwerkborrel", plek:"Utrecht", regio:"Utrecht", tijd:"", info:"Informeel bijpraten met leeftijdsgenoten.", prijs:"Gratis voor leden", aanmelden:false},
+    {datum:"2026-11-20", titel:"HYPie top 50 Awards 2026", soort:"Groot event", plek:"Locatie volgt", regio:"Landelijk", tijd:"", info:"De top 50 van 2026 in de schijnwerpers.", prijs:"Op uitnodiging", aanmelden:false},
+    {datum:"2026-11-26", titel:"Koffiebreak: je eerste jaar als adviseur", soort:"Koffiebreak", plek:"Online", regio:"Online", tijd:"08:30–09:00", info:"Een half uur Q&A met twee adviseurs die net een paar jaar verder zijn. Camera aan, koffie erbij.", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2026-12-10", titel:"Kennissessie: de leennormen voor 2027", soort:"Kennissessie", plek:"Online", regio:"Online", tijd:"16:00–17:00", info:"Wat verandert er in de leennormen en wat betekent dat voor je klantgesprekken?", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2026-12-31", titel:"Captains aan tafel — Wonen Morgen", soort:"Op uitnodiging", plek:"Locatie volgt", regio:"Landelijk", tijd:"Q4 2026", info:"Besloten gesprek met de captains van de sector over het financieren van wonen.", prijs:"Op uitnodiging", aanmelden:false, kwartaal:true},
+    {datum:"2027-01-21", titel:"Nieuwjaarsborrel & bestuurswissel", soort:"Netwerkborrel", plek:"Locatie volgt", regio:"Landelijk", tijd:"17:00–20:00", info:"We starten het jaar samen en verwelkomen de nieuwe bestuursleden.", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2027-01-28", titel:"Koffiebreak: zo werkt de top 50", soort:"Koffiebreak", plek:"Online", regio:"Online", tijd:"08:30–09:00", info:"Hoe werkt de selectie en hoe draag je iemand voor? Vragen staan centraal.", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2027-02-11", titel:"Regiobijeenkomst Noord", soort:"Regiobijeenkomst", plek:"Groningen", regio:"Noord", tijd:"16:00–19:00", info:"Groningen, Friesland en Drenthe: een korte kennissessie en daarna netwerken met jonge adviseurs uit de regio.", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2027-02-25", titel:"Dilemmasessie", soort:"Dilemmasessie", plek:"Online", regio:"Online", tijd:"19:30–21:00", info:"Vertrouwelijk, in kleine groep, zonder werkgevers en partners. Maximaal 12 deelnemers.", prijs:"Alleen voor leden", aanmelden:true},
+    {datum:"2027-03-11", titel:"Regiobijeenkomst Oost", soort:"Regiobijeenkomst", plek:"Zwolle", regio:"Oost", tijd:"16:00–19:00", info:"Gelderland en Overijssel: een korte kennissessie en daarna netwerken.", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2027-03-25", titel:"Kennissessie: AI in het adviesgesprek", soort:"Kennissessie", plek:"Online", regio:"Online", tijd:"16:00–17:00", info:"Wat kan AI al in je dossier en klantgesprek, en waar ligt de grens van je zorgplicht?", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2027-04-08", titel:"Regiobijeenkomst Zuid", soort:"Regiobijeenkomst", plek:"Eindhoven", regio:"Zuid", tijd:"16:00–19:00", info:"Noord-Brabant, Limburg en Zeeland: een korte kennissessie en daarna netwerken.", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2027-05-13", titel:"Regiobijeenkomst West", soort:"Regiobijeenkomst", plek:"Amsterdam", regio:"West", tijd:"16:00–19:00", info:"Noord-Holland, Zuid-Holland, Utrecht en Flevoland: een korte kennissessie en daarna netwerken.", prijs:"Gratis voor leden", aanmelden:true},
+    {datum:"2027-05-27", titel:"Dilemmasessie", soort:"Dilemmasessie", plek:"Online", regio:"Online", tijd:"19:30–21:00", info:"Vertrouwelijk, in kleine groep, zonder werkgevers en partners. Maximaal 12 deelnemers.", prijs:"Alleen voor leden", aanmelden:true},
+    {datum:"2027-06-03", titel:"Masterclass Hypotheekindustrie", soort:"Masterclass", plek:"Zie programma", regio:"Landelijk", tijd:"", info:"Begrijp de hele hypotheekketen: markt, klantreis, risico en funding.", prijs:"Zie programma", aanmelden:"masterclass-young-professionals.html"}
+  ];
+  var AG_REGIO = ["Alle regio's","Online","Landelijk","Noord","Oost","Zuid","West","Utrecht"];
+  var agSoort='Alle', agRegio="Alle regio's", agAll=false, AG_MAX=6;
+  var AG_MND=['Jan','Feb','Mrt','Apr','Mei','Jun','Jul','Aug','Sep','Okt','Nov','Dec'];
+  function agDate(e){ if(e.kwartaal) return '<div class="d">Q'+Math.ceil(parseInt(e.datum.slice(5,7),10)/3)+'</div><div class="m">'+e.datum.slice(0,4)+'</div>';
+    if(!e.datum) return '<div class="d">—</div><div class="m">Volgt</div>';
+    return '<div class="d">'+e.datum.slice(8,10)+'</div><div class="m">'+AG_MND[parseInt(e.datum.slice(5,7),10)-1]+' '+e.datum.slice(2,4)+'</div>'; }
+  function agHtml(e,i,past){
+    var acts='';
+    if(!past){
+      if(e.aanmelden===true) acts+='<button type="button" class="ag-in" data-i="'+i+'">Aanmelden</button>';
+      else if(typeof e.aanmelden==='string') acts+='<a class="ag-in" href="'+esc(e.aanmelden)+'">Meer info</a>';
+      if(e.datum && !e.kwartaal) acts+='<button type="button" class="ag-ics" data-ics="'+i+'">Zet in agenda</button>';
+    }
+    return '<div class="event"><div class="date">'+agDate(e)+'</div><div class="info"><span class="soort">'+esc(e.soort)+'</span><h4>'+esc(e.titel)+'</h4><p>'+esc(e.info)+'</p>'
+      +'<div class="meta"><span class="eregio">'+PIN+' '+esc(e.plek)+(e.tijd&&!e.kwartaal?' · '+esc(e.tijd):'')+'</span><span class="pill">'+esc(e.prijs)+'</span></div></div>'
+      +'<div class="acts">'+acts+'</div></div>';
+  }
+  function renderAgenda(){
+    var vandaag=new Date().toISOString().slice(0,10);
+    var komend=[], voorbij=[];
+    agenda.forEach(function(e,i){ (e.datum && e.datum<vandaag ? voorbij : komend).push(i); });
+    var soorten=['Alle'].concat(AG_SOORTEN.filter(function(t){return komend.some(function(i){return agenda[i].soort===t;});}));
+    document.getElementById('agChips').innerHTML=soorten.map(function(t){return '<button type="button" class="ag-chip'+(t===agSoort?' on':'')+'" data-s="'+esc(t)+'">'+esc(t)+'</button>';}).join('');
+    var rs=document.getElementById('agRegio');
+    if(!rs.options.length) rs.innerHTML=AG_REGIO.map(function(r){return '<option>'+esc(r)+'</option>';}).join('');
+    var lijst=komend.filter(function(i){var e=agenda[i];return (agSoort==='Alle'||e.soort===agSoort)&&(agRegio==="Alle regio's"||e.regio===agRegio);})
+      .sort(function(a,b){return (agenda[a].datum||'9999').localeCompare(agenda[b].datum||'9999');});
+    var toon=agAll?lijst:lijst.slice(0,AG_MAX);
+    document.getElementById('agList').innerHTML = toon.length ? toon.map(function(i){return agHtml(agenda[i],i,false);}).join('')
+      : '<div class="ag-empty">Geen events gevonden met deze filters.</div>';
+    var more=document.getElementById('agMore'); more.hidden=lijst.length<=AG_MAX; more.textContent=agAll?'Toon minder ↑':'Toon alle '+lijst.length+' events →';
+    voorbij.sort(function(a,b){return agenda[b].datum.localeCompare(agenda[a].datum);});
+    document.getElementById('agPast').innerHTML=voorbij.map(function(i){return agHtml(agenda[i],i,true);}).join('');
+    document.getElementById('agCount').textContent=voorbij.length;
+    document.getElementById('agArchive').hidden=!voorbij.length;
+  }
+  var PIN="<svg viewBox=\"0 0 24 24\"><path d=\"M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z\"/></svg>";
+  document.getElementById('agChips').addEventListener('click',function(e){var b=e.target.closest('.ag-chip');if(!b)return;agSoort=b.getAttribute('data-s');agAll=false;renderAgenda();});
+  document.getElementById('agRegio').addEventListener('change',function(){agRegio=this.value;agAll=false;renderAgenda();});
+  document.getElementById('agMore').addEventListener('click',function(){agAll=!agAll;renderAgenda();});
+  // .ics-bestand maken in de browser (geen externe dienst)
+  function agIcs(e){
+    var d=e.datum.replace(/-/g,''), t=(e.tijd||'').match(/(\d\d):(\d\d)[–-](\d\d):(\d\d)/);
+    var start=t?'DTSTART;TZID=Europe/Amsterdam:'+d+'T'+t[1]+t[2]+'00':'DTSTART;VALUE=DATE:'+d;
+    var end=t?'DTEND;TZID=Europe/Amsterdam:'+d+'T'+t[3]+t[4]+'00':'';
+    var ics=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//HYPie.nl//Agenda//NL','BEGIN:VEVENT','UID:'+d+'-'+e.titel.replace(/[^a-z0-9]/gi,'').toLowerCase()+'@hypie.nl',
+      'DTSTAMP:'+new Date().toISOString().replace(/[-:]/g,'').slice(0,15)+'Z',start].concat(end?[end]:[]).concat(['SUMMARY:'+e.titel,'LOCATION:'+e.plek,'DESCRIPTION:'+e.info,'END:VEVENT','END:VCALENDAR']).join('\r\n');
+    var a=document.createElement('a'); a.href='data:text/calendar;charset=utf-8,'+encodeURIComponent(ics); a.download='hypie-'+d+'.ics';
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+  var agKeuze=null;
+  (function(){var m=document.getElementById('agModal');function close(){m.classList.remove('show');}
+    m.querySelector('.modal-close').addEventListener('click',close);
+    m.addEventListener('click',function(e){if(e.target===m)close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+  function agOpenFor(i){
+    agKeuze=agenda[i];
+    document.getElementById('agTitel').textContent='Aanmelden: '+agKeuze.titel;
+    document.getElementById('agSub').textContent=(agKeuze.datum?agKeuze.datum.split('-').reverse().join('-')+' · ':'')+agKeuze.plek+(agKeuze.tijd?' · '+agKeuze.tijd:'');
+    document.getElementById('agModal').classList.add('show');document.getElementById('agBody').style.display='';document.getElementById('agOk').classList.remove('show');
+  }
+  ['agList'].forEach(function(id){document.getElementById(id).addEventListener('click',function(e){
+    var b=e.target.closest('.ag-in[data-i]'); if(b){agOpenFor(parseInt(b.getAttribute('data-i'),10));return;}
+    var c=e.target.closest('.ag-ics'); if(c) agIcs(agenda[parseInt(c.getAttribute('data-ics'),10)]);
+  });});
+  document.getElementById('agSubmit').addEventListener('click',function(){
+    if((document.getElementById('hp_ag')||{}).value) return;
+    var v=function(id){return (document.getElementById(id).value||'').trim();};
+    var ok=true;
+    ['ag_naam','ag_kt'].forEach(function(id){var e=!v(id);setErr(id,e);if(e)ok=false;});
+    var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('ag_em')); setErr('ag_em',eEm); if(eEm)ok=false;
+    if(!ok||!agKeuze) return;
+    document.getElementById('agOkMsg').textContent='Je staat op de lijst voor '+agKeuze.titel+'. We sturen je een bevestiging per e-mail.';
+    document.getElementById('agBody').style.display='none'; document.getElementById('agOk').classList.add('show');
+    dispatch('Aanmelding event: '+agKeuze.titel, {type:'event_aanmelding', event:agKeuze.titel, datum:agKeuze.datum, naam:v('ag_naam'), email:v('ag_em'), kantoor:v('ag_kt'), lid:document.getElementById('ag_lid').checked});
+  });
 
   /* ====== WERKGEVERS: eigen aanmeldlink per kantoor ====== */
   modalPair('wgModal','wgBtn','wgBody','wgOk');
@@ -2212,24 +2418,6 @@
     if(navigator.clipboard){navigator.clipboard.writeText(inp.value).then(done,function(){inp.select();document.execCommand('copy');done();});}
     else {inp.select();document.execCommand('copy');done();}
   });
-
-  /* ====== RAAD VAN ADVIES ======
-     Vul 'functie' (bijv. functie en organisatie) en eventueel 'foto' en 'linkedin' aan. */
-  var raadVanAdvies = [
-    {naam:"Jurjen Oosterbaan",  functie:"", foto:"", linkedin:""},
-    {naam:"Sanne Swierenga",    functie:"", foto:"", linkedin:""},
-    {naam:"Jeroen Oversteegen", functie:"", foto:"", linkedin:""}
-  ];
-  function renderRva(){
-    document.getElementById('rvaGrid').innerHTML=raadVanAdvies.map(function(r){
-      var ini=r.naam.split(' ').filter(function(w){return /^[A-Z]/.test(w);}).map(function(w){return w[0];}).join('').slice(0,2);
-      var av=r.foto?'<img class="tav" src="'+esc(r.foto)+'" alt="'+esc(r.naam)+'" style="object-fit:cover">':'<div class="tav">'+esc(ini)+'</div>';
-      return '<div class="tcard reveal in">'+av+'<h4>'+esc(r.naam)+'</h4><div class="trole">Lid Raad van Advies</div>'
-        +(r.functie?'<div class="tregio">'+esc(r.functie)+'</div>':'')
-        +(r.linkedin?'<div class="tregio"><a href="'+esc(r.linkedin)+'" target="_blank" rel="noopener" style="color:var(--accent);font-weight:600">LinkedIn →</a></div>':'')
-        +'</div>';
-    }).join('');
-  }
 
   /* ====== BEDRIJFSLIDMAATSCHAP ======
      prijs: bedrag per jaar in euro's, zonder btw (getal) of '' voor 'op aanvraag'. extra: wat het pakket bovenop de basis biedt.
@@ -2303,7 +2491,7 @@
   });
 
   // init
-  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour(); renderVerhalen(); renderRva(); renderLeden();
+  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour(); renderVerhalen(); renderLeden(); renderAgenda();
 </script>
 </body>
 </html>
