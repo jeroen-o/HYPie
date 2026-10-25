@@ -516,11 +516,18 @@
   .lm-prijs{font-family:var(--serif);font-size:2.2rem;color:var(--primary);margin:6px 0 4px}
   .lm-voor{color:var(--text-soft);font-size:.94rem}
   .lm-voor a{color:var(--accent);font-weight:600}
-  .lm-pakketten{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:-6px 0 22px}
+  .lm-pakketten{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:-6px 0 22px;align-items:start}
   .lm-pk{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center}
   .lm-pk b{display:block;color:var(--primary)}
   .lm-pk span{display:block;font-size:.8rem;color:var(--text-soft)}
-  .lm-pk em{display:block;font-style:normal;font-weight:700;color:var(--primary);margin-top:4px;font-size:.9rem}
+  .lm-pk em{display:block;font-style:normal;font-family:var(--serif);color:var(--primary);margin-top:6px;font-size:1.35rem}
+  .lm-pk ul{list-style:none;margin-top:8px;text-align:left;display:grid;gap:4px}
+  .lm-pk li{font-size:.78rem;color:var(--text);padding-left:14px;position:relative;line-height:1.35}
+  .lm-pk li::before{content:"+";position:absolute;left:0;color:var(--accent);font-weight:800}
+  .lm-pk.pop{border:2px solid var(--accent)}
+  .lm-sub{font-size:.78rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);margin-top:18px}
+  .lm-sub+.checklist{margin-top:10px!important}
+  .lm-btw{font-size:.8rem;color:var(--text-soft);margin:-12px 0 18px}
   .lm-note{font-size:.8rem;color:var(--text-soft);margin-top:14px;line-height:1.5}
   .bl-wall{margin-top:40px;text-align:center}
   .bl-wall h3{font-size:1.4rem;margin-bottom:16px}
@@ -1220,15 +1227,15 @@
         <h3>Bedrijfslidmaatschap</h3>
         <div class="lm-prijs" id="lmPrijs">Op aanvraag</div>
         <p class="lm-voor">Voor advieskantoren en ketens met jonge adviseurs in dienst. Geldverstrekkers en dienstverleners kunnen kiezen voor het <a href="#partners">partnerprogramma</a>.</p>
+        <p class="lm-sub">In elk pakket</p>
         <ul class="checklist">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Eigen aanmeldlink voor je team, met overzicht van het aantal aanmeldingen</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Voorrang voor je young professionals bij events en masterclasses</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Een incompany kennissessie per jaar op je kantoor</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Eén HYPie-gesprek per jaar: een klankbordsessie met young professionals van andere kantoren</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Sectorinzichten uit de HYPie-Monitor, geanonimiseerd</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Vermelding als bedrijfslid op HYPie.nl</li>
         </ul>
         <div class="lm-pakketten" id="lmPakketten"></div>
+        <p class="lm-btw">Prijzen per jaar, exclusief btw. Extra HYPie-gesprekken of kennissessies zijn los bij te boeken.</p>
         <button type="button" class="btn btn-primary" id="bdBtn">Vraag het bedrijfslidmaatschap aan →</button>
         <p class="lm-note">Het lidmaatschap van je medewerkers blijft persoonlijk. Iedereen meldt zich zelf aan en geeft zelf toestemming. Als bedrijfslid krijg je geen inzage in persoonsgegevens of activiteiten van individuele leden.</p>
       </div>
@@ -2245,21 +2252,22 @@
   }
 
   /* ====== BEDRIJFSLIDMAATSCHAP ======
-     prijs: bedrag per jaar in euro's (getal) of '' voor 'op aanvraag'.
+     prijs: bedrag per jaar in euro's excl. btw (getal) of '' voor 'op aanvraag'. extra: wat het pakket bovenop de basis biedt.
      bedrijfsleden: alleen kantoren die akkoord gaven met vermelding. logo: pad of ''. */
   var pakketten = [
-    {naam:"Klein",  bereik:"1–5 young professionals",   min:1,  max:5,    prijs:""},
-    {naam:"Middel", bereik:"6–20 young professionals",  min:6,  max:20,   prijs:""},
-    {naam:"Groot",  bereik:"21+ young professionals",   min:21, max:9999, prijs:""}
+    {naam:"Klein",  bereik:"1–5 young professionals",   min:1,  max:5,    prijs:495,  extra:[]},
+    {naam:"Middel", bereik:"6–20 young professionals",  min:6,  max:20,   prijs:1250, extra:["1 HYPie-gesprek per jaar"], pop:true},
+    {naam:"Groot",  bereik:"21+ young professionals",   min:21, max:9999, prijs:2950, extra:["1 HYPie-gesprek per jaar","1 incompany kennissessie per jaar"]}
   ];
   var bedrijfsleden = [
     // {naam:"Kantoornaam", logo:""}
   ];
   var eur = new Intl.NumberFormat('nl-NL',{style:'currency',currency:'EUR',maximumFractionDigits:0});
-  function pkPrijs(p){ return p.prijs!=='' && p.prijs!=null ? eur.format(p.prijs)+' per jaar' : 'Op aanvraag'; }
+  function pkPrijs(p){ return p.prijs!=='' && p.prijs!=null ? eur.format(p.prijs) : 'Op aanvraag'; }
   function renderLeden(){
     document.getElementById('lmPakketten').innerHTML=pakketten.map(function(p){
-      return '<div class="lm-pk"><b>'+esc(p.naam)+'</b><span>'+esc(p.bereik)+'</span><em>'+pkPrijs(p)+'</em></div>';
+      return '<div class="lm-pk'+(p.pop?' pop':'')+'"><b>'+esc(p.naam)+'</b><span>'+esc(p.bereik)+'</span><em>'+pkPrijs(p)+'</em>'
+        +'<ul>'+(p.extra&&p.extra.length?p.extra:['Basispakket']).map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul></div>';
     }).join('');
     var metPrijs=pakketten.filter(function(p){return p.prijs!=='' && p.prijs!=null;});
     document.getElementById('lmPrijs').textContent = metPrijs.length
