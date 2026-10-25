@@ -228,7 +228,7 @@
 
   /* table */
   .lb-table{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-  .lb-row{display:grid;grid-template-columns:1fr 150px 78px;gap:14px;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line);transition:background .2s}
+  .lb-row{display:grid;grid-template-columns:1fr 170px;gap:14px;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line);transition:background .2s}
   .lb-row:last-child{border-bottom:none}
   .lb-row.head{background:var(--primary);color:#fff;font-weight:700;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
   .lb-row:not(.head):hover{background:var(--bg)}
@@ -321,6 +321,9 @@
   .success .check{width:62px;height:62px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
   .success h3{margin-bottom:6px}
   .success p{color:var(--text-soft);font-size:.94rem;margin-bottom:18px}
+  .share-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  .share-row .btn{padding:10px 16px;font-size:.88rem}
+  .btn-skip{display:block;margin:12px auto 0;background:none;border:none;font-family:var(--sans);font-size:.88rem;font-weight:600;color:var(--text-soft);text-decoration:underline;cursor:pointer}
 
   /* FAQ */
   .faq{background:var(--paper)}
@@ -494,6 +497,26 @@
   .dl-rules .btn{margin-top:16px}
   @media(max-width:920px){.bg-steps,.dl-wrap{grid-template-columns:1fr}}
 
+  /* VERHALEN */
+  .verhalen{background:var(--paper)}
+  .vh-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .vh{background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:16px}
+  .vh blockquote{font-family:var(--serif);font-size:1.2rem;line-height:1.35;color:var(--primary)}
+  .vh blockquote::before{content:"\201C";color:var(--accent);font-size:2rem;line-height:0;vertical-align:-.35em;margin-right:4px}
+  .vh .who{display:flex;gap:12px;align-items:center;margin-top:auto}
+  .vh .who img,.vh .who .av{width:46px;height:46px;border-radius:50%;object-fit:cover;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif)}
+  .vh .who b{display:block;color:var(--primary);font-size:.95rem}
+  .vh .who span{font-size:.82rem;color:var(--text-soft)}
+  .vh.leeg{border-style:dashed;align-items:flex-start;justify-content:center;color:var(--text-soft)}
+  .vh.leeg b{color:var(--primary);font-family:var(--serif);font-size:1.2rem;font-weight:400}
+  .vh-cta{text-align:center;margin-top:26px}
+  @media(max-width:920px){.vh-grid{grid-template-columns:1fr}}
+
+  .ag-archive{margin-top:22px}
+  .ag-archive summary{cursor:pointer;font-weight:700;color:var(--primary);padding:8px 0}
+  .ag-archive .event{opacity:.6}
+  .ag-archive .event .pill{display:none}
+
   /* ALUMNI */
   .alumni{background:var(--bg)}
   .al-roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:38px}
@@ -544,7 +567,7 @@
     .lb-controls{width:100%}
     .lb-controls select{flex:1}
     .field-row{grid-template-columns:1fr}
-    .lb-row{grid-template-columns:1fr 64px;gap:10px;padding:12px 14px}
+    .lb-row{grid-template-columns:1fr;gap:10px;padding:12px 14px}
     .lb-regio,.head .lb-regio{display:none}
     .event{grid-template-columns:64px 1fr;gap:14px}
     .event .pill{grid-column:2;justify-self:start}
@@ -585,7 +608,7 @@
     <div class="hero-copy">
       <span class="badge35">★ Voor hypotheekadviseurs t/m 35 jaar · met Wft Hypotheken</span>
       <h1>Ben jij een <em>HYPie</em>?<br>Of op zoek naar een <em>HYPie</em>?</h1>
-      <p class="lead">Het netwerk voor Hypotheek Young Professionals zet jonge hypotheekadviseurs in het zonnetje — met trainingen, kennis, events, een netwerk én een eigen top 50. En werkgevers vinden hier hun volgende talent.</p>
+      <p class="lead">Gratis trainingen en kennissessies, een buddy en een coach, zichtbaarheid in de top 50 en een netwerk van adviseurs van jouw leeftijd. En werkgevers vinden hier hun volgende talent.</p>
       <div class="hero-cta">
         <a href="#aanmelden" class="btn btn-accent btn-cta">Ik ben een HYPie →</a>
         <a href="#werkgevers" class="btn btn-ghost">Ik zoek een HYPie</a>
@@ -699,7 +722,6 @@
         <select id="lbSort" aria-label="Sorteren">
           <option value="naam">Naam (A–Z)</option>
           <option value="regio">Regio (A–Z)</option>
-          <option value="leeftijd">Leeftijd (jong → oud)</option>
           <option value="random">Willekeurig</option>
         </select>
         <button class="btn-shuffle" id="lbShuffle" title="Nieuwe volgorde">
@@ -714,7 +736,6 @@
       <div class="lb-row head">
         <div>Young professional</div>
         <div class="lb-regio">Regio</div>
-        <div class="lb-leeft" style="text-align:center">Leeftijd</div>
       </div>
       <div id="lbBody"></div>
     </div>
@@ -864,12 +885,16 @@
       <p>Een greep uit de events. Leden krijgen voorrang bij inschrijving en betalen niets of korting.</p>
     </div>
     <div class="events">
-      <div class="event reveal"><div class="date"><div class="d">07</div><div class="m">Jul</div></div><div class="info"><h4>VIP Congres 2026 — re:Invent</h4><p>AFAS Theater, Leusden · sectorcongres met YP-track</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Regio Utrecht</div></div><span class="pill">YP-voorrang</span></div>
-      <div class="event reveal"><div class="date"><div class="d">18</div><div class="m">Sep</div></div><div class="info"><h4>Masterclass: Klantgesprek van de toekomst</h4><p>Online · praktische skills-training</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk · online</div></div><span class="pill">Gratis voor leden</span></div>
-      <div class="event reveal"><div class="date"><div class="d">09</div><div class="m">Okt</div></div><div class="info"><h4>HYPie Netwerkborrel</h4><p>Utrecht · informeel bijpraten met leeftijdsgenoten</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Regio Utrecht</div></div><span class="pill">Gratis voor leden</span></div>
-      <div class="event reveal"><div class="date"><div class="d">20</div><div class="m">Nov</div></div><div class="info"><h4>HYPie top 50 Awards</h4><p>De top 50 van 2026 in de schijnwerpers</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk</div></div><span class="pill">Op uitnodiging</span></div>
-      <div class="event reveal"><div class="date"><div class="d">Q4</div><div class="m">2026</div></div><div class="info"><h4>Captains aan tafel — Wonen Morgen</h4><p>Besloten gesprek met de captains van de sector over het financieren van wonen — morgen</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Besloten</div></div><span class="pill">Op uitnodiging</span></div>
+      <div class="event reveal" data-datum="2026-07-07"><div class="date"><div class="d">07</div><div class="m">Jul</div></div><div class="info"><h4>VIP Congres 2026 — re:Invent</h4><p>AFAS Theater, Leusden · sectorcongres met YP-track</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Regio Utrecht</div></div><span class="pill">YP-voorrang</span></div>
+      <div class="event reveal" data-datum="2026-09-18"><div class="date"><div class="d">18</div><div class="m">Sep</div></div><div class="info"><h4>Masterclass: Klantgesprek van de toekomst</h4><p>Online · praktische skills-training</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk · online</div></div><span class="pill">Gratis voor leden</span></div>
+      <div class="event reveal" data-datum="2026-10-09"><div class="date"><div class="d">09</div><div class="m">Okt</div></div><div class="info"><h4>HYPie Netwerkborrel</h4><p>Utrecht · informeel bijpraten met leeftijdsgenoten</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Regio Utrecht</div></div><span class="pill">Gratis voor leden</span></div>
+      <div class="event reveal" data-datum="2026-11-20"><div class="date"><div class="d">20</div><div class="m">Nov</div></div><div class="info"><h4>HYPie top 50 Awards</h4><p>De top 50 van 2026 in de schijnwerpers</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Landelijk</div></div><span class="pill">Op uitnodiging</span></div>
+      <div class="event reveal" data-datum="2026-12-31"><div class="date"><div class="d">Q4</div><div class="m">2026</div></div><div class="info"><h4>Captains aan tafel — Wonen Morgen</h4><p>Besloten gesprek met de captains van de sector over het financieren van wonen — morgen</p><div class="eregio"><svg viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg> Besloten</div></div><span class="pill">Op uitnodiging</span></div>
     </div>
+    <details class="ag-archive reveal" id="agArchive" hidden>
+      <summary>Afgelopen events (<span id="agCount">0</span>)</summary>
+      <div class="events" id="agPast"></div>
+    </details>
   </div>
 </section>
 
@@ -906,11 +931,37 @@
     <div class="werk-card reveal">
       <h3>Vind jouw HYPie</h3>
       <p>Vertel ons wie je zoekt of meld je kantoor aan als werkgever. We brengen je in contact met de juiste young professionals.</p>
-      <a href="mailto:werkgevers@hypie.nl?subject=Op%20zoek%20naar%20een%20HYPie" class="btn btn-accent">Neem contact op →</a>
+      <button type="button" class="btn btn-accent" id="wgBtn">Nodig je team uit →</button>
+      <a href="mailto:werkgevers@hypie.nl?subject=Op%20zoek%20naar%20een%20HYPie" class="btn btn-outline" style="margin-top:10px">Neem contact op</a>
       <a href="mailto:partners@hypie.nl?subject=Partner%20worden" class="btn btn-outline" style="margin-top:10px">Word partner</a>
     </div>
   </div>
 </section>
+
+<!-- TEAM UITNODIGEN MODAL -->
+<div class="modal" id="wgModal">
+  <div class="modal-box">
+    <button class="modal-close" id="wgClose" aria-label="Sluiten">✕</button>
+    <div id="wgBody">
+      <h3>Nodig je jonge adviseurs uit</h3>
+      <p class="sub">Je krijgt een eigen aanmeldlink voor je kantoor. Die deel je zelf met je team, dus wij hoeven geen e-mailadressen van je medewerkers te ontvangen.</p>
+      <div class="field"><label for="wg_kt">Kantoor / organisatie</label><input id="wg_kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
+      <div class="field-row">
+        <div class="field"><label for="wg_naam">Jouw naam</label><input id="wg_naam" type="text" autocomplete="name"><span class="err">Vul je naam in.</span></div>
+        <div class="field"><label for="wg_aantal">Aantal young professionals</label><input id="wg_aantal" type="number" min="1" inputmode="numeric"><span class="err">Vul een aantal in.</span></div>
+      </div>
+      <div class="field"><label for="wg_em">Jouw e-mailadres</label><input id="wg_em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
+      <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_wg" tabindex="-1" autocomplete="off"></label></div>
+      <button class="btn btn-accent" id="wgSubmit" type="button">Maak mijn aanmeldlink →</button>
+    </div>
+    <div id="wgOk" style="display:none">
+      <h3>Jouw aanmeldlink</h3>
+      <p class="sub">Deel deze link met je jonge adviseurs. Ieder meldt zich zelf aan en geeft zelf toestemming.</p>
+      <div class="field"><input id="wg_link" type="text" readonly></div>
+      <button class="btn btn-accent" id="wgCopy" type="button">Kopieer link</button>
+    </div>
+  </div>
+</div>
 
 <!-- HYPIE ON TOUR -->
 <section class="tour" id="tour">
@@ -1032,6 +1083,44 @@
   </div>
 </section>
 
+<!-- VERHALEN -->
+<section class="verhalen" id="verhalen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Verhalen van HYPies</span>
+      <h2>Waarom ik HYPie ben.</h2>
+      <p>Young professionals over hun vak, hun eerste jaren en wat het netwerk ze oplevert.</p>
+    </div>
+    <div class="vh-grid" id="vhGrid"></div>
+    <div class="vh-cta reveal"><button type="button" class="btn btn-outline" id="vhBtn">Deel jouw verhaal →</button></div>
+  </div>
+</section>
+
+<!-- VERHAAL DELEN MODAL -->
+<div class="modal" id="vhModal">
+  <div class="modal-box">
+    <button class="modal-close" id="vhClose" aria-label="Sluiten">✕</button>
+    <div id="vhBody">
+      <h3>Deel jouw verhaal</h3>
+      <p class="sub">In één of twee zinnen: waarom ben jij HYPie? We nemen contact op voordat we iets publiceren.</p>
+      <div class="field-row">
+        <div class="field"><label for="vh_naam">Naam</label><input id="vh_naam" type="text" autocomplete="name"><span class="err">Vul je naam in.</span></div>
+        <div class="field"><label for="vh_kt">Kantoor</label><input id="vh_kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
+      </div>
+      <div class="field"><label for="vh_em">E-mailadres</label><input id="vh_em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
+      <div class="field"><label for="vh_tekst">Jouw verhaal (max. 220 tekens)</label><input id="vh_tekst" type="text" maxlength="220"><span class="err">Schrijf een korte zin.</span></div>
+      <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_vh" tabindex="-1" autocomplete="off"></label></div>
+      <label class="check-line" id="vhConsentLine"><input type="checkbox" id="vh_consent"> HYPie mag mijn verhaal met naam en kantoor publiceren op de site en LinkedIn, na mijn akkoord op de definitieve tekst. Ik kan dit altijd intrekken.</label>
+      <button class="btn btn-accent" id="vhSubmit" type="button">Verstuur mijn verhaal →</button>
+    </div>
+    <div class="modal-ok" id="vhOk">
+      <div class="check"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#003057" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></div>
+      <h3>Dank je wel!</h3>
+      <p class="sub">We sturen je de tekst ter goedkeuring voordat we hem publiceren.</p>
+    </div>
+  </div>
+</div>
+
 <!-- AANMELDEN -->
 <section class="join-sec" id="aanmelden">
   <div class="glow"></div>
@@ -1039,57 +1128,71 @@
     <div class="reveal">
       <span class="eyebrow">Word lid</span>
       <h2>Meld je aan en kom direct in beeld.</h2>
-      <p class="lead">Aanmelden kost twee minuten. Daarna sta je tussen de young professionals en maak je kans op een plek in de top 50 van dit jaar.</p>
+      <p class="lead">Aanmelden kost 30 seconden. Je profiel aanvullen kan meteen of later. Met een profiel sta je in de ledenlijst en maak je kans op een plek in de top 50.</p>
       <ul class="checklist">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> 100% gratis voor adviseurs t/m 35 jaar met Wft Hypotheken</li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Direct zichtbaar in de live ledenlijst</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Zichtbaar in de ledenlijst, als jij dat wilt</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Korting of gratis toegang tot trainingen en events</li>
       </ul>
     </div>
 
     <form class="card reveal" id="joinForm" novalidate>
       <div id="formBody">
-        <h3>Meld je aan als Hypotheek Young Professional</h3>
-        <p class="sub">Vul je gegevens in — je verschijnt meteen in de ledenlijst.</p>
-        <div class="field-row">
-          <div class="field"><label for="vn">Voornaam</label><input id="vn" type="text" autocomplete="given-name"><span class="err">Vul je voornaam in.</span></div>
-          <div class="field"><label for="an">Achternaam</label><input id="an" type="text" autocomplete="family-name"><span class="err">Vul je achternaam in.</span></div>
-        </div>
-        <div class="field"><label for="em">E-mailadres</label><input id="em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
-        <div class="field-row">
-          <div class="field"><label for="lt">Leeftijd</label><input id="lt" type="number" min="18" max="35" inputmode="numeric"><span class="err">Leeftijd moet tussen 18 en 35 zijn. Ouder? Kijk bij <a href="#alumni">Alumni</a>.</span></div>
-          <div class="field"><label for="rg">Regio</label>
-            <select id="rg">
-              <option value="">Kies…</option>
-              <option>Noord-Holland</option><option>Zuid-Holland</option><option>Utrecht</option>
-              <option>Noord-Brabant</option><option>Gelderland</option><option>Overijssel</option>
-              <option>Limburg</option><option>Groningen</option><option>Friesland</option>
-              <option>Drenthe</option><option>Flevoland</option><option>Zeeland</option>
-            </select><span class="err">Kies een regio.</span>
+        <div id="joinStep1">
+          <h3>Meld je aan als Hypotheek Young Professional</h3>
+          <p class="sub">Stap 1 van 2 · kost 30 seconden.</p>
+          <div class="field-row">
+            <div class="field"><label for="vn">Voornaam</label><input id="vn" type="text" autocomplete="given-name"><span class="err">Vul je voornaam in.</span></div>
+            <div class="field"><label for="an">Achternaam</label><input id="an" type="text" autocomplete="family-name"><span class="err">Vul je achternaam in.</span></div>
           </div>
+          <div class="field-row">
+            <div class="field"><label for="em">E-mailadres</label><input id="em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
+            <div class="field"><label for="lt">Leeftijd</label><input id="lt" type="number" min="18" max="35" inputmode="numeric"><span class="err">Leeftijd moet tussen 18 en 35 zijn. Ouder? Kijk bij <a href="#alumni">Alumni</a>.</span></div>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_join" tabindex="-1" autocomplete="off"></label></div>
+          <label class="check-line" id="wftLine"><input type="checkbox" id="wft"> Ik heb minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken). Dit is een voorwaarde voor het lidmaatschap en de top 50.</label>
+          <button type="submit" class="btn btn-accent">Volgende →</button>
+          <p class="formnote">Je leeftijd gebruiken we alleen om te controleren of je lid kunt worden. We tonen die niet openbaar. Zie de <a href="privacy.html" style="color:var(--accent);font-weight:600">voorwaarden en privacyverklaring</a>.</p>
         </div>
-        <div class="field"><label for="kt">Kantoor / werkgever</label><input id="kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
-        <div class="field"><label for="ml">Ik wil graag…</label>
-          <select id="ml">
-            <option value="Meedoen aan events & trainingen">Meedoen aan events & trainingen</option>
-            <option value="Een buddy en coach krijgen">Een buddy en coach krijgen</option>
-            <option value="Meedoen aan dilemmasessies">Meedoen aan dilemmasessies</option>
-            <option value="Zelf buddy zijn">Zelf buddy zijn voor een starter</option>
-            <option value="Ambassadeur worden voor mijn regio">Ambassadeur worden voor mijn regio</option>
-            <option value="Bestuurslid worden">Bestuurslid worden (termijn 2 jaar)</option>
-          </select>
+        <div id="joinStep2" style="display:none">
+          <h3>Maak je profiel af</h3>
+          <p class="sub">Stap 2 van 2 · optioneel. Met kantoor en regio kom je in de ledenlijst en maak je kans op de top 50.</p>
+          <div class="field-row">
+            <div class="field"><label for="kt">Kantoor / werkgever</label><input id="kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
+            <div class="field"><label for="rg">Regio</label>
+              <select id="rg">
+                <option value="">Kies…</option>
+                <option>Noord-Holland</option><option>Zuid-Holland</option><option>Utrecht</option>
+                <option>Noord-Brabant</option><option>Gelderland</option><option>Overijssel</option>
+                <option>Limburg</option><option>Groningen</option><option>Friesland</option>
+                <option>Drenthe</option><option>Flevoland</option><option>Zeeland</option>
+              </select><span class="err">Kies een regio.</span>
+            </div>
+          </div>
+          <div class="field"><label for="ml">Ik wil graag…</label>
+            <select id="ml">
+              <option value="Meedoen aan events & trainingen">Meedoen aan events & trainingen</option>
+              <option value="Een buddy en coach krijgen">Een buddy en coach krijgen</option>
+              <option value="Meedoen aan dilemmasessies">Meedoen aan dilemmasessies</option>
+              <option value="Zelf buddy zijn">Zelf buddy zijn voor een starter</option>
+              <option value="Ambassadeur worden voor mijn regio">Ambassadeur worden voor mijn regio</option>
+              <option value="Bestuurslid worden">Bestuurslid worden (termijn 2 jaar)</option>
+            </select>
+          </div>
+          <label class="check-line" id="consentLine"><input type="checkbox" id="consent"> Ik geef toestemming om met mijn naam, kantoor en regio zichtbaar te zijn in de openbare HYPie top 50 en ledenlijst. Ik kan dit altijd intrekken via info@hypie.nl.</label>
+          <button type="submit" class="btn btn-accent">Afronden &amp; toon mij in de lijst →</button>
+          <button type="button" class="btn-skip" id="joinSkip">Overslaan, alleen lid worden</button>
         </div>
-        <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_join" tabindex="-1" autocomplete="off"></label></div>
-        <label class="check-line" id="wftLine"><input type="checkbox" id="wft"> Ik heb minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken). Dit is een voorwaarde voor het lidmaatschap en de top 50.</label>
-        <label class="check-line" id="consentLine"><input type="checkbox" id="consent"> Ik geef toestemming om met mijn naam, kantoor en regio zichtbaar te zijn in de openbare HYPie top 50 en ledenlijst. Ik kan dit altijd intrekken via info@hypie.nl.</label>
-        <button type="submit" class="btn btn-accent">Word lid & toon mij in de lijst →</button>
-        <p class="formnote">Door je aan te melden ga je akkoord met de <a href="privacy.html" style="color:var(--accent);font-weight:600">voorwaarden en privacyverklaring</a>.</p>
       </div>
       <div class="success" id="formSuccess">
         <div class="check"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#003057" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></div>
         <h3>Welkom bij HYPie!</h3>
         <p id="successMsg">Je staat nu in de ledenlijst.</p>
         <a href="#top50" class="btn btn-primary" id="toRank">Bekijk mij in de lijst →</a>
+        <div class="share-row">
+          <a class="btn btn-outline" target="_blank" rel="noopener" href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fwww.hypie.nl%2Flp-aanmelden.html%3Futm_source%3Dlinkedin%26utm_medium%3Dshare">Deel op LinkedIn</a>
+          <a class="btn btn-outline" href="hypie-quote-card.html" target="_blank" rel="noopener">Maak je quote card</a>
+        </div>
       </div>
     </form>
   </div>
@@ -1119,7 +1222,7 @@
       <a href="#top" class="brand"><span class="logo"><svg viewBox="0 0 24 24" width="24" height="24" aria-label="HYPie"><path d="M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z" fill="#003057"/></svg></span><span class="bt">HYPie.nl<small>Hypotheek Young Professionals</small></span></a>
       <div class="foot-links">
         <div class="foot-col"><h5>Platform</h5><a href="#voordelen">Voordelen</a><a href="#top50">top 50</a><a href="#agenda">Agenda</a><a href="masterclass-young-professionals.html">Masterclass</a><a href="#aanmelden">Word lid</a></div>
-        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="#alumni">HYPie Alumni</a><a href="#bestuur">Bestuur</a><a href="#begeleiding">Buddy & dilemmasessies</a></div>
+        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="lp-geslaagd.html">Net geslaagd voor Wft?</a><a href="#alumni">HYPie Alumni</a><a href="#bestuur">Bestuur</a><a href="#begeleiding">Buddy & dilemmasessies</a></div>
         <div class="foot-col"><h5>Community</h5><a href="https://www.linkedin.com/company/hypotheek-young-professionals-hypie-nl/" target="_blank" rel="noopener">LinkedIn-pagina</a><a href="https://www.linkedin.com/groups/25800057/" target="_blank" rel="noopener">LinkedIn-groep (besloten)</a><a href="#partners">Partners</a><a href="mailto:partners@hypie.nl">Partner worden</a></div>
         <div class="foot-col"><h5>Contact</h5><a href="mailto:info@hypie.nl">info@hypie.nl</a><a href="tel:0332580460">033 258 04 60</a><a href="https://maps.google.com/?q=De+Wel+14-16+3871+MV+Hoevelaken" style="white-space:normal">De Wel 14–16<br>3871 MV Hoevelaken</a></div>
       </div>
@@ -1184,6 +1287,7 @@
   }
 
   /* ====== DATA ======
+     Leeftijd gebruiken we alleen voor de toelatingscheck; die tonen we niet openbaar.
      Voorbeeld-young-professionals. Vervang door echte data of koppel aan een backend. */
   var members = [
     {vn:"Fleur",an:"Vermeer",leeftijd:26,kantoor:"Lelystad Hypotheekadvies",regio:"Overijssel"},
@@ -1476,8 +1580,6 @@
       ordered=members.slice().sort(function(a,b){return a.an.localeCompare(b.an,'nl')||a.vn.localeCompare(b.vn,'nl');});
     } else if(sortMode==='regio'){
       ordered=members.slice().sort(function(a,b){return a.regio.localeCompare(b.regio,'nl')||a.vn.localeCompare(b.vn,'nl');});
-    } else if(sortMode==='leeftijd'){
-      ordered=members.slice().sort(function(a,b){return a.leeftijd-b.leeftijd||a.vn.localeCompare(b.vn,'nl');});
     } else {
       ordered=shuffle(members.slice());   // willekeurig — dynamische volgorde
     }
@@ -1501,7 +1603,6 @@
       +'<div class="lb-name"><div class="av">'+initials(m)+'</div>'
         +'<div><div class="nm">'+esc(m.vn+' '+m.an)+'</div><div class="kt">'+esc(m.kantoor)+'</div></div></div>'
       +'<div class="lb-regio">'+esc(m.regio)+'</div>'
-      +'<div class="lb-leeft">'+m.leeftijd+'</div>'
       +'</div>';
   }
 
@@ -1547,47 +1648,65 @@
 
   form.addEventListener('submit',function(ev){
     ev.preventDefault();
-    var vn=document.getElementById('vn'), an=document.getElementById('an'),
-        em=document.getElementById('em'), lt=document.getElementById('lt'),
-        rg=document.getElementById('rg'), kt=document.getElementById('kt');
     if((document.getElementById('hp_join')||{}).value) return; // honeypot: bot, stil negeren
+    if(document.getElementById('joinStep2').style.display==='none') joinStep1(); else joinFinish(true);
+  });
+  document.getElementById('joinSkip').addEventListener('click',function(){joinFinish(false);});
+
+  function joinStep1(){
+    var vn=document.getElementById('vn'), an=document.getElementById('an'),
+        em=document.getElementById('em'), lt=document.getElementById('lt');
     var ok=true;
     var eVn=!vn.value.trim(); setErr('vn',eVn); if(eVn)ok=false;
     var eAn=!an.value.trim(); setErr('an',eAn); if(eAn)ok=false;
     var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim()); setErr('em',eEm); if(eEm)ok=false;
     var age=parseInt(lt.value,10);
     var eLt=!(age>=18 && age<=35); setErr('lt',eLt); if(eLt)ok=false;
-    var eRg=!rg.value; setErr('rg',eRg); if(eRg)ok=false;
-    var eKt=!kt.value.trim(); setErr('kt',eKt); if(eKt)ok=false;
     var eWft=!document.getElementById('wft').checked;
     document.getElementById('wftLine').classList.toggle('invalid',eWft); if(eWft)ok=false;
-    var eCons=!document.getElementById('consent').checked;
-    document.getElementById('consentLine').classList.toggle('invalid',eCons); if(eCons)ok=false;
     if(!ok) return;
+    document.getElementById('joinStep1').style.display='none';
+    document.getElementById('joinStep2').style.display='';
+    document.getElementById('kt').focus();
+  }
 
-    members.forEach(function(m){m._me=false;});
-    members.push({vn:vn.value.trim(),an:an.value.trim(),leeftijd:age,
-                  kantoor:kt.value.trim(),regio:rg.value,
-                  wens:(document.getElementById('ml')||{}).value||'',_me:true});
-
-    buildOrder(); renderTrio(); renderTable();
-
-    var me=ordered.filter(function(m){return m._me;})[0];
-    meBeyond = ordered.indexOf(me) >= 50;
-    document.getElementById('successMsg').textContent = meBeyond
-      ? 'Je staat nu in de ledenlijst. Klik hieronder om jezelf te vinden in de volledige lijst.'
-      : 'Je staat nu in de top 50 van 2026 — welkom in het zonnetje!';
+  function joinFinish(withProfile){
+    var g=function(id){return (document.getElementById(id).value||'').trim();};
+    var rg=document.getElementById('rg');
+    if(withProfile){
+      var ok=true;
+      var eKt=!g('kt'); setErr('kt',eKt); if(eKt)ok=false;
+      var eRg=!rg.value; setErr('rg',eRg); if(eRg)ok=false;
+      var eCons=!document.getElementById('consent').checked;
+      document.getElementById('consentLine').classList.toggle('invalid',eCons); if(eCons)ok=false;
+      if(!ok) return;
+    }
+    var age=parseInt(g('lt'),10);
+    var toRank=document.getElementById('toRank');
+    if(withProfile){
+      members.forEach(function(m){m._me=false;});
+      members.push({vn:g('vn'),an:g('an'),leeftijd:age,kantoor:g('kt'),regio:rg.value,wens:g('ml'),_me:true});
+      buildOrder(); renderTrio(); renderTable();
+      var me=ordered.filter(function(m){return m._me;})[0];
+      meBeyond = ordered.indexOf(me) >= 50;
+      document.getElementById('successMsg').textContent = meBeyond
+        ? 'Je staat nu in de ledenlijst. Klik hieronder om jezelf te vinden in de volledige lijst.'
+        : 'Je staat nu in de top 50 van 2026 — welkom in het zonnetje!';
+      toRank.style.display='';
+    } else {
+      document.getElementById('successMsg').textContent='Je bent lid. Je profiel aanvullen en in de ledenlijst komen kan later: mail ons via info@hypie.nl.';
+      toRank.style.display='none';
+    }
     document.getElementById('formBody').style.display='none';
     document.getElementById('formSuccess').classList.add('show');
 
     // Verstuur de aanmelding (Formspree/Apps Script of mailto-fallback)
     dispatch('Nieuwe HYPie-aanmelding', {
-      type:'aanmelding', voornaam:vn.value.trim(), achternaam:an.value.trim(),
-      email:em.value.trim(), leeftijd:age, regio:rg.value, kantoor:kt.value.trim(),
-      wens:(document.getElementById('ml')||{}).value||'',
-      wft_hypothecair_krediet:true, toestemming_top50:true
+      type:'aanmelding', voornaam:g('vn'), achternaam:g('an'), email:g('em'), leeftijd:age,
+      regio:withProfile?rg.value:'', kantoor:withProfile?g('kt'):'', wens:withProfile?g('ml'):'',
+      wft_hypothecair_krediet:true, toestemming_top50:withProfile, profiel_compleet:withProfile
     });
-  });
+  }
 
   document.getElementById('toRank').addEventListener('click',function(){
     if(meBeyond){showAll=true;renderTable();}
@@ -1847,8 +1966,80 @@
     });
   });
 
+  /* ====== VERHALEN ======
+     Alleen echte citaten, met schriftelijke toestemming. foto: pad naar afbeelding of ''. */
+  var verhalen = [
+    // {naam:"Voornaam Achternaam", kantoor:"Kantoor", tekst:"Citaat…", foto:""}
+  ];
+  function renderVerhalen(){
+    var html=verhalen.map(function(v){
+      var av=v.foto?'<img src="'+esc(v.foto)+'" alt="">':'<div class="av">'+esc(v.naam.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase())+'</div>';
+      return '<div class="vh"><blockquote>'+esc(v.tekst)+'</blockquote><div class="who">'+av+'<div><b>'+esc(v.naam)+'</b><span>'+esc(v.kantoor)+'</span></div></div></div>';
+    });
+    while(html.length<3) html.push('<div class="vh leeg"><b>Jouw verhaal hier?</b><span>Vertel in één zin waarom jij HYPie bent.</span></div>');
+    document.getElementById('vhGrid').innerHTML=html.join('');
+  }
+  function modalPair(id,openId,body,ok){
+    var m=document.getElementById(id);
+    function open(){m.classList.add('show');document.getElementById(body).style.display='';var o=document.getElementById(ok);o.classList.remove('show');o.style.display=o.classList.contains('modal-ok')?'':'none';}
+    function close(){m.classList.remove('show');}
+    document.getElementById(openId).addEventListener('click',open);
+    m.querySelector('.modal-close').addEventListener('click',close);
+    m.addEventListener('click',function(e){if(e.target===m)close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+    return open;
+  }
+  modalPair('vhModal','vhBtn','vhBody','vhOk');
+  document.getElementById('vhGrid').addEventListener('click',function(e){if(e.target.closest('.vh.leeg'))document.getElementById('vhBtn').click();});
+  document.getElementById('vhSubmit').addEventListener('click',function(){
+    if((document.getElementById('hp_vh')||{}).value) return;
+    var v=function(id){return (document.getElementById(id).value||'').trim();};
+    var ok=true;
+    ['vh_naam','vh_kt','vh_tekst'].forEach(function(id){var e=!v(id);setErr(id,e);if(e)ok=false;});
+    var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('vh_em')); setErr('vh_em',eEm); if(eEm)ok=false;
+    var eC=!document.getElementById('vh_consent').checked;
+    document.getElementById('vhConsentLine').classList.toggle('invalid',eC); if(eC)ok=false;
+    if(!ok) return;
+    document.getElementById('vhBody').style.display='none';
+    document.getElementById('vhOk').classList.add('show');
+    dispatch('Nieuw HYPie-verhaal', {type:'verhaal', naam:v('vh_naam'), kantoor:v('vh_kt'), email:v('vh_em'), tekst:v('vh_tekst'), toestemming_na_akkoord:true});
+  });
+
+  /* ====== AGENDA: afgelopen events naar het archief ====== */
+  (function(){
+    var vandaag=new Date().toISOString().slice(0,10), past=document.getElementById('agPast'), n=0;
+    document.querySelectorAll('.agenda .events > .event[data-datum]').forEach(function(ev){
+      if(ev.getAttribute('data-datum')<vandaag){past.insertBefore(ev,past.firstChild);n++;}
+    });
+    if(n){document.getElementById('agCount').textContent=n;document.getElementById('agArchive').hidden=false;}
+  })();
+
+  /* ====== WERKGEVERS: eigen aanmeldlink per kantoor ====== */
+  modalPair('wgModal','wgBtn','wgBody','wgOk');
+  document.getElementById('wgSubmit').addEventListener('click',function(){
+    if((document.getElementById('hp_wg')||{}).value) return;
+    var v=function(id){return (document.getElementById(id).value||'').trim();};
+    var ok=true;
+    ['wg_kt','wg_naam'].forEach(function(id){var e=!v(id);setErr(id,e);if(e)ok=false;});
+    var eA=!(parseInt(v('wg_aantal'),10)>0); setErr('wg_aantal',eA); if(eA)ok=false;
+    var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('wg_em')); setErr('wg_em',eEm); if(eEm)ok=false;
+    if(!ok) return;
+    var slug=v('wg_kt').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    var link='https://www.hypie.nl/lp-aanmelden.html?utm_source=werkgever&utm_medium=teamlink&utm_campaign='+slug;
+    document.getElementById('wg_link').value=link;
+    document.getElementById('wgBody').style.display='none';
+    document.getElementById('wgOk').style.display='';
+    dispatch('Nieuwe werkgever: teamlink aangemaakt', {type:'werkgever_teamlink', kantoor:v('wg_kt'), contactpersoon:v('wg_naam'), email:v('wg_em'), aantal_yp:v('wg_aantal'), link:link});
+  });
+  document.getElementById('wgCopy').addEventListener('click',function(){
+    var inp=document.getElementById('wg_link'), btn=this;
+    function done(){btn.textContent='Gekopieerd ✓';}
+    if(navigator.clipboard){navigator.clipboard.writeText(inp.value).then(done,function(){inp.select();document.execCommand('copy');done();});}
+    else {inp.select();document.execCommand('copy');done();}
+  });
+
   // init
-  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour();
+  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur(); renderTour(); renderVerhalen();
 </script>
 </body>
 </html>
