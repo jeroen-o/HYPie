@@ -19,7 +19,7 @@ Als HYPie krijg je:
 ✦ Kennis, tools en updates over wet- en regelgeving
 ✦ Events, meetups en een community door heel Nederland
 ✦ Een netwerk van jonge adviseurs door heel Nederland
-✦ Een plek in de jaarlijkse **top 50 van 2026**
+✦ Inspiratie uit de jaarlijkse **top 50**
 
 En het mooiste: het lidmaatschap is gratis, mede mogelijk gemaakt door 9 partners die in jonge adviseurs geloven.
 
@@ -38,7 +38,7 @@ Bij **HYPie** bouw je aan je vak én aan je netwerk, met leeftijdsgenoten die in
 Wat je eraan hebt:
 • Korting of gratis toegang tot trainingen en events
 • Een netwerk van leeftijdsgenoten die hetzelfde vak doen
-• Zichtbaarheid in de top 50 van 2026
+• Leren van de HYPies in de jaarlijkse top 50
 • Een achterban van jonge adviseurs door het hele land
 
 Meld je in 30 seconden aan en je staat meteen op de kaart.
