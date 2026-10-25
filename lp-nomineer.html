@@ -131,6 +131,8 @@ function lpInit(subject,type){
     e.preventDefault();
     if((document.getElementById('hp')||{}).value) return;
     var data={type:type},ok=true;
+    var q=new URLSearchParams(location.search);
+    ['utm_source','utm_medium','utm_campaign'].forEach(function(k){if(q.get(k))data[k]=q.get(k);});
     form.querySelectorAll('[data-key]').forEach(function(el){
       var val=el.type==='checkbox'?el.checked:(el.value||'').trim();
       var req=el.hasAttribute('data-required'),bad=false;
