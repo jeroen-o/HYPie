@@ -18,7 +18,7 @@ Als HYPie krijg je:
 ✦ Trainingen & masterclasses (gratis of met flinke korting)
 ✦ Kennis, tools en updates over wet- en regelgeving
 ✦ Events, meetups en een community door heel Nederland
-✦ Mentoren die je verder helpen
+✦ Een buddy en een coach die je verder helpen
 ✦ Een plek in de jaarlijkse **top 50 van 2026**
 
 En het mooiste: het lidmaatschap is gratis, mede mogelijk gemaakt door 9 partners die in jonge adviseurs geloven.
@@ -29,7 +29,7 @@ Ben jij een HYPie — of ken je er één? 👉 hypie.nl
 
 ---
 
-## Post 2 — Word lid (werving)
+## Post 2 — Word lid
 
 35 jaar of jonger en werkzaam in hypotheekadvies? Dan is dit voor jou. 🎯
 
@@ -37,11 +37,11 @@ Bij **HYPie** bouw je aan je vak én aan je netwerk, met leeftijdsgenoten die in
 
 Wat je eraan hebt:
 • Korting of gratis toegang tot trainingen en events
-• Een mentor die je op weg helpt
+• Een buddy en een coach die je op weg helpen
 • Zichtbaarheid in de top 50 van 2026
 • Een achterban van jonge adviseurs door het hele land
 
-Meld je in twee minuten aan en je staat meteen op de kaart.
+Meld je in 30 seconden aan en je staat meteen op de kaart.
 
 👉 hypie.nl
 
@@ -51,26 +51,24 @@ Meld je in twee minuten aan en je staat meteen op de kaart.
 
 ## Post 3 — Voor werkgevers & partners
 
-Op zoek naar een HYPie? 🔎
+Werk jij met HYPies? 🤝
 
-De nieuwe generatie hypotheekadviseurs zit op **HYPie.nl**. Voor kantoren en geldverstrekkers is dat goud waard:
+Je jonge adviseurs zijn de toekomst van je kantoor. Bij HYPie.nl groeien ze in hun vak, en jij krijgt ze sterker terug.
 
-→ Talent in beeld via de top 50 en de ledenlijst per regio
-→ Plaats je vacatures gericht bij adviseurs t/m 35
-→ Bind je eigen jonge adviseurs met trainingen, events en mentoren
-→ Versterk je werkgeversmerk bij de generatie die je morgen nodig hebt
+→ Meld je eigen young professionals aan: trainingen, buddy, coach en events
+→ Ga in gesprek met de nieuwe generatie in een klankbordsessie of rondetafel
+→ Ken de nieuwe generatie via de HYPie-Monitor
+→ Geen werving en selectie, geen vacatures: je mensen zijn hier veilig
 
-Onze partners (DFO, NVHP, Impact, Blinqx, De Goudse, VCN, Lloyds Bank, Argenta en ING) gingen je voor.
+Investeer in je eigen HYPies 👉 hypie.nl
 
-Benieuwd hoe je jouw HYPie vindt? 👉 hypie.nl
-
-#werkgeversmerk #recruitment #hypotheek #talent #HYPie
+#hypotheekadvies #youngprofessionals #ontwikkeling #hypotheek #HYPie
 
 ---
 
 ## Optioneel — korte teaser (voor stories / kort bericht)
 
-Ben jij een HYPie? Of op zoek naar een HYPie?
+Ben jij een HYPie? Of werk je met HYPies?
 
 Het netwerk voor jonge hypotheekadviseurs (t/m 35) is live. 👉 hypie.nl
 
