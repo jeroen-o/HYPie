@@ -68,7 +68,7 @@ Investeer in je eigen HYPies 👉 hypie.nl
 
 ## Optioneel — korte teaser (voor stories / kort bericht)
 
-Ben jij een HYPie? Of werk je met HYPies?
+Ben jij een HYPie? Het netwerk van de nieuwe generatie hypotheekadviseurs.
 
 Het netwerk voor jonge hypotheekadviseurs (t/m 35) is live. 👉 hypie.nl
 
