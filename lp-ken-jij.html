@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Ken jij een Hypotheek Young Professional? | HYPie.nl</title>
-<meta name="description" content="Ken jij een jonge hypotheekadviseur t/m 35? Meld diegene gratis aan bij HYPie en geef toegang tot trainingen, events en de top 50.">
+<meta name="description" content="Ken jij een jonge hypotheekadviseur met Wft Hypotheken? Meld diegene gratis aan bij HYPie en geef toegang tot trainingen, events en de top 50.">
 <meta property="og:title" content="Ken jij een Hypotheek Young Professional? | HYPie.nl">
-<meta property="og:description" content="Ken jij een jonge hypotheekadviseur t/m 35? Meld diegene gratis aan bij HYPie en geef toegang tot trainingen, events en de top 50.">
+<meta property="og:description" content="Ken jij een jonge hypotheekadviseur met Wft Hypotheken? Meld diegene gratis aan bij HYPie en geef toegang tot trainingen, events en de top 50.">
 <meta property="og:image" content="https://www.hypie.nl/hypie-og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23003057'/%3E%3Cpath d='M32 11 l4.5 16.5 16.5 4.5 -16.5 4.5 -4.5 16.5 -4.5 -16.5 -16.5 -4.5 16.5 -4.5z' fill='%23E5A138'/%3E%3C/svg%3E">
@@ -101,7 +101,7 @@ footer a{color:var(--soft)}
         <div class="field"><label>Jouw naam</label><input type="text" data-key="aangemeld_door" data-required></div>
         <div class="field"><label>Jouw e-mail</label><input type="email" data-key="jouw_email" data-email data-required></div>
       </div>
-      <label class="check-line"><input type="checkbox" data-key="voldoet_aan_voorwaarden" data-required> Voor zover ik weet is deze persoon t/m 35 jaar en heeft diegene minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken).</label>
+      <label class="check-line"><input type="checkbox" data-key="voldoet_aan_voorwaarden" data-required> Voor zover ik weet heeft deze persoon minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken) en is diegene t/m 35 jaar of heeft diegene het diploma maximaal 5 jaar.</label>
       <label class="check-line"><input type="checkbox" data-key="persoon_geinformeerd" data-required> Ik heb deze persoon op de hoogte gebracht. HYPie vraagt diegene zelf om bevestiging voordat de gegevens worden gebruikt.</label>
       <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp" tabindex="-1" autocomplete="off"></label></div>
       <button type="submit" class="btn">Meld deze HYPie aan →</button>
@@ -148,7 +148,7 @@ function lpInit(subject,type){
       else{
         if(req&&!val)bad=true;
         if(el.hasAttribute('data-email')&&val&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))bad=true;
-        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=35))bad=true;}
+        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=99))bad=true;}
       }
       var w=el.closest('.field')||el.closest('.check-line');
       if(w)w.classList.toggle('invalid',bad);

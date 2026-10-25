@@ -85,16 +85,18 @@ footer a{color:var(--soft)}
   <form class="card" id="lpForm" novalidate>
     <div id="lpBody">
       <h2>Start je eerste jaar goed — gratis</h2>
-      <p class="sub">Twee minuten en je staat op de kaart.</p>
+      <p class="sub">Twee minuten en je bent lid.</p>
       <div class="row">
         <div class="field"><label>Voornaam</label><input type="text" data-key="voornaam" data-required autocomplete="given-name"></div>
         <div class="field"><label>Achternaam</label><input type="text" data-key="achternaam" data-required autocomplete="family-name"></div>
       </div>
       <div class="field"><label>E-mailadres</label><input type="email" data-key="email" data-email data-required autocomplete="email"></div>
       <div class="row">
-        <div class="field"><label>Leeftijd</label><input type="number" data-key="leeftijd" data-age inputmode="numeric" min="18" max="35"></div>
+        <div class="field"><label>Leeftijd</label><input type="number" data-key="leeftijd" data-age inputmode="numeric" min="18" max="99"></div>
         <div class="field"><label>Regio</label><select data-key="regio" data-required><option value="">Kies…</option><option>Noord-Holland</option><option>Zuid-Holland</option><option>Utrecht</option><option>Noord-Brabant</option><option>Gelderland</option><option>Overijssel</option><option>Limburg</option><option>Groningen</option><option>Friesland</option><option>Drenthe</option><option>Flevoland</option><option>Zeeland</option></select></div>
       </div>
+      <div class="field"><label>Jaar Wft Hypothecair Krediet behaald</label><select data-key="wft_jaar" data-wftjaar data-required></select></div>
+      <p class="formnote" style="margin-top:-6px">Lid worden kan t/m 35 jaar, of tot 5 jaar na je Wft-diploma.</p>
       <div class="field"><label>Kantoor / werkgever</label><input type="text" data-key="kantoor" data-required autocomplete="organization"></div>
       <div class="field"><label>Ik wil graag…</label><select data-key="wens">
         <option>Een buddy en coach krijgen</option>
@@ -104,7 +106,7 @@ footer a{color:var(--soft)}
         <option>Ambassadeur worden voor mijn regio</option>
       </select></div>
       <label class="check-line"><input type="checkbox" data-key="wft_hypothecair_krediet" data-required> Ik heb minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken). Dit is een voorwaarde voor het lidmaatschap en de top 50.</label>
-      <label class="check-line"><input type="checkbox" data-key="toestemming_top50" data-required> Ik geef toestemming om met mijn naam, kantoor en regio zichtbaar te zijn in de openbare HYPie top 50 en ledenlijst. Ik kan dit altijd intrekken via info@hypie.nl.</label>
+      <label class="check-line"><input type="checkbox" data-key="toestemming_top50" data-required> Word ik geselecteerd voor de top 50, dan mag HYPie mijn naam, kantoor en regio openbaar tonen. De ledenlijst zelf is niet openbaar. Ik kan dit altijd intrekken via info@hypie.nl.</label>
       <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp" tabindex="-1" autocomplete="off"></label></div>
       <button type="submit" class="btn">Ja, ik meld me aan →</button>
       <p class="formnote">Door te versturen ga je akkoord met de <a href="https://www.hypie.nl/privacy.html">privacyverklaring</a>.</p>
@@ -150,13 +152,19 @@ function lpInit(subject,type){
       else{
         if(req&&!val)bad=true;
         if(el.hasAttribute('data-email')&&val&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))bad=true;
-        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=35))bad=true;}
+        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=99))bad=true;}
       }
       var w=el.closest('.field')||el.closest('.check-line');
       if(w)w.classList.toggle('invalid',bad);
       if(bad)ok=false;
       data[el.getAttribute('data-key')]=val;
     });
+    // toelating: t/m 35 jaar of Wft-diploma maximaal 5 jaar oud
+    var ageEl=form.querySelector('[data-age]'), wjEl=form.querySelector('[data-wftjaar]');
+    if(ok && ageEl && wjEl){
+      var lft=parseInt(ageEl.value,10), wj=parseInt(wjEl.value,10);
+      if(!wj || !(lft<=35 || wj>=new Date().getFullYear()-5)){ wjEl.closest('.field').classList.add('invalid'); ageEl.closest('.field').classList.add('invalid'); ok=false; }
+    }
     if(!ok)return;
     dispatch(subject,data);
     document.getElementById('lpBody').style.display='none';
@@ -166,6 +174,12 @@ function lpInit(subject,type){
 }
 
 lpInit('Nieuwe HYPie-aanmelding (net geslaagd)','aanmelding_geslaagd');
+
+document.querySelectorAll('select[data-wftjaar]').forEach(function(sel){
+  var nu=new Date().getFullYear(), o='<option value="">Kies…</option>';
+  for(var y=nu;y>=nu-40;y--) o+='<option>'+y+'</option>';
+  sel.innerHTML=o+'<option value="geen">Nog niet behaald</option>';
+});
 </script>
 </body>
 </html>
