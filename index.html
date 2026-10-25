@@ -360,6 +360,27 @@
   .btn-outline:hover{background:var(--primary);color:#fff;transform:translateY(-2px)}
 
   /* BESTUUR */
+  .team-grid.six{grid-template-columns:repeat(3,1fr);margin-top:34px}
+  .tcard .tgrp{display:inline-block;margin-top:10px;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(229,161,56,.16);border:1px solid rgba(229,161,56,.5);color:var(--primary)}
+  .bs-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .bs-rule{display:flex;gap:16px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+  .bs-rule .n{flex:none;width:54px;height:54px;border-radius:14px;background:var(--primary);color:var(--accent);font-family:var(--serif);font-size:1.7rem;display:flex;align-items:center;justify-content:center}
+  .bs-rule b{display:block;color:var(--primary)}
+  .bs-rule span{color:var(--text-soft);font-size:.88rem;line-height:1.45}
+  .bs-rooster{margin-top:40px}
+  .bs-rooster h3{font-size:1.5rem}
+  .bs-rooster>p{color:var(--text-soft);margin:6px 0 16px}
+  .bs-table{border:1px solid var(--line);border-radius:16px;overflow:hidden;overflow-x:auto}
+  .bs-table table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:520px}
+  .bs-table th,.bs-table td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--line)}
+  .bs-table th{background:var(--primary);color:#fff;font-weight:700}
+  .bs-table td.in{color:var(--primary);font-weight:700}
+  .bs-table td.in::before{content:"● ";color:var(--accent)}
+  .bs-table tr:last-child td{border-bottom:none}
+  .bs-cta{margin-top:34px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;background:var(--primary);color:#fff;border-radius:20px;padding:26px 30px}
+  .bs-cta h3{color:#fff;font-size:1.5rem}
+  .bs-cta p{color:rgba(255,255,255,.8)}
+  @media(max-width:920px){.bs-rules{grid-template-columns:1fr}.team-grid.six{grid-template-columns:repeat(2,1fr)}}
   .bestuur{background:var(--paper)}
   .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
   .tcard{text-align:center;background:var(--bg);border:1px solid var(--line);border-radius:18px;padding:28px 20px;transition:transform .25s,box-shadow .25s,border-color .25s}
@@ -635,19 +656,62 @@
 <!-- BESTUUR -->
 <section class="bestuur" id="bestuur">
   <div class="wrap">
-    <div class="sec-head reveal">
+    <div class="sec-head reveal" style="max-width:720px">
       <span class="eyebrow">Wie zit erachter</span>
-      <h2>Voor en door Hypotheek Young Professionals.</h2>
-      <p>Dit netwerk wordt gerund door jonge adviseurs en sectorgenoten die het dagelijks laten draaien. Maak kennis met het kernteam — en meld je aan als je zelf wilt meedoen.</p>
+      <h2>Een bestuur van Hypotheek Young Professionals.</h2>
+      <p>HYPie wordt bestuurd door de doelgroep zelf. Het bestuur bestaat uit zes young professionals. Elk bestuurslid zit twee jaar, en elk jaar wordt de helft van het bestuur vervangen. Zo blijft er altijd ervaring aan tafel en komt er elk jaar nieuwe energie bij.</p>
     </div>
-    <div class="team-grid">
-      <div class="tcard reveal"><div class="tav">JO</div><h4>Voorzitter</h4><div class="trole">Community & strategie</div><div class="tregio">Naam volgt</div></div>
-      <div class="tcard reveal"><div class="tav">??</div><h4>Events</h4><div class="trole">Meetups & congressen</div><div class="tregio">Naam volgt</div></div>
-      <div class="tcard reveal"><div class="tav">??</div><h4>Kennis & content</h4><div class="trole">Trainingen & nieuwsbrief</div><div class="tregio">Naam volgt</div></div>
-      <div class="tcard reveal"><div class="tav">★</div><h4>Word ambassadeur</h4><div class="trole">Voor jouw regio</div><div class="tregio"><a href="#aanmelden" style="color:var(--accent);font-weight:600">Meld je aan →</a></div></div>
+
+    <div class="bs-rules reveal">
+      <div class="bs-rule"><div class="n">6</div><div><b>zetels</b><span>Allemaal Hypotheek Young Professionals: t/m 35 jaar en minimaal Wft Hypotheken.</span></div></div>
+      <div class="bs-rule"><div class="n">2</div><div><b>jaar per termijn</b><span>Je zit twee jaar in het bestuur en draagt daarna over.</span></div></div>
+      <div class="bs-rule"><div class="n">½</div><div><b>elk jaar vervangen</b><span>Groep A en groep B wisselen om de beurt, zodat de helft blijft zitten.</span></div></div>
+    </div>
+
+    <div class="team-grid six" id="bsGrid"></div>
+
+    <div class="bs-rooster reveal">
+      <h3>Rooster van aftreden</h3>
+      <p>Wisseling per 1 januari. Groep A start in <span id="bsStart"></span> eenmalig met een termijn van één jaar, zodat de jaarlijkse wisseling op gang komt.</p>
+      <div class="bs-table" id="bsRooster"></div>
+    </div>
+
+    <div class="bs-cta reveal">
+      <div>
+        <h3>Zelf in het bestuur?</h3>
+        <p>Elk jaar komen er drie zetels vrij. Stel je kandidaat voor de lichting van <b id="bsNext"></b>.</p>
+      </div>
+      <button class="btn btn-accent" id="bsBtn" type="button">Stel je kandidaat →</button>
     </div>
   </div>
 </section>
+
+<!-- KANDIDAAT BESTUUR MODAL -->
+<div class="modal" id="bsModal">
+  <div class="modal-box">
+    <button class="modal-close" id="bsClose" aria-label="Sluiten">✕</button>
+    <div id="bsBody">
+      <h3>Stel je kandidaat voor het HYPie-bestuur</h3>
+      <p class="sub">Termijn van twee jaar, start per 1 januari <span id="bsNext2"></span>.</p>
+      <div class="field-row">
+        <div class="field"><label for="bs_naam">Naam</label><input id="bs_naam" type="text" autocomplete="name"><span class="err">Vul je naam in.</span></div>
+        <div class="field"><label for="bs_lt">Leeftijd</label><input id="bs_lt" type="number" min="18" max="35" inputmode="numeric"><span class="err">Bestuursleden zijn 18 t/m 35 jaar.</span></div>
+      </div>
+      <div class="field"><label for="bs_em">E-mailadres</label><input id="bs_em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
+      <div class="field"><label for="bs_kt">Kantoor / werkgever</label><input id="bs_kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
+      <div class="field"><label for="bs_zetel">Voorkeur voor zetel</label><select id="bs_zetel"></select></div>
+      <div class="field"><label for="bs_mot">Waarom jij? (kort)</label><input id="bs_mot" type="text"><span class="err">Vertel kort waarom.</span></div>
+      <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_bs" tabindex="-1" autocomplete="off"></label></div>
+      <label class="check-line" id="bsWftLine"><input type="checkbox" id="bs_wft"> Ik heb minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken) en kan twee jaar tijd vrijmaken voor het bestuur.</label>
+      <button class="btn btn-accent" id="bsSubmit" type="button">Kandidatuur versturen →</button>
+    </div>
+    <div class="modal-ok" id="bsOk">
+      <div class="check"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#003057" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></div>
+      <h3>Bedankt voor je kandidatuur!</h3>
+      <p class="sub">We nemen contact met je op over de selectie voor het bestuur.</p>
+    </div>
+  </div>
+</div>
 
 <!-- ALUMNI -->
 <section class="alumni" id="alumni">
@@ -901,6 +965,7 @@
             <option value="Gekoppeld worden aan een mentor">Gekoppeld worden aan een mentor</option>
             <option value="Zelf mentor/buddy zijn">Zelf mentor/buddy zijn</option>
             <option value="Ambassadeur worden voor mijn regio">Ambassadeur worden voor mijn regio</option>
+            <option value="Bestuurslid worden">Bestuurslid worden (termijn 2 jaar)</option>
           </select>
         </div>
         <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_join" tabindex="-1" autocomplete="off"></label></div>
@@ -943,7 +1008,7 @@
       <a href="#top" class="brand"><span class="logo"><svg viewBox="0 0 24 24" width="24" height="24" aria-label="HYPie"><path d="M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z" fill="#003057"/></svg></span><span class="bt">HYPie.nl<small>Hypotheek Young Professionals</small></span></a>
       <div class="foot-links">
         <div class="foot-col"><h5>Platform</h5><a href="#voordelen">Voordelen</a><a href="#top50">top 50</a><a href="#agenda">Agenda</a><a href="masterclass-young-professionals.html">Masterclass</a><a href="#aanmelden">Word lid</a></div>
-        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="#alumni">HYPie Alumni</a></div>
+        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="#alumni">HYPie Alumni</a><a href="#bestuur">Bestuur</a></div>
         <div class="foot-col"><h5>Community</h5><a href="https://www.linkedin.com/company/hypotheek-young-professionals-hypie-nl/" target="_blank" rel="noopener">LinkedIn-pagina</a><a href="https://www.linkedin.com/groups/25800057/" target="_blank" rel="noopener">LinkedIn-groep (besloten)</a><a href="#partners">Partners</a><a href="mailto:partners@hypie.nl">Partner worden</a></div>
         <div class="foot-col"><h5>Contact</h5><a href="mailto:info@hypie.nl">info@hypie.nl</a><a href="tel:0332580460">033 258 04 60</a><a href="https://maps.google.com/?q=De+Wel+14-16+3871+MV+Hoevelaken" style="white-space:normal">De Wel 14–16<br>3871 MV Hoevelaken</a></div>
       </div>
@@ -1543,8 +1608,73 @@
     });
   });
 
+  /* ====== BESTUUR ======
+     6 zetels in twee groepen. Termijn 2 jaar; elk jaar treedt één groep (de helft) af.
+     Groep A begint in START_JAAR eenmalig met 1 jaar, zodat A en B om en om wisselen.
+     Vul 'naam' in zodra bestuursleden bekend zijn. */
+  var bestuur = [
+    {zetel:"Voorzitter",           taak:"Strategie & partners",         groep:"B", naam:""},
+    {zetel:"Vicevoorzitter",       taak:"Secretariaat & continuïteit",  groep:"A", naam:""},
+    {zetel:"Events",               taak:"Meetups, borrels & congressen",groep:"A", naam:""},
+    {zetel:"Kennis & opleiding",   taak:"Masterclasses & PE",           groep:"B", naam:""},
+    {zetel:"Community & regio's",  taak:"Ambassadeurs & ledengroei",    groep:"A", naam:""},
+    {zetel:"Inspraak & welzijn",   taak:"Stem van YP's in de sector",   groep:"B", naam:""}
+  ];
+  // groep die per 1 januari van 'jaar' wordt vervangen: A in START_JAAR+1, daarna om en om
+  function groepAftredend(jaar){ return ((jaar-(START_JAAR+1))%2===0) ? 'A' : 'B'; }
+  function renderBestuur(){
+    var now=new Date().getFullYear(), next=now+1;
+    document.getElementById('bsGrid').innerHTML=bestuur.map(function(b,i){
+      var tot = groepAftredend(next)===b.groep ? now : next;   // laatste jaar van huidige termijn
+      var ini = b.naam ? b.naam.split(' ').map(function(w){return w[0];}).join('').slice(0,2).toUpperCase() : '★';
+      return '<div class="tcard reveal in"><div class="tav"'+(i%2?' style="background:var(--accent);color:var(--primary)"':'')+'>'+esc(ini)+'</div>'
+        +'<h4>'+esc(b.zetel)+'</h4><div class="trole">'+esc(b.taak)+'</div>'
+        +'<div class="tregio">'+(b.naam?esc(b.naam):'Zetel vrij — <a href="#bestuur" class="bsOpen" style="color:var(--accent);font-weight:600">kandidaat stellen</a>')+'</div>'
+        +'<span class="tgrp">Groep '+b.groep+' · termijn t/m '+tot+'</span></div>';
+    }).join('');
+    var jaren=[]; for(var y=START_JAAR+1;y<=Math.max(now,START_JAAR)+4;y++) jaren.push(y);
+    document.getElementById('bsRooster').innerHTML='<table><thead><tr><th>Zetel</th><th>Groep</th>'
+      +jaren.map(function(y){return '<th>1 jan '+y+'</th>';}).join('')+'</tr></thead><tbody>'
+      +bestuur.map(function(b){
+        return '<tr><td>'+esc(b.zetel)+'</td><td>'+b.groep+'</td>'+jaren.map(function(y){
+          return groepAftredend(y)===b.groep ? '<td class="in">nieuw lid</td>' : '<td>blijft</td>';
+        }).join('')+'</tr>';
+      }).join('')+'</tbody></table>';
+    document.getElementById('bsStart').textContent=START_JAAR;
+    document.getElementById('bsNext').textContent='1 januari '+next;
+    document.getElementById('bsNext2').textContent=next;
+    var vrij=bestuur.filter(function(b){return groepAftredend(next)===b.groep;});
+    document.getElementById('bs_zetel').innerHTML='<option value="Geen voorkeur">Geen voorkeur</option>'
+      +vrij.map(function(b){return '<option>'+esc(b.zetel)+'</option>';}).join('');
+  }
+  var bsModal=document.getElementById('bsModal');
+  function bsOpen(e){if(e)e.preventDefault();bsModal.classList.add('show');document.getElementById('bsBody').style.display='';document.getElementById('bsOk').classList.remove('show');}
+  function bsCloseFn(){bsModal.classList.remove('show');}
+  document.getElementById('bsBtn').addEventListener('click',bsOpen);
+  document.getElementById('bsGrid').addEventListener('click',function(e){if(e.target.closest('.bsOpen'))bsOpen(e);});
+  document.getElementById('bsClose').addEventListener('click',bsCloseFn);
+  bsModal.addEventListener('click',function(e){if(e.target===bsModal)bsCloseFn();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')bsCloseFn();});
+  document.getElementById('bsSubmit').addEventListener('click',function(){
+    if((document.getElementById('hp_bs')||{}).value) return; // honeypot
+    var v=function(id){return (document.getElementById(id).value||'').trim();};
+    var ok=true;
+    ['bs_naam','bs_kt','bs_mot'].forEach(function(id){var e=!v(id);setErr(id,e);if(e)ok=false;});
+    var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('bs_em')); setErr('bs_em',eEm); if(eEm)ok=false;
+    var lt=parseInt(v('bs_lt'),10), eLt=!(lt>=18&&lt<=35); setErr('bs_lt',eLt); if(eLt)ok=false;
+    var eW=!document.getElementById('bs_wft').checked;
+    document.getElementById('bsWftLine').classList.toggle('invalid',eW); if(eW)ok=false;
+    if(!ok) return;
+    document.getElementById('bsBody').style.display='none';
+    document.getElementById('bsOk').classList.add('show');
+    dispatch('Nieuwe kandidatuur HYPie-bestuur', {
+      type:'kandidaat_bestuur', naam:v('bs_naam'), leeftijd:lt, email:v('bs_em'), kantoor:v('bs_kt'),
+      zetel:v('bs_zetel'), motivatie:v('bs_mot'), start_termijn:new Date().getFullYear()+1, wft_hypothecair_krediet:true
+    });
+  });
+
   // init
-  buildOrder(); renderTrio(); renderTable(); renderAlumni();
+  buildOrder(); renderTrio(); renderTable(); renderAlumni(); renderBestuur();
 </script>
 </body>
 </html>
