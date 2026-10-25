@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex">
 <title>Word lid — Hypotheek Young Professional | HYPie.nl</title>
-<meta name="description" content="Ben jij een jonge hypotheekadviseur met Wft Hypotheken? Meld je gratis aan bij HYPie en maak kans op een plek in de top 50 van 2026.">
+<meta name="description" content="Ben jij een hypotheekadviseur t/m 35 met Wft Hypotheken? Meld je gratis aan bij HYPie en maak kans op een plek in de top 50 van 2026.">
 <meta property="og:title" content="Word lid — Hypotheek Young Professional | HYPie.nl">
-<meta property="og:description" content="Ben jij een jonge hypotheekadviseur met Wft Hypotheken? Meld je gratis aan bij HYPie en maak kans op een plek in de top 50 van 2026.">
+<meta property="og:description" content="Ben jij een hypotheekadviseur t/m 35 met Wft Hypotheken? Meld je gratis aan bij HYPie en maak kans op een plek in de top 50 van 2026.">
 <meta property="og:image" content="https://www.hypie.nl/hypie-og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23003057'/%3E%3Cpath d='M32 11 l4.5 16.5 16.5 4.5 -16.5 4.5 -4.5 16.5 -4.5 -16.5 -16.5 -4.5 16.5 -4.5z' fill='%23E5A138'/%3E%3C/svg%3E">
@@ -74,7 +74,7 @@ footer a{color:var(--soft)}
   <div class="glow"></div>
   <div class="wrap inner">
     <div class="brand"><span class="logo"><svg viewBox="0 0 24 24"><path d="M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z" fill="#003057"/></svg></span><span class="bt">HYPie.nl<small>Hypotheek Young Professionals</small></span></div>
-    <div><span class="badge">★ Met Wft Hypotheken · t/m 35 jaar of tot 5 jaar na je diploma</span></div>
+    <div><span class="badge">★ Voor adviseurs t/m 35 jaar met Wft Hypotheken</span></div>
     <h1>Ben jij een <em>Hypotheek Young Professional</em>?</h1>
     <p class="lead">Meld je gratis aan, ervaar de voordelen — en wie weet sta jij volgend jaar in de top 50.</p>
     <div class="benefits"><span><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.6"><path d="m5 13 4 4L19 7"/></svg> 100% gratis</span><span><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.6"><path d="m5 13 4 4L19 7"/></svg> Trainingen & events</span><span><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.6"><path d="m5 13 4 4L19 7"/></svg> Buddy & coach</span><span><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.6"><path d="m5 13 4 4L19 7"/></svg> Kans op de top 50</span></div>
@@ -92,11 +92,9 @@ footer a{color:var(--soft)}
       </div>
       <div class="field"><label>E-mailadres</label><input type="email" data-key="email" data-email data-required autocomplete="email"></div>
       <div class="row">
-        <div class="field"><label>Leeftijd</label><input type="number" data-key="leeftijd" data-age inputmode="numeric" min="18" max="99"></div>
+        <div class="field"><label>Leeftijd</label><input type="number" data-key="leeftijd" data-age inputmode="numeric" min="18" max="35"></div>
         <div class="field"><label>Regio</label><select data-key="regio" data-required><option value="">Kies…</option><option>Noord-Holland</option><option>Zuid-Holland</option><option>Utrecht</option><option>Noord-Brabant</option><option>Gelderland</option><option>Overijssel</option><option>Limburg</option><option>Groningen</option><option>Friesland</option><option>Drenthe</option><option>Flevoland</option><option>Zeeland</option></select></div>
       </div>
-      <div class="field"><label>Jaar Wft Hypothecair Krediet behaald</label><select data-key="wft_jaar" data-wftjaar data-required></select></div>
-      <p class="formnote" style="margin-top:-6px">Lid worden kan t/m 35 jaar, of tot 5 jaar na je Wft-diploma.</p>
       <div class="field"><label>Kantoor / werkgever</label><input type="text" data-key="kantoor" data-required autocomplete="organization"></div>
       <div class="field"><label>Ik wil graag…</label><select data-key="wens">
         <option>Meedoen aan events & trainingen</option>
@@ -152,19 +150,13 @@ function lpInit(subject,type){
       else{
         if(req&&!val)bad=true;
         if(el.hasAttribute('data-email')&&val&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val))bad=true;
-        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=99))bad=true;}
+        if(el.hasAttribute('data-age')){var a=parseInt(val,10);if(!(a>=18&&a<=35))bad=true;}
       }
       var w=el.closest('.field')||el.closest('.check-line');
       if(w)w.classList.toggle('invalid',bad);
       if(bad)ok=false;
       data[el.getAttribute('data-key')]=val;
     });
-    // toelating: t/m 35 jaar of Wft-diploma maximaal 5 jaar oud
-    var ageEl=form.querySelector('[data-age]'), wjEl=form.querySelector('[data-wftjaar]');
-    if(ok && ageEl && wjEl){
-      var lft=parseInt(ageEl.value,10), wj=parseInt(wjEl.value,10);
-      if(!wj || !(lft<=35 || wj>=new Date().getFullYear()-5)){ wjEl.closest('.field').classList.add('invalid'); ageEl.closest('.field').classList.add('invalid'); ok=false; }
-    }
     if(!ok)return;
     dispatch(subject,data);
     document.getElementById('lpBody').style.display='none';
@@ -174,12 +166,6 @@ function lpInit(subject,type){
 }
 
 lpInit('Nieuwe HYPie-aanmelding (landingspagina)','aanmelding');
-
-document.querySelectorAll('select[data-wftjaar]').forEach(function(sel){
-  var nu=new Date().getFullYear(), o='<option value="">Kies…</option>';
-  for(var y=nu;y>=nu-40;y--) o+='<option>'+y+'</option>';
-  sel.innerHTML=o+'<option value="geen">Nog niet behaald</option>';
-});
 </script>
 </body>
 </html>
