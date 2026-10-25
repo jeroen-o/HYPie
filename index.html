@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>HYPie.nl — Hypotheek Young Professionals</title>
-<meta name="description" content="HYPie.nl zet hypotheekadviseurs tot 35 jaar in het zonnetje: trainingen, kennis, events, netwerk en de jaarlijkse top 50 van young professionals.">
+<meta name="description" content="HYPie.nl zet hypotheekadviseurs tot en met 35 jaar met Wft Hypotheken in het zonnetje: trainingen, kennis, events, netwerk en de jaarlijkse top 50 van young professionals.">
 
 <!-- Social share (Open Graph + Twitter) -->
 <meta property="og:type" content="website">
@@ -42,7 +42,7 @@
       "alternateName": "Hypotheek Young Professionals",
       "url": "https://www.hypie.nl/",
       "logo": "https://www.hypie.nl/hypie-og-image.png",
-      "description": "HYPie is het netwerk voor hypotheekadviseurs tot 35 jaar: trainingen, kennis, events, een community en de jaarlijkse top 50 van young professionals.",
+      "description": "HYPie is het netwerk voor hypotheekadviseurs t/m 35 jaar met minimaal het Wft-diploma Hypothecair Krediet: trainingen, kennis, events, een community en de jaarlijkse top 50 van young professionals.",
       "areaServed": "NL",
       "email": "info@hypie.nl",
       "telephone": "+31 33 258 04 60",
@@ -439,6 +439,33 @@
   .modal-ok.show{display:block}
   .modal-ok .check{width:56px;height:56px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 14px}
 
+  /* ALUMNI */
+  .alumni{background:var(--bg)}
+  .al-roles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:38px}
+  .al-role{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .al-role h4{font-size:1.12rem;margin-bottom:4px}
+  .al-role p{color:var(--text-soft);font-size:.9rem;line-height:1.5}
+  .al-tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+  .al-tab{font-family:var(--sans);font-weight:700;font-size:.9rem;cursor:pointer;border:1.5px solid var(--line);background:var(--paper);color:var(--primary);padding:9px 16px;border-radius:999px;transition:border-color .2s,background .2s}
+  .al-tab:hover{border-color:var(--accent)}
+  .al-tab.on{background:var(--primary);border-color:var(--primary);color:#fff}
+  .al-tab .c{display:inline-block;margin-left:6px;font-size:.76rem;opacity:.7}
+  .al-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .acard{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .acard:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--accent)}
+  .acard .aav{width:52px;height:52px;border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.15rem;margin-bottom:12px}
+  .acard h4{font-size:1.06rem}
+  .acard .ak{color:var(--text-soft);font-size:.84rem;margin-top:2px}
+  .acard .atags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+  .atag{font-size:.72rem;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--bg);color:var(--primary);border:1px solid var(--line)}
+  .atag.gold{background:rgba(229,161,56,.16);border-color:rgba(229,161,56,.5)}
+  .al-empty{grid-column:1/-1;background:var(--paper);border:1.5px dashed var(--line);border-radius:16px;padding:30px;text-align:center;color:var(--text-soft)}
+  .al-join{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start;margin-top:48px}
+  .al-join h3{font-size:1.6rem;margin-bottom:10px}
+  .al-join>div>p{color:var(--text-soft)}
+  @media(max-width:920px){.al-roles{grid-template-columns:1fr}.al-grid{grid-template-columns:repeat(2,1fr)}.al-join{grid-template-columns:1fr;gap:24px}}
+  @media(max-width:480px){.al-grid{grid-template-columns:1fr}}
+
   @media(max-width:920px){
     .hero-inner{grid-template-columns:1fr;gap:34px}
     .hero-stats{flex-direction:row;gap:30px;padding-left:0;border-left:none;flex-wrap:wrap}
@@ -485,6 +512,7 @@
       <a href="#top">Home</a>
       <a href="#voordelen">Voordelen</a>
       <a href="#top50">top 50</a>
+      <a href="#alumni">Alumni</a>
       <a href="#werkgevers">Werkgevers</a>
       <a href="#agenda">Agenda</a>
       <a href="masterclass-young-professionals.html">Masterclass</a>
@@ -500,7 +528,7 @@
   <div class="ring"></div>
   <div class="wrap hero-inner">
     <div class="hero-copy">
-      <span class="badge35">★ Voor hypotheekadviseurs t/m 35 jaar</span>
+      <span class="badge35">★ Voor hypotheekadviseurs t/m 35 jaar · met Wft Hypotheken</span>
       <h1>Ben jij een <em>HYPie</em>?<br>Of op zoek naar een <em>HYPie</em>?</h1>
       <p class="lead">Het netwerk voor Hypotheek Young Professionals zet jonge hypotheekadviseurs in het zonnetje — met trainingen, kennis, events, een netwerk én een eigen top 50. En werkgevers vinden hier hun volgende talent.</p>
       <div class="hero-cta">
@@ -617,6 +645,62 @@
       <div class="tcard reveal"><div class="tav">??</div><h4>Events</h4><div class="trole">Meetups & congressen</div><div class="tregio">Naam volgt</div></div>
       <div class="tcard reveal"><div class="tav">??</div><h4>Kennis & content</h4><div class="trole">Trainingen & nieuwsbrief</div><div class="tregio">Naam volgt</div></div>
       <div class="tcard reveal"><div class="tav">★</div><h4>Word ambassadeur</h4><div class="trole">Voor jouw regio</div><div class="tregio"><a href="#aanmelden" style="color:var(--accent);font-weight:600">Meld je aan →</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ALUMNI -->
+<section class="alumni" id="alumni">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:720px">
+      <span class="eyebrow">Eens een HYPie, altijd een HYPie</span>
+      <h2>HYPie Alumni — per lichting.</h2>
+      <p>In het jaar waarin je 36 wordt, stroom je door naar de alumni. Je lichting krijgt een vast jaartal en blijft hier zichtbaar. Je houdt toegang tot het netwerk en geeft je ervaring door aan de volgende generatie.</p>
+    </div>
+    <div class="al-roles reveal">
+      <div class="al-role"><h4>Mentor</h4><p>Begeleid een young professional in het eerste jaar na het Wft-diploma.</p></div>
+      <div class="al-role"><h4>Jury top 50</h4><p>Beoordeel voordrachten volgens het beoordelingskader, met oog voor vakmanschap en klantbelang.</p></div>
+      <div class="al-role"><h4>Spreker &amp; gastheer</h4><p>Deel je praktijk op een masterclass, meetup of borrel in je regio.</p></div>
+    </div>
+
+    <div class="al-tabs reveal" id="alTabs" role="tablist" aria-label="Alumni per lichting"></div>
+    <div class="al-grid" id="alGrid"></div>
+
+    <div class="al-join">
+      <div class="reveal">
+        <span class="eyebrow">Alumnus worden</span>
+        <h3>Was je HYPie en ben je inmiddels 36+?</h3>
+        <p>Meld je aan bij je lichting. Kies het jaar waarin je 36 werd: dat is je alumni-jaartal. Wil je mentor, jurylid of spreker worden? Geef het aan, dan nemen we contact op.</p>
+      </div>
+      <form class="card reveal" id="alForm" novalidate>
+        <div id="alBody">
+          <div class="field-row">
+            <div class="field"><label for="al_vn">Voornaam</label><input id="al_vn" type="text" autocomplete="given-name"><span class="err">Vul je voornaam in.</span></div>
+            <div class="field"><label for="al_an">Achternaam</label><input id="al_an" type="text" autocomplete="family-name"><span class="err">Vul je achternaam in.</span></div>
+          </div>
+          <div class="field"><label for="al_em">E-mailadres</label><input id="al_em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
+          <div class="field-row">
+            <div class="field"><label for="al_kt">Kantoor / werkgever</label><input id="al_kt" type="text" autocomplete="organization"><span class="err">Vul je kantoor in.</span></div>
+            <div class="field"><label for="al_jr">Lichting (jaar 36 geworden)</label><select id="al_jr"></select><span class="err">Kies je lichting.</span></div>
+          </div>
+          <div class="field"><label for="al_rol">Ik wil graag…</label>
+            <select id="al_rol">
+              <option>In het netwerk blijven</option>
+              <option>Mentor worden</option>
+              <option>Jurylid top 50 worden</option>
+              <option>Spreker of gastheer zijn</option>
+            </select>
+          </div>
+          <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_al" tabindex="-1" autocomplete="off"></label></div>
+          <label class="check-line" id="alConsentLine"><input type="checkbox" id="al_consent"> Ik geef toestemming om met mijn naam, kantoor en lichting zichtbaar te zijn in het openbare HYPie-alumnioverzicht. Ik kan dit altijd intrekken via info@hypie.nl.</label>
+          <button type="submit" class="btn btn-accent">Meld mij aan als alumnus →</button>
+        </div>
+        <div class="success" id="alOk">
+          <div class="check"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="#003057" stroke-width="3"><path d="m5 13 4 4L19 7"/></svg></div>
+          <h3>Welkom bij de alumni!</h3>
+          <p id="alOkMsg">Je staat nu bij je lichting.</p>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -783,7 +867,7 @@
       <h2>Meld je aan en kom direct in beeld.</h2>
       <p class="lead">Aanmelden kost twee minuten. Daarna sta je tussen de young professionals en maak je kans op een plek in de top 50 van dit jaar.</p>
       <ul class="checklist">
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> 100% gratis voor adviseurs t/m 35 jaar</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> 100% gratis voor adviseurs t/m 35 jaar met Wft Hypotheken</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Direct zichtbaar in de live ledenlijst</li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Korting of gratis toegang tot trainingen en events</li>
       </ul>
@@ -799,7 +883,7 @@
         </div>
         <div class="field"><label for="em">E-mailadres</label><input id="em" type="email" autocomplete="email"><span class="err">Vul een geldig e-mailadres in.</span></div>
         <div class="field-row">
-          <div class="field"><label for="lt">Leeftijd</label><input id="lt" type="number" min="16" max="35" inputmode="numeric"><span class="err">Leeftijd moet tussen 16 en 35 zijn.</span></div>
+          <div class="field"><label for="lt">Leeftijd</label><input id="lt" type="number" min="18" max="35" inputmode="numeric"><span class="err">Leeftijd moet tussen 18 en 35 zijn. Ouder? Kijk bij <a href="#alumni">Alumni</a>.</span></div>
           <div class="field"><label for="rg">Regio</label>
             <select id="rg">
               <option value="">Kies…</option>
@@ -820,6 +904,7 @@
           </select>
         </div>
         <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_join" tabindex="-1" autocomplete="off"></label></div>
+        <label class="check-line" id="wftLine"><input type="checkbox" id="wft"> Ik heb minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken). Dit is een voorwaarde voor het lidmaatschap en de top 50.</label>
         <label class="check-line" id="consentLine"><input type="checkbox" id="consent"> Ik geef toestemming om met mijn naam, kantoor en regio zichtbaar te zijn in de openbare HYPie top 50 en ledenlijst. Ik kan dit altijd intrekken via info@hypie.nl.</label>
         <button type="submit" class="btn btn-accent">Word lid & toon mij in de lijst →</button>
         <p class="formnote">Door je aan te melden ga je akkoord met de <a href="privacy.html" style="color:var(--accent);font-weight:600">voorwaarden en privacyverklaring</a>.</p>
@@ -842,10 +927,11 @@
       <h2>Nog even dit.</h2>
     </div>
     <div class="faq-list">
-      <div class="qa reveal"><button>Voor wie is HYPie? <span class="plus">+</span></button><div class="ans"><p>Voor iedereen die in hypotheekadvies werkt en 35 jaar of jonger is — van adviseur in opleiding tot zelfstandig adviseur.</p></div></div>
+      <div class="qa reveal"><button>Voor wie is HYPie? <span class="plus">+</span></button><div class="ans"><p>Voor hypotheekadviseurs van 35 jaar of jonger met minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken) — van startend adviseur in loondienst tot zelfstandig adviseur.</p></div></div>
+      <div class="qa reveal"><button>Ik ben mijn Wft Hypotheken nog aan het halen. Kan ik meedoen? <span class="plus">+</span></button><div class="ans"><p>Lid worden kan zodra je het diploma Hypothecair Krediet hebt. Tot die tijd kun je je inschrijven voor de nieuwsbrief en de HYPie-Monitor, zodat je niets mist. Meld je aan zodra je geslaagd bent.</p></div></div>
       <div class="qa reveal"><button>Hoe werkt de top 50? <span class="plus">+</span></button><div class="ans"><p>De top 50 is een jaarlijkse selectie van young professionals die we in het zonnetje zetten. Er is geen ranglijst op punten — iedereen staat gelijk en de volgorde wisselt steeds, zodat telkens iemand anders bovenaan staat. Elk jaar stellen we een nieuwe top 50 samen.</p></div></div>
       <div class="qa reveal"><button>Kost het lidmaatschap iets? <span class="plus">+</span></button><div class="ans"><p>Nee, het lidmaatschap is gratis dankzij onze partners. Sommige premium-trainingen kunnen een sterk verlaagde bijdrage hebben — dat staat altijd vooraf vermeld.</p></div></div>
-      <div class="qa reveal"><button>Wat gebeurt er na mijn 35e? <span class="plus">+</span></button><div class="ans"><p>Je blijft onderdeel van het netwerk. De YP-specifieke voordelen en de top 50 gelden tot je 35e; het netwerk en de kennis blijven beschikbaar.</p></div></div>
+      <div class="qa reveal"><button>Wat gebeurt er na mijn 35e? <span class="plus">+</span></button><div class="ans"><p>In het jaar waarin je 36 wordt, stroom je door naar de <a href="#alumni" style="color:var(--accent);font-weight:600">HYPie Alumni</a>. Je blijft bij je lichting (het jaartal van doorstroom), houdt toegang tot het netwerk en kunt mentor, spreker of jurylid voor de top 50 worden. De YP-voordelen en meedoen aan de top 50 gelden t/m je 35e.</p></div></div>
     </div>
   </div>
 </section>
@@ -857,7 +943,7 @@
       <a href="#top" class="brand"><span class="logo"><svg viewBox="0 0 24 24" width="24" height="24" aria-label="HYPie"><path d="M12 1.5 L14.6 9.4 L22.5 12 L14.6 14.6 L12 22.5 L9.4 14.6 L1.5 12 L9.4 9.4 Z" fill="#003057"/></svg></span><span class="bt">HYPie.nl<small>Hypotheek Young Professionals</small></span></a>
       <div class="foot-links">
         <div class="foot-col"><h5>Platform</h5><a href="#voordelen">Voordelen</a><a href="#top50">top 50</a><a href="#agenda">Agenda</a><a href="masterclass-young-professionals.html">Masterclass</a><a href="#aanmelden">Word lid</a></div>
-        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a></div>
+        <div class="foot-col"><h5>Doe mee</h5><a href="lp-aanmelden.html">Ik ben een HYPie</a><a href="lp-ken-jij.html">Ken jij een HYPie?</a><a href="lp-nomineer.html">Nomineer voor de top 50</a><a href="#alumni">HYPie Alumni</a></div>
         <div class="foot-col"><h5>Community</h5><a href="https://www.linkedin.com/company/hypotheek-young-professionals-hypie-nl/" target="_blank" rel="noopener">LinkedIn-pagina</a><a href="https://www.linkedin.com/groups/25800057/" target="_blank" rel="noopener">LinkedIn-groep (besloten)</a><a href="#partners">Partners</a><a href="mailto:partners@hypie.nl">Partner worden</a></div>
         <div class="foot-col"><h5>Contact</h5><a href="mailto:info@hypie.nl">info@hypie.nl</a><a href="tel:0332580460">033 258 04 60</a><a href="https://maps.google.com/?q=De+Wel+14-16+3871+MV+Hoevelaken" style="white-space:normal">De Wel 14–16<br>3871 MV Hoevelaken</a></div>
       </div>
@@ -881,6 +967,7 @@
       <div class="field"><label for="nom_waarom">Waarom verdient deze persoon het? (optioneel)</label><input id="nom_waarom" type="text"></div>
       <div class="field"><label for="nom_jij">Jouw e-mail (optioneel)</label><input id="nom_jij" type="email"></div>
       <div class="hp" aria-hidden="true"><label>Laat dit veld leeg<input type="text" id="hp_nom" tabindex="-1" autocomplete="off"></label></div>
+      <label class="check-line" id="nomWftLine"><input type="checkbox" id="nom_wft"> Voor zover ik weet is deze persoon t/m 35 jaar en heeft diegene minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken).</label>
       <label class="check-line" id="nomConsentLine"><input type="checkbox" id="nom_consent"> Ik heb deze persoon op de hoogte gebracht. Wij vragen de voorgedragen persoon altijd eerst om toestemming voordat de naam openbaar wordt getoond.</label>
       <button class="btn btn-accent" id="nominateSubmit">Voordracht versturen →</button>
     </div>
@@ -1293,9 +1380,11 @@
     var eAn=!an.value.trim(); setErr('an',eAn); if(eAn)ok=false;
     var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em.value.trim()); setErr('em',eEm); if(eEm)ok=false;
     var age=parseInt(lt.value,10);
-    var eLt=!(age>=16 && age<=35); setErr('lt',eLt); if(eLt)ok=false;
+    var eLt=!(age>=18 && age<=35); setErr('lt',eLt); if(eLt)ok=false;
     var eRg=!rg.value; setErr('rg',eRg); if(eRg)ok=false;
     var eKt=!kt.value.trim(); setErr('kt',eKt); if(eKt)ok=false;
+    var eWft=!document.getElementById('wft').checked;
+    document.getElementById('wftLine').classList.toggle('invalid',eWft); if(eWft)ok=false;
     var eCons=!document.getElementById('consent').checked;
     document.getElementById('consentLine').classList.toggle('invalid',eCons); if(eCons)ok=false;
     if(!ok) return;
@@ -1320,7 +1409,7 @@
       type:'aanmelding', voornaam:vn.value.trim(), achternaam:an.value.trim(),
       email:em.value.trim(), leeftijd:age, regio:rg.value, kantoor:kt.value.trim(),
       wens:(document.getElementById('ml')||{}).value||'',
-      toestemming_top50:true
+      wft_hypothecair_krediet:true, toestemming_top50:true
     });
   });
 
@@ -1364,6 +1453,8 @@
     var nm=document.getElementById('nom_naam');
     var bad=false;
     if(!nm.value.trim()){nm.closest('.field').classList.add('invalid');bad=true;} else {nm.closest('.field').classList.remove('invalid');}
+    var eW=!document.getElementById('nom_wft').checked;
+    document.getElementById('nomWftLine').classList.toggle('invalid',eW); if(eW)bad=true;
     var eC=!document.getElementById('nom_consent').checked;
     document.getElementById('nomConsentLine').classList.toggle('invalid',eC); if(eC)bad=true;
     if(bad) return;
@@ -1375,12 +1466,85 @@
       kantoor:(document.getElementById('nom_kantoor')||{}).value||'',
       waarom:(document.getElementById('nom_waarom')||{}).value||'',
       door:(document.getElementById('nom_jij')||{}).value||'',
-      bevestigd_geinformeerd:true
+      voldoet_aan_voorwaarden:true, bevestigd_geinformeerd:true
+    });
+  });
+
+  /* ====== ALUMNI ======
+     Lichting = het jaar waarin iemand 36 werd en doorstroomde naar de alumni.
+     Voorbeeld-alumni — vervang door echte data (alleen met toestemming). top50 = jaartallen in de top 50. */
+  var START_JAAR = 2026;   // eerste jaar van HYPie
+  var alumni = [
+    {vn:"Marloes",an:"de Ridder",kantoor:"Ridder Hypotheekadvies",lichting:2026,rol:"Mentor",top50:[]},
+    {vn:"Jeroen",an:"Vink",kantoor:"Vink & Partners",lichting:2026,rol:"Jurylid top 50",top50:[]},
+    {vn:"Sanne",an:"Kuipers",kantoor:"De Hypotheker Zwolle",lichting:2026,rol:"Spreker",top50:[]},
+    {vn:"Thomas",an:"Brink",kantoor:"Brink Financieel",lichting:2026,rol:"Mentor",top50:[]},
+    {vn:"Anouk",an:"Visser",kantoor:"Van Bruggen Adviesgroep Utrecht",lichting:2026,rol:"Netwerk",top50:[]},
+    {vn:"Bart",an:"Smit",kantoor:"Hypotheekpunt Ede",lichting:2026,rol:"Mentor",top50:[]}
+  ];
+  var alYear='alle';
+  function alYears(){
+    var now=new Date().getFullYear(), ys={};
+    for(var y=START_JAAR;y<=now+1;y++) ys[y]=true;
+    alumni.forEach(function(a){ys[a.lichting]=true;});
+    return Object.keys(ys).map(Number).sort(function(a,b){return b-a;});
+  }
+  function renderAlumni(){
+    var ys=alYears();
+    document.getElementById('alTabs').innerHTML=
+      '<button type="button" class="al-tab'+(alYear==='alle'?' on':'')+'" data-y="alle">Alle lichtingen<span class="c">'+fmt.format(alumni.length)+'</span></button>'
+      +ys.map(function(y){
+        var n=alumni.filter(function(a){return a.lichting===y;}).length;
+        return '<button type="button" class="al-tab'+(alYear===y?' on':'')+'" data-y="'+y+'">Lichting '+y+'<span class="c">'+fmt.format(n)+'</span></button>';
+      }).join('');
+    var list=alumni.filter(function(a){return alYear==='alle'||a.lichting===alYear;})
+      .sort(function(a,b){return b.lichting-a.lichting||a.an.localeCompare(b.an,'nl');});
+    var now=new Date().getFullYear();
+    document.getElementById('alGrid').innerHTML = list.length===0
+      ? '<div class="al-empty">'+(alYear>now
+          ? 'Lichting '+alYear+' stroomt door in '+alYear+': iedereen die dan 36 wordt.'
+          : 'Nog geen alumni in lichting '+alYear+'. Hoor je hierbij? Meld je hieronder aan.')+'</div>'
+      : list.map(function(a){
+          return '<div class="acard"><div class="aav">'+initials(a)+'</div>'
+            +'<h4>'+esc(a.vn+' '+a.an)+'</h4><div class="ak">'+esc(a.kantoor)+'</div>'
+            +'<div class="atags"><span class="atag gold">Lichting '+a.lichting+'</span>'
+            +(a.top50||[]).map(function(t){return '<span class="atag gold">★ top 50 · '+t+'</span>';}).join('')
+            +(a.rol?'<span class="atag">'+esc(a.rol)+'</span>':'')+'</div></div>';
+        }).join('');
+    var sel=document.getElementById('al_jr');
+    if(!sel.options.length){
+      sel.innerHTML='<option value="">Kies…</option>'+ys.filter(function(y){return y<=now;}).map(function(y){return '<option>'+y+'</option>';}).join('');
+    }
+  }
+  document.getElementById('alTabs').addEventListener('click',function(e){
+    var b=e.target.closest('.al-tab'); if(!b) return;
+    alYear = b.getAttribute('data-y')==='alle' ? 'alle' : parseInt(b.getAttribute('data-y'),10);
+    renderAlumni();
+  });
+  document.getElementById('alForm').addEventListener('submit',function(ev){
+    ev.preventDefault();
+    if((document.getElementById('hp_al')||{}).value) return; // honeypot
+    var v=function(id){return (document.getElementById(id).value||'').trim();};
+    var ok=true;
+    ['al_vn','al_an','al_kt','al_jr'].forEach(function(id){var e=!v(id);setErr(id,e);if(e)ok=false;});
+    var eEm=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('al_em')); setErr('al_em',eEm); if(eEm)ok=false;
+    var eC=!document.getElementById('al_consent').checked;
+    document.getElementById('alConsentLine').classList.toggle('invalid',eC); if(eC)ok=false;
+    if(!ok) return;
+    var jr=parseInt(v('al_jr'),10), rol=v('al_rol');
+    alumni.push({vn:v('al_vn'),an:v('al_an'),kantoor:v('al_kt'),lichting:jr,rol:rol==='In het netwerk blijven'?'Netwerk':rol.replace(/ (worden|zijn)$/,''),top50:[]});
+    alYear=jr; renderAlumni();
+    document.getElementById('alOkMsg').textContent='Je staat nu bij lichting '+jr+'.';
+    document.getElementById('alBody').style.display='none';
+    document.getElementById('alOk').classList.add('show');
+    dispatch('Nieuwe HYPie-alumni-aanmelding', {
+      type:'alumni', voornaam:v('al_vn'), achternaam:v('al_an'), email:v('al_em'),
+      kantoor:v('al_kt'), lichting:jr, wens:rol, toestemming_openbaar:true
     });
   });
 
   // init
-  buildOrder(); renderTrio(); renderTable();
+  buildOrder(); renderTrio(); renderTable(); renderAlumni();
 </script>
 </body>
 </html>

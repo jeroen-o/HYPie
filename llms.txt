@@ -1,18 +1,20 @@
 # HYPie.nl — Hypotheek Young Professionals
 
-> HYPie is het Nederlandse netwerk voor hypotheekadviseurs tot en met 35 jaar.
+> HYPie is het Nederlandse netwerk voor hypotheekadviseurs tot en met 35 jaar
+> met minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken).
 > Het zet jonge adviseurs in het zonnetje met trainingen, kennis, events, een
 > community en een jaarlijkse top 50. Werkgevers vinden er jong talent.
 > Kernvraag van het merk: "Ben jij een HYPie? Of op zoek naar een HYPie?"
 
 ## Wat HYPie biedt
-- Gratis lidmaatschap voor adviseurs t/m 35 jaar
+- Gratis lidmaatschap voor adviseurs t/m 35 jaar met minimaal Wft Hypothecair Krediet
 - Trainingen, masterclasses en PE-punten (gratis of met korting)
 - Kennis & tools en updates over wet- en regelgeving
 - Events, meetups en netwerkborrels door heel Nederland
 - Mentoren en een community (LinkedIn/WhatsApp)
 - De HYPie top 50: een jaarlijkse selectie (2026), zonder puntenranking,
   met een dynamische volgorde zodat iedereen gelijk in beeld komt
+- HYPie Alumni: oud-leden (36+) per lichting/jaartal; mentoren, jury en sprekers
 - De HYPie-Monitor: jaarlijks onderzoek onder jonge hypotheekadviseurs
 
 ## Voor werkgevers
