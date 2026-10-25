@@ -1238,7 +1238,7 @@
           <li><svg viewBox="0 0 24 24" fill="none" stroke="#E5A138" stroke-width="2.4"><path d="m5 13 4 4L19 7"/></svg> Vermelding als bedrijfslid op HYPie.nl</li>
         </ul>
         <div class="lm-pakketten" id="lmPakketten"></div>
-        <p class="lm-btw">Prijzen per jaar, exclusief btw. Extra HYPie-gesprekken of kennissessies zijn los bij te boeken.</p>
+        <p class="lm-btw">Prijzen per jaar. HYPie rekent geen btw. Extra HYPie-gesprekken of kennissessies zijn los bij te boeken.</p>
         <button type="button" class="btn btn-primary" id="bdBtn">Vraag het bedrijfslidmaatschap aan →</button>
         <p class="lm-note">Het lidmaatschap van je medewerkers blijft persoonlijk. Iedereen meldt zich zelf aan en geeft zelf toestemming. Als bedrijfslid krijg je geen inzage in persoonsgegevens of activiteiten van individuele leden.</p>
       </div>
@@ -1404,8 +1404,9 @@
     </div>
     <div class="faq-list">
       <div class="qa reveal"><button>Voor wie is HYPie? <span class="plus">+</span></button><div class="ans"><p>Voor hypotheekadviseurs met minimaal het Wft-diploma Hypothecair Krediet (Wft Hypotheken) die 35 jaar of jonger zijn, of hun diploma maximaal 5 jaar hebben. Zo zijn ook zij-instromers welkom — van startend adviseur in loondienst tot zelfstandig adviseur.</p></div></div>
+      <div class="qa reveal"><button>Waarom heet het "Young" als ik ouder dan 35 ben? <span class="plus">+</span></button><div class="ans"><p>Young staat voor jong in het vak. Ben je later ingestroomd, dan ben je de eerste vijf jaar na je Wft Hypotheken net zo goed een Hypotheek Young Professional.</p></div></div>
       <div class="qa reveal"><button>Ik ben mijn Wft Hypotheken nog aan het halen. Kan ik meedoen? <span class="plus">+</span></button><div class="ans"><p>Lid worden kan zodra je het diploma Hypothecair Krediet hebt. Tot die tijd kun je je inschrijven voor de nieuwsbrief en de HYPie-Monitor, zodat je niets mist. Meld je aan zodra je geslaagd bent.</p></div></div>
-      <div class="qa reveal"><button>Hoe werkt de top 50? <span class="plus">+</span></button><div class="ans"><p>De top 50 is een jaarlijkse selectie van young professionals die we in het zonnetje zetten. Er is geen ranglijst op punten — iedereen staat gelijk en de volgorde wisselt steeds, zodat telkens iemand anders bovenaan staat. Elk jaar stellen we een nieuwe top 50 samen.</p></div></div>
+      <div class="qa reveal"><button>Hoe werkt de top 50? <span class="plus">+</span></button><div class="ans"><p>De top 50 is een jaarlijkse selectie van young professionals die we in het zonnetje zetten. Er is geen ranglijst op punten — iedereen staat gelijk en de volgorde wisselt steeds, zodat telkens iemand anders bovenaan staat. Elk jaar stellen we een nieuwe top 50 samen. We kijken naar vakmanschap, klantbelang en inzet voor het vak. Leeftijd, werkgever en bedrijfslidmaatschap spelen geen rol in de selectie.</p></div></div>
       <div class="qa reveal"><button>Kunnen werkgevers via HYPie mensen werven? <span class="plus">+</span></button><div class="ans"><p>Nee. HYPie plaatst geen vacatures en doet niet aan werving en selectie. Ook bij HYPie-gesprekken mogen bedrijven deelnemers niet benaderen voor een baan. Zo kunnen kantoren hun mensen met een gerust hart aanmelden.</p></div></div>
       <div class="qa reveal"><button>Kost het lidmaatschap iets? <span class="plus">+</span></button><div class="ans"><p>Nee, het lidmaatschap is gratis dankzij onze partners. Sommige premium-trainingen kunnen een sterk verlaagde bijdrage hebben — dat staat altijd vooraf vermeld.</p></div></div>
       <div class="qa reveal"><button>Wanneer word ik alumnus? <span class="plus">+</span></button><div class="ans"><p>Als je 36 of ouder bent én je Wft-diploma langer dan 5 jaar hebt, stroom je in dat jaar door naar de <a href="#alumni" style="color:var(--accent);font-weight:600">HYPie Alumni</a>. Je blijft bij je lichting (het jaartal van doorstroom), houdt toegang tot het netwerk en kunt coach, spreker of jurylid voor de top 50 worden. De YP-voordelen en meedoen aan de top 50 gelden zolang je aan de toelating voldoet.</p></div></div>
@@ -1966,15 +1967,10 @@
 
   /* ====== ALUMNI ======
      Lichting = het jaar waarin iemand niet meer aan de toelating voldeed en doorstroomde naar de alumni.
-     Voorbeeld-alumni — vervang door echte data (alleen met toestemming). top50 = jaartallen in de top 50. */
+     Alleen echte alumni met toestemming. top50 = jaartallen waarin iemand in de top 50 stond. */
   var START_JAAR = 2026;   // eerste jaar van HYPie
   var alumni = [
-    {vn:"Marloes",an:"de Ridder",kantoor:"Ridder Hypotheekadvies",lichting:2026,rol:"Coach",top50:[]},
-    {vn:"Jeroen",an:"Vink",kantoor:"Vink & Partners",lichting:2026,rol:"Jurylid top 50",top50:[]},
-    {vn:"Sanne",an:"Kuipers",kantoor:"De Hypotheker Zwolle",lichting:2026,rol:"Spreker",top50:[]},
-    {vn:"Thomas",an:"Brink",kantoor:"Brink Financieel",lichting:2026,rol:"Coach",top50:[]},
-    {vn:"Anouk",an:"Visser",kantoor:"Van Bruggen Adviesgroep Utrecht",lichting:2026,rol:"Netwerk",top50:[]},
-    {vn:"Bart",an:"Smit",kantoor:"Hypotheekpunt Ede",lichting:2026,rol:"Coach",top50:[]}
+    // {vn:"Voornaam", an:"Achternaam", kantoor:"Kantoor", lichting:2027, rol:"Coach", top50:[2026]}
   ];
   var alYear='alle';
   function alYears(){
@@ -1997,7 +1993,7 @@
     document.getElementById('alGrid').innerHTML = list.length===0
       ? '<div class="al-empty">'+(alYear>now
           ? 'Lichting '+alYear+' stroomt door in '+alYear+': iedereen die dan niet meer aan de toelating voldoet.'
-          : 'Nog geen alumni in lichting '+alYear+'. Hoor je hierbij? Meld je hieronder aan.')+'</div>'
+          : (alYear==='alle' ? 'De eerste HYPie-alumni volgen. Val je al buiten de toelating? Meld je hieronder aan.' : 'Nog geen alumni in lichting '+alYear+'. Hoor je hierbij? Meld je hieronder aan.'))+'</div>'
       : list.map(function(a){
           return '<div class="acard"><div class="aav">'+initials(a)+'</div>'
             +'<h4>'+esc(a.vn+' '+a.an)+'</h4><div class="ak">'+esc(a.kantoor)+'</div>'
@@ -2257,7 +2253,7 @@
   }
 
   /* ====== BEDRIJFSLIDMAATSCHAP ======
-     prijs: bedrag per jaar in euro's excl. btw (getal) of '' voor 'op aanvraag'. extra: wat het pakket bovenop de basis biedt.
+     prijs: bedrag per jaar in euro's, zonder btw (getal) of '' voor 'op aanvraag'. extra: wat het pakket bovenop de basis biedt.
      bedrijfsleden: alleen kantoren die akkoord gaven met vermelding. logo: pad of ''. */
   var pakketten = [
     {naam:"Klein",  bereik:"1–5 young professionals",   min:1,  max:5,    prijs:495,  extra:[]},
